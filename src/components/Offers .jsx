@@ -1,25 +1,32 @@
+// src/components/Offers.jsx
+
 import React from 'react';
 import Slider from 'react-slick';
 import PropTypes from 'prop-types'; 
-import './offers.css'
+import './offers.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { motion } from 'framer-motion'; // Importar Framer Motion
 
 // Componente de tarjeta de oferta
 const OfferCard = ({ product }) => (
-    <div className="bg-[#FFFFFF] rounded-lg shadow-md  mx-3 card-contain">
+    <motion.div
+        className="bg-[#FFFFFF] rounded-lg shadow-md mx-3 card-contain"
+        initial={{ opacity: 0, y: 20 }} // Comienza oculto y desplazado hacia abajo
+        animate={{ opacity: 1, y: 0 }} // Desaparece y se mueve a su posición original
+        transition={{ duration: 0.6 }} // Duración de la transición
+    >
         <div className="image-contain w-full h-full">
-        <img src={product.image} alt={product.name} className="image-offer w-full h-60 bg-initial rounded-t-lg" />
+            <img src={product.image} alt={product.name} className="image-offer w-full h-60 bg-initial rounded-t-lg" />
         </div>
-       <div className="description p-2  relative rounded-lg">
-
-        <h2 className="font-semibold text-xl mt-2">{product.name}</h2>
-        <span className="text-[#FF0000] font-bold text-[1.2em]">{product.price}</span>
-        <a href="#" className="absolute right-2 bottom-2 block md:inline-block">
-                        <FontAwesomeIcon className='hover:text-[#008DDA] text-[#41C9E2]' icon={faShoppingCart} size="2x" />
-                    </a>
-       </div>
-    </div>
+        <div className="description p-2 relative rounded-lg">
+            <h2 className="font-semibold text-xl mt-2">{product.name}</h2>
+            <span className="text-[#FF0000] font-bold text-[1.2em]">{product.price}</span>
+            <a href="#" className="absolute right-2 bottom-2 block md:inline-block">
+                <FontAwesomeIcon className='hover:text-[#008DDA] text-[#41C9E2]' icon={faShoppingCart} size="2x" />
+            </a>
+        </div>
+    </motion.div>
 );
 
 // Componente principal de Ofertas
@@ -35,7 +42,6 @@ const Offers = ({ products }) => {
         autoplaySpeed: 4000, 
         pauseOnHover: true, 
         responsive: [
-    
             {
                 breakpoint: 1300,
                 settings: {
@@ -43,7 +49,6 @@ const Offers = ({ products }) => {
                     slidesToScroll: 1,
                 },
             },
-
             {
                 breakpoint: 600,
                 settings: {
@@ -52,11 +57,11 @@ const Offers = ({ products }) => {
                 },
             },
         ],
-    }        
+    };        
 
     return (
-        <div id='offer-list' className="my-8 relative ">
-            <h1 className="text-[1.8em] font-bold mb-4  text-[#FF0000]">Ofertas</h1>
+        <div id='offer-list' className="my-8 relative">
+            <h1 className="text-[1.8em] font-bold mb-4 text-[#FF0000]">Ofertas</h1>
             <Slider {...settings}>
                 {products.map((product) => (
                     <OfferCard key={product.id} product={product} />

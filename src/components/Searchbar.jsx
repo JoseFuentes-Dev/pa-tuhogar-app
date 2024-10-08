@@ -27,7 +27,7 @@ const SearchBar = ({ placeholder, onSearch }) => {
 
   return (
     <div className=" -mt-0 flex items-center justify-center w-full ">
-    <div className="contain-input relative w-full max-w-4xl ">
+    <div className="contain-input relative w-full max-w-4xl">
 
       <input
         type="text"

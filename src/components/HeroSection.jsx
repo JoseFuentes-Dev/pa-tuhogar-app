@@ -1,11 +1,13 @@
+// src/components/HeroSection.jsx
+
 import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import './herosection.css'
-
+import { Link } from 'react-scroll';
+import { motion } from 'framer-motion'; // Importar Framer Motion
 
 // Importar las imágenes directamente
 import image1 from '../assets/images/1.jpg';
@@ -32,49 +34,85 @@ const HeroSection = () => {
     fade: true,
     cssEase: 'linear',
     arrows: false,
-    
+  };
+
+  // Definición de las variantes de animación
+  const slideVariants = {
+    hidden: { opacity: 0, scale: 1.2 },
+    visible: { opacity: 1, scale: 1 },
+  };
+
+  const titleVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const paragraphVariants = {
+    hidden: { opacity: 0, y: -30 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const buttonVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
   };
 
   return (
-    <section className=" z-0 w-[20rem] h-[500px]  relative sm:w-[1200px] sm:h-[600px] rounded-lg text-white flex flex-col overflow-hidden">
-      <Slider {...settings} className="w-full h-full ">
-        {images.map((image, index) => (
-          <div key={index} className=" w-full h-full flex justify-center items-center">
-            <img
-              src={image}
-              className="w-full h-[500px] sm:h-[600px]" 
-              alt={`Slide ${index + 1}`}
-            />
-          </div>
-        ))}
-      </Slider>
+    <motion.section className="z-0 w-[20rem] h-[500px] relative sm:w-[1200px] sm:h-[600px] rounded-lg text-white flex flex-col overflow-hidden"
+    initial="hidden"
+    animate="visible"
+    transition={{ duration: 1, ease: 'easeInOut' }}
+    variants={slideVariants}>
+      {/* Slider animado */}
+
+        <Slider {...settings} className="w-full h-full">
+          {images.map((image, index) => (
+            <div key={index} className="w-full h-full flex justify-center items-center">
+              <img
+                src={image}
+                className="w-full h-[500px] sm:h-[600px]"
+                alt={`Slide ${index + 1}`}
+              />
+            </div>
+          ))}
+        </Slider>
 
       {/* Contenido sobre el banner */}
-      <div className=" absolute inset-0 flex flex-col justify-center items-center z-10 text-center">
-        <h1 className="text-4xl font-bold mb-4">Bienvenido a Pa'tu H <FontAwesomeIcon 
-                        className={`text-[#FF0000]`}
-                        icon={faHeart} 
-                        size="1x" 
-                    /> gar</h1>
-        <p className="text-xl mb-6">
+      <div
+        className="absolute inset-0 flex flex-col justify-center items-center z-10 text-center"
+       
+      >
+        <motion.h1 className="text-4xl font-bold mb-4"
+         initial="hidden"
+         animate="visible"
+         transition={{ duration: 1 }}
+         variants={titleVariants}>
+          Bienvenido a Pa'tu H <FontAwesomeIcon className={`text-[#FF0000]`} icon={faHeart} size="1x" /> gar
+        </motion.h1>
+        <motion.p className="text-xl mb-6"
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 1, delay: 0.5 }}
+          variants={paragraphVariants}
+          >
           Encuentra los mejores electrodomésticos para tu hogar en Holguín.
-        </p>
+        </motion.p>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 1, delay: 1 }}
+          variants={buttonVariants}
+        >
+        <Link to="offer-list" smooth={true} duration={700} className="bg-[#ACE2E1] text-black px-6 py-1 rounded-lg hover:bg-[#41C9E2] flex flex-col items-center cursor-pointer">
+          <label className='hero-label text-xl'>Ver Productos</label>
+          <FontAwesomeIcon className='hero-chevron -mt-2 cursor-pointer text-[#008DDA]' icon={faChevronDown} size="2x" />
+        </Link>
+        </motion.div>
+      </div>
 
-        <a href="#offer-list" className="bg-[#ACE2E1] text-black  px-6 py-1 rounded-lg hover:bg-[#41C9E2] flex flex-col items-center">  
-             <label className=' hero-label text-xl '>
-          Ver Productos 
-          </label>
-          <FontAwesomeIcon 
-                        className='hero-chevron -mt-2 cursor-pointer  text-[#008DDA] ' 
-                        icon={faChevronDown} 
-                        size="2x" 
-                    />
-          </a>
-                          </div>
-   
       {/* Fondo oscuro para mejorar la legibilidad del texto */}
       <div className="absolute inset-0 bg-black opacity-40 z-0"></div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -5,6 +5,15 @@ import HeroSection from './components/HeroSection'
 import Badges from './components/Badges'
 import SearchBar from './components/Searchbar'
 import Offers from './components/Offers '
+import FeaturedProducts from './components/FeaturedProducts'
+
+import ReactDOM from 'react-dom';
+import 'aos/dist/aos.css'; // Importar CSS de AOS
+import AOS from 'aos'; // Importar AOS
+
+AOS.init(); // Inicializar AOS
+
+ReactDOM.render(<App />, document.getElementById('root'));
 
 //Productos
 import cafeteraImg from './assets/images/Productos/cafetera.jpg';
@@ -41,6 +50,7 @@ function App() {
      <Badges />
      </div>
      <Offers  products={offerProducts}  />
+     <FeaturedProducts />
      </main>
     </>
   )
