@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background:#F7EEDD ;
+    font-family: 'Open Sans', sans-serif;
+}
+.menu-principal {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.1em;
+}
+.productos-menu{
+    font-weight: 300;
+    font-size: .9em;
+}
+
+

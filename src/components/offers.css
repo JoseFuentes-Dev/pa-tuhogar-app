@@ -1,0 +1,42 @@
+/* Estilo para las flechas */
+.slick-prev, .slick-next {
+
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    z-index: 1; 
+}
+
+/* Posición de las flechas */
+.slick-prev {
+    left: 0px; /* A la izquierda */
+}
+
+.slick-next {
+    right: 30px; /* A la derecha */
+}
+
+.slick-prev:before, .slick-next:before {
+    color: #008DDA;
+    font-size: 50px; 
+ 
+}
+.slick-list {
+    border-radius: 15px;
+    overflow: hidden;
+    
+  }
+  .image-contain{
+    overflow: hidden;
+   
+  }
+  .card-contain{
+    overflow: hidden;
+    
+  }
+.image-offer:hover
+{
+cursor: pointer;
+transform: scale(120%);
+transition: all 1s ease;
+  }
