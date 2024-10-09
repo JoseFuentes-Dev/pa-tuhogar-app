@@ -11,7 +11,7 @@ import { motion } from 'framer-motion'; // Importar Framer Motion
 const OfferCard = ({ product }) => (
     <div className="pruebA"
     data-aos="fade-up" 
-    data-aos-duration="1000"
+    data-aos-duration="600"
     >
 
     <motion.div

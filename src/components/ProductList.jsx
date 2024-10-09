@@ -14,7 +14,7 @@ export const products = [
         image: ventiladorimg },
     { id: 3, name: 'Horno Microondas', category: 'Para tu Cocina', price: 249.99,
         image: colchonimg },
-    { id: 4, name: 'Televisor', category: 'TV & Equipos', price: 249.99,
+    { id: 4, name: 'Televisor, TV', category: 'TV & Equipos', price: 249.99,
         image: ollaarroceraImg},
     { id: 5, name: 'Ventilador', category: 'Climatización',price: 249.99,
         image: turbinaImg },

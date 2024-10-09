@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './search.css';
 import { products } from './ProductList'; 
 
-const SearchBar = ({ placeholder }) => {
+const SearchBar = () => {
   const [inputValue, setInputValue] = useState('');
   const [isVisible, setIsVisible] = useState(true);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -52,7 +52,7 @@ const SearchBar = ({ placeholder }) => {
     setIsVisible(false); // Ocultamos el placeholder si hay texto
   };
 
-  const handleProductClick = (product) => {
+  const handleProductClick = () => {
     setInputValue('');
     setFilteredProducts([]);
     setNoResults(false); // Al seleccionar un producto, quitamos el mensaje de "no resultados"
@@ -80,12 +80,12 @@ const SearchBar = ({ placeholder }) => {
           value={inputValue}
           onChange={handleInputChange}
           className="relative shadow-md pl-4 text-[1.2em] text-[rgba(0,0,0,.7)] h-[50px] w-full max-w-4xl p-2 rounded-bl-lg rounded-br-lg focus:outline-none focus:ring-1 focus:ring-[#008DDA]"
-          placeholder={placeholder}
+          placeholder='Buscar:'
         />
 
         {/* Placeholder si no hay texto en el input */}
         {isVisible && (
-          <div className="wrapper absolute left-2 top-3" style={{ pointerEvents: 'none' }}>
+          <div className="wrapper absolute left-20 top-3" style={{ pointerEvents: 'none' }}>
             <div className="words">
               <span>Climatización</span>
               <span>Refrigeración</span>

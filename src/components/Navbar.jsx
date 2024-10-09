@@ -37,9 +37,9 @@ const Navbar = () => {
         <>
             {/* Navbar */}
             <nav className={`menu-principal bg-[#008DDA] w-full h-20 flex justify-between pr-5 items-center fixed top-0 z-50 transition-all duration-500 ease-in-out 
-                ${isScrolled ?  'shadow-lg h-14' : 'h-20'}`}>
+                ${isScrolled ?  'shadow-lg h-12' : 'h-20'}`}>
                 {/* Logo */}
-                <img src={logo} alt="Pa' tu hogar logo" className={`transition-all duration-500 ease-in-out ${isScrolled ? 'h-14' : 'h-20'}`} />
+                <img src={logo} alt="Pa' tu hogar logo" className={`transition-all duration-500 ease-in-out ${isScrolled ? 'h-12' : 'h-20'}`} />
 
                 {/* Hamburger Menu (for mobile) */}
                 <div className='md:hidden'>
