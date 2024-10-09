@@ -9,22 +9,22 @@ import { motion } from 'framer-motion'; // Importar Framer Motion
 
 // Componente de tarjeta de oferta
 const OfferCard = ({ product }) => (
-    <div className="pruebA"
+    <div
     data-aos="fade-up" 
     data-aos-duration="600"
     >
 
     <motion.div
-        className="bg-[#FFFFFF] rounded-lg shadow-md mx-3 card-contain"
+        className="bg-[#FFFFFF] rounded-lg shadow-md mx-3 card-contain p-4"
         initial={{ opacity: 0, y: 20 }} // Comienza oculto y desplazado hacia abajo
         animate={{ opacity: 1, y: 0 }} // Desaparece y se mueve a su posición original
         transition={{ duration: 0.6 }} // Duración de la transición
 
    
         >
-        <div className="image-contain w-full h-full"
+        <div className="image-contain w-full h-full rounded-t-lg"
             >
-            <img src={product.image} alt={product.name} className="image-offer w-full h-60 bg-initial rounded-t-lg" />
+            <img src={product.image} alt={product.name} className="image-offer w-full h-60 bg-initial rounded-t-lg " />
         </div>
         <div className="description p-2 relative rounded-lg">
             <h2 className="font-semibold text-xl mt-2">{product.name}</h2>
@@ -68,7 +68,7 @@ const Offers = ({ products }) => {
     };        
 
     return (
-        <div id='offer-list' className="my-10 relative"
+        <div  id='ofertas' className="my-10 relative pt-[120px] "
         >
             <h1 className="text-[1.8em] font-bold mb-4 text-[#FF0000]"
               >Ofertas</h1>
@@ -84,11 +84,10 @@ const Offers = ({ products }) => {
 
 // Validación de PropTypes
 Offers.propTypes = {
-    products: PropTypes.arrayOf(
+    productsoffers: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.number.isRequired,
             name: PropTypes.string.isRequired,
-            description: PropTypes.string.isRequired,
             price: PropTypes.string.isRequired,
             image: PropTypes.string.isRequired,
         })

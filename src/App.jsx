@@ -13,7 +13,7 @@ import ReactDOM from 'react-dom';
 import 'aos/dist/aos.css'; // Importar CSS de AOS
 import AOS from 'aos'; // Importar AOS
 
-import { products } from './components/ProductList'
+import { productsoffers } from './components/Productoffers'
 AOS.init(); // Inicializar AOS
 
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -24,6 +24,7 @@ function App() {
   
   return (
     <>
+    <span id='top'></span>
      <Navbar />
      <SearchBar />
      <main className='px-20'>
@@ -32,8 +33,8 @@ function App() {
      <HeroSection />
      <Badges />
      </div>
-     
-     <Offers  products={products}  />
+
+     <Offers  products={productsoffers}  />
      <FeaturedProducts />
      <Testimonials />
      </main>

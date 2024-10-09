@@ -47,8 +47,10 @@ const TestimonialsCarousel = () => {
   };
 
   return (
-    <div className="my-10 flex flex-col items-center">
-      <h1 className="text-center text-[1.8em] font-bold mb-4">Lo Que Dicen Nuestros Clientes</h1>
+    <div className="my-10 flex flex-col mt-20">
+      <h1 className="text-[1.8em] font-bold mb-4 text-center">Lo Que Dicen Nuestros Clientes</h1>
+      <div className='flex justify-center my-12'>
+
       <Slider {...settings}
        className='w-[400px] md:w-[700px]'>
         {testimonials.map((testimonial) => (
@@ -56,7 +58,7 @@ const TestimonialsCarousel = () => {
             key={testimonial.id}
             className="bg-white rounded-lg shadow-md p-8 "
             data-aos="fade-up"
-          >
+            >
             <p className="font-semibold text-xl">{testimonial.name}</p>
             <p className="text-sm text-gray-600">{testimonial.location}</p>
             <p className="mt-4 text-lg italic">"{testimonial.comment}"</p>
@@ -64,6 +66,7 @@ const TestimonialsCarousel = () => {
           </div>
         ))}
       </Slider>
+        </div>
     </div>
   );
 };

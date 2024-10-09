@@ -5,7 +5,7 @@ import './footer.css';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#008DDA] text-white py-8">
+    <footer className="bg-[#008DDA] text-white py-8 ">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         
         {/* Columna 1: Logotipo y descripción */}

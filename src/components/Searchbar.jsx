@@ -44,7 +44,9 @@ const SearchBar = () => {
 
     // Actualizamos la lista filtrada en tiempo real
     const filtered = products.filter(product =>
-      product.name.toLowerCase().includes(value.toLowerCase().trim())
+      product.name.toLowerCase().includes(value.toLowerCase().trim()) || 
+      product.description.toLowerCase().includes(value.toLowerCase().trim())
+
     );
 
     setFilteredProducts(filtered);
@@ -73,7 +75,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div ref={searchBarRef} className="flex flex-col items-center justify-center w-full ">
+    <div id='search-bar' ref={searchBarRef} className="flex flex-col items-center justify-center w-full ">
       <div className="contain-input relative w-full max-w-4xl">
         <input
           type="text"

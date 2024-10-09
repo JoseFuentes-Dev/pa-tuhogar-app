@@ -4,6 +4,7 @@ animation: chevron_moved 2s infinite;
 .hero-label{
     cursor: pointer;
 }
+
 @keyframes chevron_moved{
     0%{
         transform: translateY(0);

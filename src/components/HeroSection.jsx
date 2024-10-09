@@ -1,13 +1,13 @@
 // src/components/HeroSection.jsx
 
-import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-scroll';
-import { motion } from 'framer-motion'; // Importar Framer Motion
+import { motion } from 'framer-motion';
+import './herosection.css'
 
 // Importar las imágenes directamente
 import image1 from '../assets/images/1.jpg';
@@ -58,38 +58,40 @@ const HeroSection = () => {
   };
 
   return (
-    <motion.section className="z-0 w-[20rem] h-[500px] relative sm:w-[1200px] sm:h-[600px] rounded-lg text-white flex flex-col overflow-hidden"
+    <motion.section className="z-0 w-[20rem] h-[500px] relative sm:w-[1200px] sm:h-[650px]  text-white flex flex-col overflow-hidden"
     initial="hidden"
     animate="visible"
     transition={{ duration: 1, ease: 'easeInOut' }}
     variants={slideVariants}>
       {/* Slider animado */}
 
-        <Slider {...settings} className="w-full h-full">
+        <Slider {...settings} className="w-full h-full rounded-xl ">
           {images.map((image, index) => (
-            <div key={index} className="w-full h-full flex justify-center items-center">
+            <div key={index} className="w-full h-full flex justify-center items-center rounded-lg ">
               <img
                 src={image}
-                className="w-full h-[500px] sm:h-[600px]"
+                className="w-full h-[500px] sm:h-[650px] rounded-lg"
                 alt={`Slide ${index + 1}`}
               />
             </div>
           ))}
+          
         </Slider>
 
       {/* Contenido sobre el banner */}
       <div
-        className="absolute inset-0 flex flex-col justify-center items-center z-10 text-center"
+        className="absolute inset-0 flex flex-col justify-center items-center z-10 text-center rounded-lg "
        
       >
-        <motion.h1 className="text-4xl font-bold mb-4"
+        
+        <motion.h1 className="text-4xl font-bold mb-4 bg-white text-black p-2 rounded-lg mx-2"
          initial="hidden"
          animate="visible"
          transition={{ duration: 1 }}
          variants={titleVariants}>
           Bienvenido a Pa'tu H <FontAwesomeIcon className={`text-[#FF0000]`} icon={faHeart} size="1x" /> gar
         </motion.h1>
-        <motion.p className="text-xl mb-6"
+        <motion.p className="text-xl mb-6 bg-white text-black p-2 rounded-lg mx-2"
           initial="hidden"
           animate="visible"
           transition={{ duration: 1, delay: 0.5 }}
@@ -103,7 +105,7 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 1 }}
           variants={buttonVariants}
         >
-        <Link to="offer-list" smooth={true} duration={700} className="bg-[#ACE2E1] text-black px-6 py-1 rounded-lg hover:bg-[#41C9E2] flex flex-col items-center cursor-pointer">
+        <Link to="ofertas" smooth={true} duration={700} className="bg-[#ACE2E1] text-black px-6 py-1  hover:bg-[#41C9E2] flex flex-col items-center cursor-pointer rounded-lg">
           <label className='hero-label text-xl cursor-pointer '>Ver Productos</label>
           <FontAwesomeIcon className='hero-chevron -mt-2 cursor-pointer text-[#008DDA]' icon={faChevronDown} size="2x" />
         </Link>
@@ -111,7 +113,6 @@ const HeroSection = () => {
       </div>
 
       {/* Fondo oscuro para mejorar la legibilidad del texto */}
-      <div className="absolute inset-0 bg-black opacity-40 z-0"></div>
     </motion.section>
   );
 };
