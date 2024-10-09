@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import logo from '../assets/images/logo.jpeg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import ProductList from './ProductList';
+import Productnavbar from './Productnavbar';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -72,14 +72,14 @@ const Navbar = () => {
 
                         {/* Menú para desktop */}
                         <ul className={`z-30 productos-menu absolute w-[150px] md:group-hover:block hidden bg-white text-black mt-0 p-4 rounded-lg shadow-lg top-full`}>
-                            <ProductList />
+                            <Productnavbar />
                         </ul>
                     </li>
 
                     {/* Menú para mobile */}
                     {isProductsOpen && (
                         <ul className='z-30 productos-menu flex flex-col items-center md:hidden bg-[#008DDA] text-[#ffff] mt-1 p-2 rounded-lg  w-full'>
-                            <ProductList />
+                            <Productnavbar />
                         </ul>
                     )}
 

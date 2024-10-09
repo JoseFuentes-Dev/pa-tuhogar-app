@@ -2,58 +2,10 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-
+import { products } from './ProductList';
 const FeaturedProducts = () => {
-  // Datos de ejemplo de productos destacados
-  const products = [
-    {
-      id: 1,
-      name: 'Refrigerador Inverter',
-      price: 699.99,
-      image: 'ruta/de/tu/imagen1.jpg',
-    },
-    {
-      id: 2,
-      name: 'Lavadora Automática',
-      price: 499.99,
-      image: 'ruta/de/tu/imagen2.jpg',
-    },
-    {
-      id: 3,
-      name: 'Horno Eléctrico',
-      price: 249.99,
-      image: 'ruta/de/tu/imagen3.jpg',
-    },
-    {
-        id: 4,
-        name: 'Horno Eléctrico',
-        price: 249.99,
-        image: 'ruta/de/tu/imagen3.jpg',
-      },
-  
-      {
-        id: 5,
-        name: 'Horno Eléctrico',
-        price: 249.99,
-        image: 'ruta/de/tu/imagen3.jpg',
-      },
-  
-      {
-        id: 6,
-        name: 'Horno Eléctrico',
-        price: 249.99,
-        image: 'ruta/de/tu/imagen3.jpg',
-      },
-  
-      {
-        id: 7,
-        name: 'Horno Eléctrico',
-        price: 249.99,
-        image: 'ruta/de/tu/imagen3.jpg',
-      },
-    
-  
-  ];
+
+
 
   return (
     <div className="mt-10">

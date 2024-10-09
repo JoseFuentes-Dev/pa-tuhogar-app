@@ -68,8 +68,8 @@ const Offers = ({ products }) => {
     };        
 
     return (
-        <div id='offer-list' className="my-8 relative"
-       >
+        <div id='offer-list' className="my-10 relative"
+        >
             <h1 className="text-[1.8em] font-bold mb-4 text-[#FF0000]"
               >Ofertas</h1>
             <Slider {...settings}

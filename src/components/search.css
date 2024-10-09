@@ -20,6 +20,8 @@
 
 }
 
+
+
 @keyframes spin_words{
   10%{
       transform: translateY(-112%);
