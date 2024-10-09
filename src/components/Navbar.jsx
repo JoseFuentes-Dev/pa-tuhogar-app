@@ -36,10 +36,10 @@ const Navbar = () => {
     return (
         <>
             {/* Navbar */}
-            <nav className={`menu-principal w-full h-20 flex justify-between pr-5 items-center fixed top-0 z-50 transition-all duration-500 ease-in-out 
-                ${isScrolled ? 'bg-[#41C9E2] shadow-lg h-16' : 'bg-[#008DDA] h-20'}`}>
+            <nav className={`menu-principal bg-[#008DDA] w-full h-20 flex justify-between pr-5 items-center fixed top-0 z-50 transition-all duration-500 ease-in-out 
+                ${isScrolled ?  'shadow-lg h-14' : 'h-20'}`}>
                 {/* Logo */}
-                <img src={logo} alt="Pa' tu hogar logo" className={`transition-all duration-500 ease-in-out ${isScrolled ? 'h-16' : 'h-20'}`} />
+                <img src={logo} alt="Pa' tu hogar logo" className={`transition-all duration-500 ease-in-out ${isScrolled ? 'h-14' : 'h-20'}`} />
 
                 {/* Hamburger Menu (for mobile) */}
                 <div className='md:hidden'>
@@ -49,7 +49,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Links (desktop && Mobile) */}
-                <ul className={`z-40 flex flex-col items-center md:flex-row md:items-center text-white md:static absolute ${isScrolled ? 'bg-[#41C9E2]' : 'bg-[#008DDA]'} md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-9 transition-all duration-500 ease-in-out ${isOpen ? 'top-20' : 'top-[-490px]'}`}>
+                <ul className={`z-40 flex flex-col items-center md:flex-row md:items-center text-white md:static absolute  md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-9 transition-all duration-500 ease-in-out ${isOpen ? 'top-20' : 'top-[-490px]'}`}>
                     <li><a href='#' className='hover:text-[#ACE2E1] text-white px-3 py-2 block md:inline-block'>Inicio</a></li>
 
                     {/* Menú de Productos */}
