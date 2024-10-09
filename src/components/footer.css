@@ -1,0 +1,23 @@
+footer {
+    background-color: #008DDA;  /* Azul del diseño principal */
+    color: white;
+  }
+  
+  footer a {
+    color: white;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  footer a:hover {
+    color: #F7EEDD;  /* Amarillo claro para el hover */
+  }
+  
+  footer h2, footer h3 {
+    color: #F7EEDD;  /* Amarillo claro para los títulos */
+  }
+  
+  footer p, footer li {
+    font-size: 0.9rem;
+    color: #ACE2E1;  /* Verde claro para los textos */
+  }
+  

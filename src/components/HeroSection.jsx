@@ -104,7 +104,7 @@ const HeroSection = () => {
           variants={buttonVariants}
         >
         <Link to="offer-list" smooth={true} duration={700} className="bg-[#ACE2E1] text-black px-6 py-1 rounded-lg hover:bg-[#41C9E2] flex flex-col items-center cursor-pointer">
-          <label className='hero-label text-xl'>Ver Productos</label>
+          <label className='hero-label text-xl cursor-pointer '>Ver Productos</label>
           <FontAwesomeIcon className='hero-chevron -mt-2 cursor-pointer text-[#008DDA]' icon={faChevronDown} size="2x" />
         </Link>
         </motion.div>

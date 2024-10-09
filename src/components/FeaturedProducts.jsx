@@ -62,7 +62,7 @@ const FeaturedProducts = () => {
         {products.map((product) => (
           <div key={product.id} className="bg-white rounded-lg shadow-md p-4"
           data-aos="fade-up" 
-          data-aos-duration="500" 
+          data-aos-duration="600" 
           >
             <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded-md mb-2" />
             <h3 className="text-lg font-semibold">{product.name}</h3>

@@ -6,6 +6,8 @@ import Badges from './components/Badges'
 import SearchBar from './components/Searchbar'
 import Offers from './components/Offers '
 import FeaturedProducts from './components/FeaturedProducts'
+import Testimonials from './components/Testimonials'
+import Footer from './components/Footer'
 
 import ReactDOM from 'react-dom';
 import 'aos/dist/aos.css'; // Importar CSS de AOS
@@ -51,7 +53,9 @@ function App() {
      </div>
      <Offers  products={offerProducts}  />
      <FeaturedProducts />
+     <Testimonials />
      </main>
+     <Footer />
     </>
   )
 }
