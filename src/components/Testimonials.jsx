@@ -62,7 +62,7 @@ const TestimonialsCarousel = () => {
             <p className="font-semibold text-xl">{testimonial.name}</p>
             <p className="text-sm text-gray-600">{testimonial.location}</p>
             <p className="mt-4 text-lg italic">"{testimonial.comment}"</p>
-            <p className="mt-4 text-yellow-500">{'⭐'.repeat(testimonial.rating)}</p>
+            
           </div>
         ))}
       </Slider>

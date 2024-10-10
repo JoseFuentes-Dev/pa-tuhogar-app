@@ -58,7 +58,7 @@ const HeroSection = () => {
   };
 
   return (
-    <motion.section className="z-0 w-[20rem] h-[500px] relative sm:w-[1200px] sm:h-[650px]  text-white flex flex-col overflow-hidden"
+    <motion.section className="mt-10 z-0 w-[20rem] h-[500px] relative sm:w-[1200px] sm:h-[650px]  text-white flex flex-col overflow-hidden"
     initial="hidden"
     animate="visible"
     transition={{ duration: 1, ease: 'easeInOut' }}

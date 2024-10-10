@@ -25,7 +25,7 @@ const Badges = () => {
         <FontAwesomeIcon icon={faCheck} className="text-[#008DDA] transition-transform transform hover:scale-110 text-[40px] sm:text-[80px]" />
         <label className='flex flex-col text-left'>
           <span className="sm:text-[1.8em] text-[1em] font-semibold">Calidad</span>
-          <p className="sm:text-[.9em] text-[.7em]">Productos seleccionados por su excelente calidad.</p>
+          <p className="sm:text-[1em] text-[.7em]">Productos seleccionados por su excelente calidad.</p>
         </label>
       </motion.div>
 
@@ -40,7 +40,7 @@ const Badges = () => {
         <FontAwesomeIcon icon={faCheck} className="text-[#008DDA] transition-transform transform hover:scale-110 text-[40px] sm:text-[80px]" />
         <label className='flex flex-col text-left'>
           <span className="sm:text-[1.8em] text-[1em] font-semibold">Garantía</span>
-          <p className="sm:text-[.9em] text-[.7em]">Disfruta de la tranquilidad de la garantía de los productos</p>
+          <p className="sm:text-[1em] text-[.7em]">Disfruta de la tranquilidad de la garantía de los productos</p>
         </label>
       </motion.div>
 
@@ -55,7 +55,7 @@ const Badges = () => {
         <FontAwesomeIcon icon={faCheck} className="text-[#008DDA] transition-transform transform hover:scale-110 text-[40px] sm:text-[80px]" />
         <label className='flex flex-col text-left'>
           <span className="sm:text-[1.8em] text-[1em] font-semibold">Domicilio</span>
-          <p className="sm:text-[.9em] text-[.7em]">Aprovecha las entregas rápidas y seguras a tu hogar</p>
+          <p className="sm:text-[1em] text-[.7em]">Aprovecha las entregas rápidas y seguras a tu hogar</p>
         </label>
       </motion.div>
     </div>
