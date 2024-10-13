@@ -1,4 +1,3 @@
-
 import './App.css'
 import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
@@ -8,17 +7,16 @@ import Offers from './components/Offers '
 import FeaturedProducts from './components/FeaturedProducts'
 import Testimonials from './components/Testimonials'
 import Footer from './components/Footer'
-
-import ReactDOM from 'react-dom';
 import 'aos/dist/aos.css'; // Importar CSS de AOS
 import AOS from 'aos'; // Importar AOS
 
 import { productsoffers } from './components/Productoffers'
 AOS.init(); // Inicializar AOS
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { createRoot } from 'react-dom/client';
 
-
+const root = createRoot(document.getElementById('root'));
+root.render(<App />);
 
 function App() {
   

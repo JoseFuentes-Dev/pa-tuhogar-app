@@ -111,7 +111,7 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* Fondo oscuro para mejorar la legibilidad del texto */}
+  
     </motion.section>
   );
 };
