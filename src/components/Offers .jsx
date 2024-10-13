@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import './offers.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import { motion } from 'framer-motion'; // Importar Framer Motion
+
 
 // Componente de tarjeta de oferta
 const OfferCard = ({ product }) => (
@@ -14,11 +14,9 @@ const OfferCard = ({ product }) => (
     data-aos-duration="600"
     >
 
-    <motion.div
+    <div
         className="bg-[#FFFFFF] rounded-lg shadow-md mx-3 card-contain p-4"
-        initial={{ opacity: 0, y: 20 }} // Comienza oculto y desplazado hacia abajo
-        animate={{ opacity: 1, y: 0 }} // Desaparece y se mueve a su posición original
-        transition={{ duration: 0.6 }} // Duración de la transición
+
 
    
         >
@@ -27,45 +25,76 @@ const OfferCard = ({ product }) => (
             <img src={product.image} alt={product.name} className="image-offer w-full h-60 bg-initial rounded-t-lg " />
         </div>
         <div className="description p-2 relative rounded-lg">
-            <h2 className="font-semibold text-xl mt-2">{product.name}</h2>
+            <h2 className="font-semibold  text-[1em] mt-2">{product.name}</h2>
             <span className="text-[#FF0000] font-bold text-[1.2em]">{product.price}</span>
             <a href="#" className="absolute right-2 bottom-2 block md:inline-block">
                 <FontAwesomeIcon className='hover:text-[#008DDA] text-[#41C9E2]' icon={faShoppingCart} size="2x" />
             </a>
         </div>
-    </motion.div>
+    </div>
                 </div>
 );
 
+const CustomPrevArrow = (props) => {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={`${className} custom-prev-arrow`}
+        style={{ ...style }}
+        onClick={onClick}
+      />
+    );
+  };
+  
+  const CustomNextArrow = (props) => {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={`${className} custom-next-arrow`}
+        style={{ ...style }}
+        onClick={onClick}
+      />
+    );
+  };
+  
 // Componente principal de Ofertas
 const Offers = ({ products }) => {
     const settings = {
         dots: false,
-        infinite: true, 
+        infinite: true,
         speed: 600,
         slidesToShow: 5,
         slidesToScroll: 1,
         arrows: true,
         autoplay: true,
-        autoplaySpeed: 4000, 
-        pauseOnHover: true, 
+        autoplaySpeed: 4000,
+        pauseOnHover: true,
+        prevArrow: <CustomPrevArrow />,
+        nextArrow: <CustomNextArrow />,
         responsive: [
-            {
-                breakpoint: 1300,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                },
+          {
+            breakpoint: 1300,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
             },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                },
+          },
+          {
+            breakpoint: 900,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
             },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
         ],
-    };        
+      };
 
     return (
         <div  id='ofertas' className="my-10 relative pt-[80px] "

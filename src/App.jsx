@@ -26,10 +26,10 @@ function App() {
     <>
     <span id='top'></span>
      <Navbar />
+     <main className='px-5 xl:px-20'>
      <SearchBar />
-     <main className='px-20'>
 
-     <div className=' flex flex-col gap-5 p-5 my-5 mt-5 justify-evenly z-0 sm:flex-row' >
+     <div className=' flex flex-col gap-5  my-5 mt-28 justify-around  z-0 sm:flex-row' >
      <HeroSection />
      <Badges />
      </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './search.css';
 import { products } from './ProductList'; 
 
@@ -75,7 +75,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div id='search-bar' ref={searchBarRef} className="flex flex-col items-center justify-center w-full ">
+    <div id='search-bar' ref={searchBarRef} className="flex flex-col items-center justify-center ">
       <div className="contain-input relative w-full max-w-4xl">
         <input
           type="text"

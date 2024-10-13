@@ -1,4 +1,3 @@
-// src/components/HeroSection.jsx
 
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -58,14 +57,14 @@ const HeroSection = () => {
   };
 
   return (
-    <motion.section className="mt-10 z-0 w-[20rem] h-[500px] relative sm:w-[1200px] sm:h-[650px]  text-white flex flex-col overflow-hidden"
+    <motion.section className="z-0 w-full h-[500px] relative sm:h-[650px]  text-white flex flex-col overflow-hidden"
     initial="hidden"
     animate="visible"
     transition={{ duration: 1, ease: 'easeInOut' }}
     variants={slideVariants}>
       {/* Slider animado */}
 
-        <Slider {...settings} className="w-full h-full rounded-xl ">
+        <Slider {...settings} className="w-full h-full rounded-lg ">
           {images.map((image, index) => (
             <div key={index} className="w-full h-full flex justify-center items-center rounded-lg ">
               <img

@@ -7,7 +7,7 @@ const FeaturedProducts = () => {
     <div className="mt-20">
       <h2 className="text-[1.8em] font-bold mb-6">Productos Destacados</h2>
       <div 
-        className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 "
+        className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"
       >
         {productsdestacados.map((product) => (
           <div 
@@ -25,7 +25,7 @@ const FeaturedProducts = () => {
             </div>
             <div className="description flex flex-col justify-between h-[170px]">
 
-            <h3 className="text-lg font-semibold">{product.name}</h3>
+            <h3 className="text-[1em] font-semibold">{product.name}</h3>
             <p className="text-xl text-gray-800">${product.price.toFixed(2)}</p>
             <button className="mt-4 w-full bg-[#008DDA] text-white hover:text-black font-semibold py-2 rounded hover:bg-[#41C9E2]">
               <FontAwesomeIcon className='text-[#FFFFF] mr-2' icon={faShoppingCart} size="1x" />

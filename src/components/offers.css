@@ -1,26 +1,62 @@
-/* Estilo para las flechas */
-.slick-prev, .slick-next {
-
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    z-index: 1; 
+/* Personaliza las flechas cuadradas */
+.custom-prev-arrow, .custom-next-arrow {
+  width: 43px; /* Tamaño del cuadro */
+  height: 100px;
+  background-color: rgb(255, 255, 255); /* Cambia el color de fondo */
+  
+  border-radius: 3px; /* Asegura que el cuadro sea cuadrado */
+  z-index: 1; /* Asegúrate de que esté visible por encima del carrusel */
+  position: absolute;
+  cursor: pointer;
+}
+.custom-prev-arrow:hover,  .custom-next-arrow:hover{
+  background-color: #ACE2E1;
 }
 
-/* Posición de las flechas */
-.slick-prev {
-    left: 0px; /* A la izquierda */
+/* Agrega una flecha en el centro del cuadro */
+.custom-prev-arrow:before, .custom-next-arrow:before {
+  content: ''; /* Crea la flecha */
+  display: block;
+  width: 20px; /* Tamaño de la flecha */
+  height: 20px;
+  border: solid #008DDA; /* Color de la flecha */
+  border-width: 0 5px 5px 0;
+  transform: rotate(45deg); /* Estilo base de la flecha */
+  position: absolute;
+  margin: 0 auto;
+  right: 0;
+  left: 0;
+  top: 40px;
+  
 }
 
-.slick-next {
-    right: 30px; /* A la derecha */
+
+/* Flecha hacia la izquierda */
+.custom-prev-arrow:before {
+  transform: rotate(135deg); /* Flecha apunta hacia la izquierda */
+  left: 10px;
+  
 }
 
-.slick-prev:before, .slick-next:before {
-    color: #008DDA;
-    font-size: 50px; 
- 
+/* Flecha hacia la derecha */
+.custom-next-arrow:before {
+  transform: rotate(-45deg); /* Flecha apunta hacia la derecha */
+  right: 10px;
 }
+
+/* Posicionamiento personalizado de las flechas */
+.custom-prev-arrow {
+  left: -45px; /* Ajusta la posición de la flecha izquierda */
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.13);
+}
+
+.custom-next-arrow {
+  right: -45px; /* Ajusta la posición de la flecha derecha */
+  box-shadow: -2px 4px 8px rgba(0, 0, 0, 0.13);
+}
+
+
+
 .slick-list {
     border-radius: 15px;
     overflow: hidden;
