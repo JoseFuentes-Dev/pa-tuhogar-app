@@ -9,7 +9,7 @@ import Testimonials from './components/Testimonials'
 import Footer from './components/Footer'
 import 'aos/dist/aos.css'; // Importar CSS de AOS
 import AOS from 'aos'; // Importar AOS
-
+import BusinessPromo from './components/BusinessPromo'
 import { productsoffers } from './components/Productoffers'
 AOS.init(); // Inicializar AOS
 
@@ -29,6 +29,7 @@ function App() {
 
      <div className=' flex flex-col gap-5  my-5 mt-28 justify-around  z-0 sm:flex-row' >
      <HeroSection />
+    <BusinessPromo />
      <Badges />
      </div>
 
