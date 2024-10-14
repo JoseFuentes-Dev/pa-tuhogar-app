@@ -27,10 +27,14 @@ function App() {
      <main className='px-5 xl:px-20'>
      <SearchBar />
 
-     <div className=' flex flex-col gap-5  my-5 mt-28 justify-around  z-0 sm:flex-row' >
+     <div className=' flex flex-col items-center md:items-start  my-5 mt-12  z-0 md:flex-row  w-full gap-5  '  >
      <HeroSection />
+     <section className='flex flex-col md:h-[650px]  gap-5 z-0 w-full md:w-1/3' >
+
     <BusinessPromo />
      <Badges />
+     </section>
+
      </div>
 
      <Offers  products={productsoffers}  />

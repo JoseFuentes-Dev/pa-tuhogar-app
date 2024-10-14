@@ -1,5 +1,3 @@
-// src/components/Offers.jsx
-
 import Slider from 'react-slick';
 import PropTypes from 'prop-types'; 
 import './offers.css';

@@ -57,7 +57,7 @@ const HeroSection = () => {
   };
 
   return (
-    <motion.section className="z-0 w-full h-[500px] relative sm:h-[650px]  text-white flex flex-col overflow-hidden"
+    <motion.section className="z-0 w-full h-[500px] relative sm:h-[650px] md:w-2/3  text-white flex flex-col "
     initial="hidden"
     animate="visible"
     transition={{ duration: 1, ease: 'easeInOut' }}
@@ -83,14 +83,14 @@ const HeroSection = () => {
        
       >
         
-        <motion.h1 className="text-4xl font-bold mb-4 bg-white text-black p-2 rounded-lg mx-2"
+        <motion.h1 className="text-3xl xl:text-4xl font-bold mb-4 bg-white text-black p-2 rounded-lg mx-2"
          initial="hidden"
          animate="visible"
          transition={{ duration: 1 }}
          variants={titleVariants}>
           Bienvenido a Pa'tu H <FontAwesomeIcon className={`text-[#FF0000]`} icon={faHeart} size="1x" /> gar
         </motion.h1>
-        <motion.p className="text-xl mb-6 bg-white text-black p-2 rounded-lg mx-2"
+        <motion.p className="text-md p-1 mx-1 xl:text-[1.2em] md:text-[1em] md:p-2 mb-6 bg-white text-black  rounded-lg md:mx-2"
           initial="hidden"
           animate="visible"
           transition={{ duration: 1, delay: 0.5 }}
@@ -105,7 +105,7 @@ const HeroSection = () => {
           variants={buttonVariants}
         >
         <Link to="ofertas" smooth={true} duration={700} className="bg-[#ACE2E1] text-black px-6 py-1  hover:bg-[#41C9E2] flex flex-col items-center cursor-pointer rounded-lg">
-          <label className='hero-label text-xl cursor-pointer '>Ver Productos</label>
+          <label className='hero-label text-[1em] cursor-pointer '>Ver Productos</label>
           <FontAwesomeIcon className='hero-chevron -mt-2 cursor-pointer text-[#008DDA]' icon={faChevronDown} size="2x" />
         </Link>
         </motion.div>

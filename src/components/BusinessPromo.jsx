@@ -1,9 +1,15 @@
-import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { motion } from 'framer-motion';
+
+import image6 from '../assets/images/6.jpg';
+import image7 from '../assets/images/7.jpg';
+import image8 from '../assets/images/8.jpg';
 
 const BusinessPromo = () => {
+  const images = [image6, image7, image8];
+
   const settings = {
     infinite: true,
     speed: 500,
@@ -15,43 +21,71 @@ const BusinessPromo = () => {
     autoplaySpeed: 3000, // Cambia la velocidad si lo necesitas
   };
 
+  // Definición de las variantes de animación
+  const slideVariants = {
+    hidden: { opacity: 0, scale: 1.2 },
+    visible: { opacity: 1, scale: 1 },
+  };
+
+  const titleVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const paragraphVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const buttonVariants = {
+    hidden: { opacity: 0, x: 50 }, // Desplazado a la derecha y oculto
+    visible: { opacity: 1, x: 0 },  // Visible y en su posición original
+  };
   return (
-    <div className="relative w-full md:w-1/3 h-64 bg-white shadow-lg rounded-lg overflow-hidden">
+    <motion.div className="relative w-full h-[240px]   md:h-2/3 shadow-lg rounded-lg overflow-hidden  "
+    initial="hidden"
+    animate="visible"
+    transition={{ duration: 1, ease: 'easeInOut' }}
+    variants={slideVariants}
+    >
       <Slider {...settings}>
-        <div>
-          <img
-            src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyNjYzM3wwfDF8c2VhcmNofDEyfHxidXNpbmVzcyUyMHByb21vdGlvbnxlbnwwfHx8fDE2OTcwMzA5OTR8MA&ixlib=rb-4.0.3&q=80&w=400"
-            alt="Publicar promociones"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div>
-          <img
-            src="https://images.unsplash.com/photo-1494177310976-79e93ee893a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyNjYzM3wwfDF8c2VhcmNofDd8fGJ1c2luZXNzJTIwcHJvbW90aW9ufGVufDB8fHx8MTY5NzAzMDk5NHww&ixlib=rb-4.0.3&q=80&w=400"
-            alt="Ofertas destacadas"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div>
-          <img
-            src="https://images.unsplash.com/photo-1581091012184-e04f26ef3eaf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyNjYzM3wwfDF8c2VhcmNofDV8fG1hcmtldGluZ3xlbnwwfHx8fDE2OTcwMzA5OTR8MA&ixlib=rb-4.0.3&q=80&w=400"
-            alt="Haz crecer tu negocio"
-            className="w-full h-full object-cover"
-          />
-        </div>
+      {images.map((image, index) => (
+            <div key={index} className="w-full h-full flex justify-center items-center rounded-lg ">
+              <img
+                src={image}
+                className="w-full h-[240px] md:h-[370px] rounded-lg object-initial"
+                alt={`Slide ${index + 1}`}
+              />
+            </div>
+          ))}
       </Slider>
 
       {/* Texto centrado sobre las imágenes */}
-      <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50">
-        <h2 className="text-3xl font-bold text-white text-center mb-4">¡Promociona tu Negocio!</h2>
-        <p className="text-lg text-white text-center px-4 mb-4">
+      <div className="  absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50 ">
+        <motion.h2 className="text-xl md:text-2xl xl:text-3xl font-bold text-white text-center mb-2 px-4"
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 1 }}
+        variants={titleVariants}
+        >¡Promociona tu Negocio!</motion.h2>
+        <motion.p className="  text-md  xl:text-lg  text-white text-center px-4 mb-2"
+         initial="hidden"
+         animate="visible"
+         transition={{ duration: 1, delay: 0.5 }}
+         variants={paragraphVariants}
+        >
           ¿Quieres publicar o ver nuestras ofertas para promocionar tu negocio?
-        </p>
-        <button className="bg-yellow-400 text-black py-2 px-4 rounded hover:bg-yellow-500">
+        </motion.p>
+        <motion.button className="bg-yellow-400 text-black py-2 px-4 rounded hover:bg-yellow-500"
+         initial="hidden"
+         animate="visible"
+         transition={{ duration: 0.5, ease: 'easeInOut' }}
+         variants={buttonVariants}
+        >
           Ver Ofertas
-        </button>
+        </motion.button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
