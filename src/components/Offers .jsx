@@ -10,15 +10,16 @@ const OfferCard = ({ product }) => (
     <div
     data-aos="fade-up" 
     data-aos-duration="600"
+    className='items-center'
     >
 
     <div
-        className="bg-[#FFFFFF] rounded-lg shadow-md mx-3 card-contain p-4"
+        className="bg-[#FFFFFF]  rounded-lg shadow-md mx-3 card-contain "
 
 
    
-        >
-        <div className="image-contain w-full h-full rounded-t-lg"
+        > 
+        <div className="image-contain h-full rounded-t-lg"
             >
             <img src={product.image} alt={product.name} className="image-offer w-full h-60 bg-initial rounded-t-lg " />
         </div>
@@ -73,19 +74,26 @@ const Offers = ({ products }) => {
           {
             breakpoint: 1300,
             settings: {
+              slidesToShow: 4,
+              slidesToScroll: 1,
+            },
+          },
+          {
+            breakpoint: 1000,
+            settings: {
               slidesToShow: 3,
               slidesToScroll: 1,
             },
           },
           {
-            breakpoint: 900,
+            breakpoint: 700,
             settings: {
               slidesToShow: 2,
               slidesToScroll: 1,
             },
           },
           {
-            breakpoint: 600,
+            breakpoint: 400,
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
