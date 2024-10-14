@@ -12,7 +12,7 @@ const FeaturedProducts = () => {
         {productsdestacados.map((product) => (
           <div 
             key={product.id} 
-            className="bg-white rounded-lg shadow-md w-[330px] sm:w-[280px] md:w-full   "
+            className="bg-white rounded-lg shadow-md w-[320px] sm:w-[300px] md:w-full   "
             data-aos="fade-up" 
             data-aos-duration="600"
           >

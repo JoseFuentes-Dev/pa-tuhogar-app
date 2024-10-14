@@ -52,7 +52,7 @@ const TestimonialsCarousel = () => {
       <div className='flex justify-center my-12'>
 
       <Slider {...settings}
-       className='w-[400px] md:w-[700px]'>
+       className='w-[340px] sm:w-[500px] md:w-[700px]'>
         {testimonials.map((testimonial) => (
           <div
             key={testimonial.id}
