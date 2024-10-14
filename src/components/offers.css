@@ -46,12 +46,12 @@
 
 /* Posicionamiento personalizado de las flechas */
 .custom-prev-arrow {
-  left: -45px; /* Ajusta la posición de la flecha izquierda */
+  left: 0; /* Ajusta la posición de la flecha izquierda */
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.13);
 }
 
 .custom-next-arrow {
-  right: -45px; /* Ajusta la posición de la flecha derecha */
+  right: 0; /* Ajusta la posición de la flecha derecha */
   box-shadow: -2px 4px 8px rgba(0, 0, 0, 0.13);
 }
 

@@ -3,16 +3,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { motion } from 'framer-motion';
 
-import image6 from '../assets/images/6.jpg';
+import image1 from '../assets/images/promotion.jpg';
 import image7 from '../assets/images/7.jpg';
 import image8 from '../assets/images/8.jpg';
 
 const BusinessPromo = () => {
-  const images = [image6, image7, image8];
+  const images = [image1, image7, image8];
 
   const settings = {
     infinite: true,
-    speed: 500,
+    speed: 600,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false, // Opcional: Puedes mantener o eliminar las flechas
