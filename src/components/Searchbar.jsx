@@ -92,6 +92,8 @@ const SearchBar = () => {
               <span>Climatización</span>
               <span>Refrigeración</span>
               <span>Para tu Cocina</span>
+              <span>Otros Equipos</span>
+              <span>Transporte</span>
               <span>TV & Equipos</span>
               <span>Climatización</span>
             </div>

@@ -5,7 +5,7 @@ import colchonimg from '../assets/images/Productos/colchon.jpg';
 import ollaarroceraImg from '../assets/images/Productos/ollaarrocera1.8litros.jpg';
 import turbinaImg from '../assets/images/Productos/turbina.jpg';
 import split1tImg from '../assets/images/Productos/split1t.jpg';
-import reina8lImg from '../assets/images/Productos/reina8litros.jpg';
+import reina8lImg from '../assets/images/Productos/reina.jpg';
 
 export const productsdestacados = [
     { id: 1, name: 'Aire Acondicionado', price: 699.99,
