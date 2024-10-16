@@ -5,11 +5,11 @@ import { faShoppingCart, faChevronDown } from '@fortawesome/free-solid-svg-icons
 import Productnavbar from './Productnavbar';
 import { Link } from 'react-scroll';
 
-const Navbar = () => {
+const Navbar = ({ cartCount, toggleCart }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isProductsOpen, setIsProductsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false); // Estado para detectar scroll
-    
+
     const toggleMobileMenu = () => {
         setIsOpen(!isOpen);
     };
@@ -87,9 +87,18 @@ const Navbar = () => {
 
                     <li><a href='#' className='hover:text-[#ACE2E1] text-white px-3 py-2 block md:inline-block'>Contacto</a></li>
                     <li><a href='#' className='hover:text-[#ACE2E1] text-white px-1 py-2 block md:inline-block'>Acerca De</a></li>
-                    <li>
-                        <a href="#" className="mr-2 px-4 py-2 block md:inline-block">
+
+                    {/* Carrito de compras */}
+                    <li className='relative'>
+                        <a onClick={toggleCart} className="mr-2 px-4 py-2 block md:inline-block">
+                      
                             <FontAwesomeIcon className='hover:text-[#ACE2E1]' icon={faShoppingCart} size="1x" />
+                            {/* Contador de productos en el carrito */}
+                            {cartCount > 0 && (
+                                <span className="  absolute  top-0 right-0 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex justify-center items-center">
+                                    {cartCount}
+                                </span>
+                            )}
                         </a>
                     </li>
                 </ul>

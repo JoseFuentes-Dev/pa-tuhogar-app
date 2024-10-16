@@ -6,18 +6,19 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 
 // Componente de tarjeta de oferta
-const OfferCard = ({ product }) => (
-    <div
-    data-aos="fade-up" 
-    data-aos-duration="600"
-    className='items-center'
-    >
+const OfferCard = ({ product, addToCart }) => (
+  
+  <div
+  data-aos="fade-up" 
+  data-aos-duration="600"
+  className='items-center'
+  >
 
     <div
         className="bg-[#FFFFFF]  rounded-lg shadow-md mx-3 card-contain "
-
-
-   
+        
+        
+        
         > 
         <div className="image-contain h-full rounded-t-lg"
             >
@@ -26,13 +27,25 @@ const OfferCard = ({ product }) => (
         <div className="description p-2 relative rounded-lg">
             <h2 className="font-semibold  text-[1em] mt-2">{product.name}</h2>
             <span className="text-[#FF0000] font-bold text-[1.2em]">{product.price}</span>
-            <a href="#" className="absolute right-2 bottom-2 block md:inline-block">
-                <FontAwesomeIcon className='hover:text-[#008DDA] text-[#41C9E2]' icon={faShoppingCart} size="2x" />
-            </a>
+            <div href="#" className="absolute right-2 bottom-2 block md:inline-block">
+            <button onClick={() => addToCart(product)} className="absolute right-2 bottom-2 block md:inline-block">
+                    <FontAwesomeIcon className='hover:text-[#008DDA] text-[#41C9E2]' icon={faShoppingCart} size="2x" />
+                </button>
+            </div>
         </div>
     </div>
                 </div>
 );
+
+OfferCard.propTypes = {
+  product: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+  }).isRequired,
+  addToCart: PropTypes.func.isRequired,
+};
 
 const CustomPrevArrow = (props) => {
     const { className, style, onClick } = props;
@@ -56,8 +69,22 @@ const CustomPrevArrow = (props) => {
     );
   };
   
+// Agregar validación de PropTypes
+CustomPrevArrow.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
+  onClick: PropTypes.func,
+};
+
+CustomNextArrow.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
+  onClick: PropTypes.func,
+};
+
 // Componente principal de Ofertas
-const Offers = ({ products }) => {
+const Offers = ({ products, onAddToCart }) => {
+
     const settings = {
         dots: false,
         infinite: true,
@@ -103,6 +130,7 @@ const Offers = ({ products }) => {
       };
 
     return (
+      
         <div  id='ofertas' className="my-10 relative pt-[80px] "
         >
             <h1 className="text-[1.8em] font-bold mb-6 text-[#FF0000]"
@@ -110,7 +138,7 @@ const Offers = ({ products }) => {
             <Slider {...settings}
             >
                 {products.map((product) => (
-                    <OfferCard key={product.id} product={product} />
+                    <OfferCard key={product.id} product={product}  addToCart={onAddToCart}/>
                 ))}
             </Slider>
         </div>
@@ -119,7 +147,7 @@ const Offers = ({ products }) => {
 
 // Validación de PropTypes
 Offers.propTypes = {
-    productsoffers: PropTypes.arrayOf(
+    products: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.number.isRequired,
             name: PropTypes.string.isRequired,
@@ -127,6 +155,7 @@ Offers.propTypes = {
             image: PropTypes.string.isRequired,
         })
     ).isRequired,
+    onAddToCart: PropTypes.func.isRequired,
 };
 
 export default Offers;
