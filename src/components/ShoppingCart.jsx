@@ -1,8 +1,8 @@
-import './ShoppingCart.css'; // CSS para el modal y oscurecer fondo
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes, faMinus, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const ShoppingCart = ({ cart, setCart, closeCart }) => {
-     console.log('Contenido del carrito:', cart); 
   // Función para eliminar productos del carrito
   const removeFromCart = (id) => {
     setCart((prevCart) => prevCart.filter(item => item.id !== id));
@@ -21,26 +21,48 @@ const ShoppingCart = ({ cart, setCart, closeCart }) => {
   const totalPrice = cart.reduce((total, product) => total + (product.price * product.quantity), 0);
 
   return (
-    <div className="modal">
-      <div className="modal-content">
-        <button onClick={closeCart}>❌</button>
+    <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-70  z-50">
+      <div className="relative bg-white rounded-lg shadow-lg w-full max-w-md p-6 ">
+        {/* Botón de cerrar */}
+        <button onClick={closeCart} className="absolute top-3 right-3 text-red-600 text-2xl">
+          <FontAwesomeIcon icon={faTimes} />
+        </button>
 
-        <h2>Carrito de Compras</h2>
+        <h2 className="text-2xl font-bold text-[#008DDA] mb-4">Carrito de Compras</h2>
+
         {cart.length === 0 ? (
-          <p>El carrito está vacío</p>
+          <p className="text-gray-600">El carrito está vacío</p>
         ) : (
-          <ul>
+          <ul className="space-y-4">
             {cart.map(product => (
-              <li key={product.id}>
-                {product.name} - ${product.price} x {product.quantity}
+              <li key={product.id} className="flex justify-between items-center border-b pb-2">
                 <div>
-                  {/* Botón para aumentar/disminuir cantidad */}
-                  <button onClick={() => product.quantity > 1 && updateQuantity(product.id, product.quantity - 1)}>-</button>
-                  <span>{product.quantity}</span>
-                  <button onClick={() => updateQuantity(product.id, product.quantity + 1)}>+</button>
+                  <p className="text-lg font-medium">{product.name}</p>
+                  <p className="text-gray-600">${product.price.toFixed(2)} x {product.quantity}</p>
+                </div>
+                <div className="flex items-center">
+                  {/* Botón para reducir cantidad */}
+                  <button
+                    onClick={() => product.quantity > 1 && updateQuantity(product.id, product.quantity - 1)}
+                    className="bg-[#008DDA] text-white p-2 rounded hover:bg-[#41C9E2]">
+                    <FontAwesomeIcon icon={faMinus} />
+                  </button>
+                  
+                  <span className="mx-2">{product.quantity}</span>
 
-                  {/* Eliminar producto */}
-                  <button onClick={() => removeFromCart(product.id)}>Eliminar</button>
+                  {/* Botón para aumentar cantidad */}
+                  <button
+                    onClick={() => updateQuantity(product.id, product.quantity + 1)}
+                    className="bg-[#008DDA] text-white p-2 rounded hover:bg-[#41C9E2]">
+                    <FontAwesomeIcon icon={faPlus} />
+                  </button>
+
+                  {/* Botón para eliminar producto */}
+                  <button
+                    onClick={() => removeFromCart(product.id)}
+                    className="ml-4 bg-red-500 text-white p-2 rounded hover:bg-red-600">
+                    <FontAwesomeIcon icon={faTrash} />
+                  </button>
                 </div>
               </li>
             ))}
@@ -48,11 +70,8 @@ const ShoppingCart = ({ cart, setCart, closeCart }) => {
         )}
 
         {/* Mostrar el total */}
-        <h3>Total: ${totalPrice.toFixed(2)}</h3>
+        <h3 className="mt-6 text-xl font-semibold">Total: ${totalPrice.toFixed(2)}</h3>
       </div>
-
-      {/* Fondo oscuro */}
-      <div className="modal-overlay" onClick={closeCart}></div>
     </div>
   );
 };
