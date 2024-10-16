@@ -21,6 +21,28 @@ const ShoppingCart = ({ cart, setCart, closeCart }) => {
   // Calcular el total del carrito
   const totalPrice = cart.reduce((total, product) => total + (product.price * product.quantity), 0);
 
+  // Función para generar el mensaje de WhatsApp
+  const generateWhatsAppMessage = () => {
+    let message = '¡Hola! Me gustaría realizar el siguiente pedido:\n\n';
+
+    cart.forEach(product => {
+      message += `- ${product.name} (Cantidad: ${product.quantity}) - Precio: $${product.price.toFixed(2)}\n`;
+    });
+
+    message += `\nTotal a pagar: $${totalPrice.toFixed(2)}\n`;
+    message += 'Por favor, confirmar la compra. ¡Gracias!';
+    
+    return message;
+  };
+
+  // Función para abrir WhatsApp con el mensaje
+  const handleBuy = () => {
+    const message = encodeURIComponent(generateWhatsAppMessage()); // Codifica el mensaje
+    const phoneNumber = '+5359014481';
+    const url = `https://wa.me/${phoneNumber}?text=${message}`; // URL con el mensaje codificado
+    window.open(url, '_blank'); // Abre WhatsApp en una nueva pestaña
+  };
+
   return (
     <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-70 z-50">
       <div className="relative bg-white rounded-lg shadow-lg w-full max-w-md p-6 z-10 animate-slideDown">
@@ -72,6 +94,15 @@ const ShoppingCart = ({ cart, setCart, closeCart }) => {
 
         {/* Mostrar el total */}
         <h3 className="mt-6 text-xl font-semibold">Total: ${totalPrice.toFixed(2)}</h3>
+
+        {/* Botón de Comprar */}
+        {cart.length > 0 && (
+          <button
+            onClick={handleBuy}
+            className="mt-6 w-full bg-green-500 text-white font-bold py-2 rounded hover:bg-green-600">
+            Comprar
+          </button>
+        )}
       </div>
     </div>
   );
