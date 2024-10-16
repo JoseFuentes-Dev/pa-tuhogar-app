@@ -35,7 +35,7 @@ const ShoppingCart = ({ cart, setCart, closeCart }) => {
                 {product.name} - ${product.price} x {product.quantity}
                 <div>
                   {/* Botón para aumentar/disminuir cantidad */}
-                  <button onClick={() => updateQuantity(product.id, product.quantity - 1)}>-</button>
+                  <button onClick={() => product.quantity > 1 && updateQuantity(product.id, product.quantity - 1)}>-</button>
                   <span>{product.quantity}</span>
                   <button onClick={() => updateQuantity(product.id, product.quantity + 1)}>+</button>
 
