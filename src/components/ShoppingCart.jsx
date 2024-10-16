@@ -1,3 +1,4 @@
+import './ShoppingCart.css'; // Mantén esta línea si agregas la animación personalizada aquí
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faMinus, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -21,8 +22,8 @@ const ShoppingCart = ({ cart, setCart, closeCart }) => {
   const totalPrice = cart.reduce((total, product) => total + (product.price * product.quantity), 0);
 
   return (
-    <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-70  z-50">
-      <div className="relative bg-white rounded-lg shadow-lg w-full max-w-md p-6 ">
+    <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-70 z-50">
+      <div className="relative bg-white rounded-lg shadow-lg w-full max-w-md p-6 z-10 animate-slideDown">
         {/* Botón de cerrar */}
         <button onClick={closeCart} className="absolute top-3 right-3 text-red-600 text-2xl">
           <FontAwesomeIcon icon={faTimes} />

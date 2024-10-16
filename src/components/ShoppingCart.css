@@ -1,0 +1,16 @@
+@keyframes slideDown {
+    0% {
+      transform: translateY(-200%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Agregamos una clase personalizada para Tailwind */
+  .animate-slideDown {
+    animation: slideDown 0.4s ease-out forwards;
+  }
+  
