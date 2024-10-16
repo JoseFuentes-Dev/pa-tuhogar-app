@@ -27,7 +27,7 @@ import refrigeradorroyal8pies from '../assets/images/Productos/refrigeradorroyal
 
 export const products = [
     { id: 1, name: 'Ventiladores Recargables', category: 'Climatización',  price: 91,
-        image: ventiladormilexus, garantia: 'No cuenta con garantia', domicilio: '500 cup', description: 'Ventiladores recargables Marca Milexus de 16 pulgadas, Batería de litio , alumbran y traen puerto USB para cargar, colores: Blancos y Negros' },
+        image: ventiladormilexus, garantia: 'No cuenta con garantia', domicilio: '500 cup', description: 'Ventiladores recargables, Ventilador recargable, Marca Milexus de 16 pulgadas, Batería de litio , alumbran y traen puerto USB para cargar, colores: Blancos y Negros' },
     
     { id: 2, name: 'Neveras', category: 'Refrigeración',  price: 480,
             image: nevera7pies, garantia: '-', domicilio: 'Incluido', description: 'Neveras, tamaño: 7.5 pies, color: Blanco' },
@@ -63,7 +63,7 @@ export const products = [
                                                     image: tv32rca, garantia: 'No cuenta con garantia', domicilio: 'No cuenta con domicilio', description: 'Smart TV, tamaño: 32 pulgadas, marca: RCA, de uso impecable' },
    
     { id: 13, name: 'Ventiladores Ciclones de Pared', category: 'Climatización',  price: 55,
-                                                        image: ciclondepared, garantia: '-', domicilio: '500', description: 'Ventiladores Ciclones de Pared, marca: Milexus, color: Negro' },
+                                                        image: ciclondepared, garantia: '-', domicilio: '500', description: 'Ventiladores Ciclones de Pared, ventilador ciclon, marca: Milexus, color: Negro' },
    
     { id: 14, name: 'Televisor 32 pulgadas', category: 'TV & Equipos',  price: 290,
                                                             image: tv32pulgadaskodak, garantia: '-', domicilio: '-', description: 'Smart TV, tamaño: 32 pulgadas, marca: KODAK' },

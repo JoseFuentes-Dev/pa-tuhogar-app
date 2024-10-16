@@ -1,16 +1,29 @@
-// src/components/ProductList.js
-import React from 'react';
+
+import { Link } from 'react-router-dom';
 
 const ProductList = () => {
-    return (
-        <>
-            <li className='py-1 px-2 hover:bg-[#ACE2E1]'><a href='#'>Producto 1</a></li>
-            <li className='py-1 px-2 hover:bg-[#ACE2E1]'><a href='#'>Producto 2</a></li>
-            <li className='py-1 px-2 hover:bg-[#ACE2E1]'><a href='#'>Producto 3</a></li>
-            <li className='py-1 px-2 hover:bg-[#ACE2E1]'><a href='#'>Producto 4</a></li>
-            <li className='py-1 px-2 hover:bg-[#ACE2E1]'><a href='#'>Producto 5</a></li>
-        </>
-    );
+  return (
+    <ul>
+      <li className='py-1 px-2 hover:bg-[#ACE2E1]'>
+        <Link to="/Productsection/Climatizacion">Climatización</Link>
+      </li>
+      <li className='py-1 px-2 hover:bg-[#ACE2E1]'>
+        <Link to="#">Refrigeración</Link>
+      </li>
+      <li className='py-1 px-2 hover:bg-[#ACE2E1]'>
+        <Link to="#">Otros Equipos</Link>
+      </li>
+      <li className='py-1 px-2 hover:bg-[#ACE2E1]'>
+        <Link to="#">Para tu Cocina</Link>
+      </li>
+      <li className='py-1 px-2 hover:bg-[#ACE2E1]'>
+        <Link to="#">TV & Equipos</Link>
+      </li>
+      <li className='py-1 px-2 hover:bg-[#ACE2E1]'>
+        <Link to="#">Transporte</Link>
+      </li>
+    </ul>
+  );
 };
 
 export default ProductList;
