@@ -2,7 +2,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { productsdestacados } from './Productdestacados';
 
-const FeaturedProducts = () => {
+const FeaturedProducts = ({ onAddToCart }) => {
+  console.log(onAddToCart);
   return (
     <div className="mt-20 ">
       <h2 className="text-[1.8em] font-bold mb-6">Productos Destacados</h2>
@@ -27,7 +28,8 @@ const FeaturedProducts = () => {
 
             <h3 className="text-[1em] font-semibold">{product.name}</h3>
             <p className="text-xl text-gray-800">${product.price.toFixed(2)}</p>
-            <button className="mt-4 w-full bg-[#008DDA] text-white hover:text-black font-semibold py-2 rounded hover:bg-[#41C9E2]">
+            <button  onClick={() => onAddToCart(product)}  className="mt-4 w-full bg-[#008DDA] text-white hover:text-black font-semibold py-2 rounded hover:bg-[#41C9E2]">
+    
               <FontAwesomeIcon className='text-[#FFFFF] mr-2' icon={faShoppingCart} size="1x" />
               Añadir al Carrito
             </button>

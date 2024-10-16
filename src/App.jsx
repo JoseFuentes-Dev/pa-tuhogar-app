@@ -10,6 +10,7 @@ import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 import BusinessPromo from './components/BusinessPromo';
 import { productsoffers } from './components/Productoffers';
+import { productsdestacados } from './components/Productdestacados';
 import 'aos/dist/aos.css'; 
 import AOS from 'aos'; 
 import { createRoot } from 'react-dom/client';
@@ -70,7 +71,7 @@ function App() {
           </section>
         </div>
         <Offers products={productsoffers} onAddToCart={handleAddToCart} />
-        <FeaturedProducts />
+        <FeaturedProducts products={productsdestacados} onAddToCart={handleAddToCart}/>
         <Testimonials />
       </main>
       <Footer />

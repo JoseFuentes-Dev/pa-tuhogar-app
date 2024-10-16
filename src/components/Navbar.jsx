@@ -89,7 +89,7 @@ const Navbar = ({ cartCount, toggleCart }) => {
                     <li><a href='#' className='hover:text-[#ACE2E1] text-white px-1 py-2 block md:inline-block'>Acerca De</a></li>
 
                     {/* Carrito de compras */}
-                    <li className='relative'>
+                    <li className='relative cursor-pointer'>
                         <a onClick={toggleCart} className="mr-2 px-4 py-2 block md:inline-block">
                       
                             <FontAwesomeIcon className='hover:text-[#ACE2E1]' icon={faShoppingCart} size="1x" />
