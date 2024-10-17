@@ -92,7 +92,7 @@ export const products = [
 { id: 22, name: 'Mini Refrigerador ', category: 'Refrigeración',  price: 350,
                                                                                         image: minibar3pies, garantia: '-', domicilio: 'Incluido', description: 'Mini Frio, Mini bar, marca: Hisense, tamaño: 3.1 pies, color: Gris' },
            
- { id: 22, name: 'Refrigerador ', category: 'Refrigeración',  price: 700,
+ { id: 23, name: 'Refrigerador ', category: 'Refrigeración',  price: 700,
                                                                                             image: refrigeradorroyal8pies, garantia: '2 Meses', domicilio: 'Incluido', description: 'Frio, color: Gris, marca: Royal, tamaño: 8.5 pies' },
                
 ];

@@ -15,8 +15,11 @@ const Navbar = ({ cartCount, toggleCart }) => {
     };
     
     const toggleProducts = (event) => {
-        event.preventDefault();
         setIsProductsOpen(!isProductsOpen);
+        event.preventDefault();
+    };
+    const handleCategoryClick = () => {
+        setIsOpen(!isOpen);
     };
 
     useEffect(() => {
@@ -51,8 +54,8 @@ const Navbar = ({ cartCount, toggleCart }) => {
                         <Link to="/" smooth={true} duration={700} className='cursor-pointer hover:text-[#ACE2E1] text-white px-3 py-2 block md:inline-block'>Inicio</Link>
                     </li>
 
-                    <li className='hover:text-[#ACE2E1] relative flex items-center group' onClick={toggleProducts}>
-                        <a href='#' className='hover:text-[#ACE2E1] text-white px-1 py-2 block md:inline-block'>
+                    <li className='hover:text-[#ACE2E1] relative flex items-center group' >
+                        <a href='#' className='hover:text-[#ACE2E1] text-white px-1 py-2 block md:inline-block' onClick={toggleProducts}>
                             Productos
                             <FontAwesomeIcon 
                                 className={`ml-1 cursor-pointer transition-transform duration-300 ease-in-out ${isProductsOpen ? 'rotate-180' : ''} md:group-hover:rotate-180`}
@@ -62,13 +65,13 @@ const Navbar = ({ cartCount, toggleCart }) => {
                         </a>
 
                         <ul className={`z-30 productos-menu absolute w-[180px] md:group-hover:block hidden bg-white text-black mt-0 p-4 rounded-lg shadow-lg top-full`}>
-                            <Productnavbar />
+                            <Productnavbar handleCategoryClick={handleCategoryClick}/>
                         </ul>
                     </li>
 
                     {isProductsOpen && (
                         <ul className='z-30 productos-menu flex flex-col items-center md:hidden bg-[#008DDA] text-[#ffff] mt-1 p-2 rounded-lg w-full'>
-                            <Productnavbar />
+                            <Productnavbar handleCategoryClick={handleCategoryClick}/>
                         </ul>
                     )}
 

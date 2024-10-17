@@ -1,0 +1,26 @@
+@keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .toast-message {
+    text-align: center;
+    position: fixed;
+    top: 3rem; /* Puedes ajustar este valor para la separación del borde superior */
+    left: 20%;
+    right: 20%;
+    background-color: #f87171; /* Color de fondo rojo */
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    animation: slideDown 0.5s ease-in-out;
+  }
+  

@@ -20,6 +20,36 @@ function App() {
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
+  const [showToast, setShowToast] = useState(false); // Estado del toast
+
+  // Función para mostrar el toast temporalmente
+  const showTemporaryToast = () => {
+    setShowToast(true);
+    setTimeout(() => {
+      setShowToast(false);
+    }, 4000); // Oculta el toast después de 4 segundos
+  };
+
+  const handleAddToCart = (product) => {
+    setCart((prevCart) => {
+      const isProductInCart = prevCart.find(item => item.id === product.id);
+
+      if (isProductInCart) {
+        return prevCart.map(item =>
+          item.id === product.id ? { ...item, quantity: item.quantity < 5 ? item.quantity + 1 : 5 } : item
+        );
+      }
+
+      if (prevCart.length >= 5) {
+        showTemporaryToast(); // Muestra el mensaje emergente si se alcanzan 5 productos
+        return prevCart; // No agregar más productos
+      }
+
+      return [...prevCart, { ...product, quantity: 1 }];
+    });
+  };
+
+
   const toggleCart = () => {
       setIsCartOpen(prev => !prev);
   };
@@ -28,24 +58,7 @@ function App() {
       setIsCartOpen(false);
   };
   
-  const handleAddToCart = (product) => {
-    setCart((prevCart) => {
-        const existingProductIndex = prevCart.findIndex(item => item.id === product.id);
-
-        if (existingProductIndex !== -1) {
-            const updatedCart = [...prevCart];
-            const existingProduct = updatedCart[existingProductIndex];
-
-            if (existingProduct.quantity < 5) {
-                existingProduct.quantity += 1;
-            }
-
-            return updatedCart;
-        } else {
-            return [...prevCart, { ...product, quantity: 1 }];
-        }
-    });
-  };
+  
 
   return (
     <Router basename='/pa-tuhogar-app/'>
@@ -54,6 +67,14 @@ function App() {
       {isCartOpen && (
           <ShoppingCart cart={cart} setCart={setCart} closeCart={closeCart} />
       )}
+    
+    {showToast && (
+      <div className="toast-message">
+    No puedes agregar más de 5 productos distintos al carrito.
+  </div>
+)}
+
+
       <Routes>
         <Route path="/" element={<Home handleAddToCart={handleAddToCart} />} />
         <Route path="/Productsection/:categoryName" element={<CategoryPage handleAddToCart={handleAddToCart} />} />
