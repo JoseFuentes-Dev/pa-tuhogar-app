@@ -38,7 +38,7 @@ const CategoryPage = ({ handleAddToCart }) => {
   return (
     <div className="p-4">
       <h2 className="text-2xl font-bold text-[#008DDA] mb-4">
-        {categoryName} - Productos
+      Categoria - {categoryName} 
       </h2>
 
       <Searchbarcategori 
@@ -54,7 +54,7 @@ const CategoryPage = ({ handleAddToCart }) => {
       />
 
       {searchedProducts.length === 0 ? (
-        <p>No hay productos disponibles en la categoría {categoryName}.</p>
+        <p className='absolute ml-3 -mt-5 text-[#FF0000]'>No hay productos disponibles en la categoría {categoryName}.</p>
       ) : (
         <ul className="grid place-items-center gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
           {searchedProducts.map(product => (
@@ -64,7 +64,7 @@ const CategoryPage = ({ handleAddToCart }) => {
               </div>
               <div className="description flex flex-col justify-between h-[170px] p-4">
                 <h3 className="text-lg font-bold">{product.name}</h3>
-                <p>Precio: ${product.price}</p>
+                <p>Precio: {product.price}</p>
                 <button onClick={() => handleAddToCart(product)} className="mt-4 w-full bg-[#008DDA] text-white hover:text-black font-semibold py-2 rounded hover:bg-[#41C9E2]">
                   <FontAwesomeIcon className='text-[#FFFFF] mr-2' icon={faShoppingCart} size="1x" />
                   Añadir al Carrito

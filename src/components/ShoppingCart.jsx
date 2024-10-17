@@ -44,10 +44,10 @@ const ShoppingCart = ({ cart, setCart, closeCart }) => {
   };
 
   return (
-    <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-70 z-50">
-      <div className="relative bg-white rounded-lg shadow-lg w-full max-w-md p-6 z-10 animate-slideDown">
+    <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-70 z-50 ">
+      <div className="relative bg-white rounded-lg shadow-lg w-full max-w-md p-6 z-10 animate-slideDown h-[580px] flex flex-col justify-between">
         {/* Botón de cerrar */}
-        <button onClick={closeCart} className="absolute top-3 right-3 text-red-600 text-2xl">
+        <button onClick={closeCart} className="absolute top-3 right-3 text-red-600 text-2xl transition-transform transform hover:scale-110 ">
           <FontAwesomeIcon icon={faTimes} />
         </button>
 
@@ -56,7 +56,7 @@ const ShoppingCart = ({ cart, setCart, closeCart }) => {
         {cart.length === 0 ? (
           <p className="text-gray-600">El carrito está vacío</p>
         ) : (
-          <ul className="space-y-4">
+          <ul className="space-y-4 h-full">
             {cart.map(product => (
               <li key={product.id} className="flex justify-between items-center border-b pb-2">
                 <div>
@@ -78,7 +78,10 @@ const ShoppingCart = ({ cart, setCart, closeCart }) => {
                   {/* Botón para aumentar cantidad */}
                   <button
                     onClick={() => updateQuantity(product.id, product.quantity + 1)}
-                    className="bg-[#008DDA] text-white p-2 rounded hover:bg-[#41C9E2]">
+                    className={`text-white p-2 rounded hover:bg-[#41C9E2] ${product.quantity === 5 ? 'bg-gray-300 cursor-not-allowed' : 'bg-[#008DDA]'}`}
+                    disabled={product.quantity === 5} // Deshabilitar el botón si la cantidad es 1
+                    >
+                    
                     <FontAwesomeIcon icon={faPlus} />
                   </button>
 
@@ -93,6 +96,7 @@ const ShoppingCart = ({ cart, setCart, closeCart }) => {
             ))}
           </ul>
         )}
+      <div className="contain-button">
 
         {/* Mostrar el total */}
         <h3 className="mt-6 text-xl font-semibold">Total: ${totalPrice.toFixed(2)}</h3>
@@ -100,11 +104,12 @@ const ShoppingCart = ({ cart, setCart, closeCart }) => {
         {/* Botón de Comprar */}
         {cart.length > 0 && (
           <button
-            onClick={handleBuy}
-            className="mt-6 w-full bg-green-500 text-white font-bold py-2 rounded hover:bg-green-600">
+          onClick={handleBuy}
+          className="mt-6 w-full bg-green-500 text-white font-bold py-2 rounded hover:bg-green-600">
             Comprar
           </button>
         )}
+        </div>
       </div>
     </div>
   );

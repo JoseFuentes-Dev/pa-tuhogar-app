@@ -8,19 +8,19 @@ import split1tImg from '../assets/images/Productos/split1t.jpg';
 import tvrca from '../assets/images/Productos/tv32rca.jpg';
 
 export const productsoffers = [
-    { id: 1, name: 'Aire Acondicionado', price: 699.99,
+    { id: 1, name: 'Aire Acondicionado', price: '10 USD',
         image: cafeteraImg },
-    { id: 2, name: 'Refrigerador', price: 499.99,
+    { id: 2, name: 'Refrigerador', price: '499 USD',
         image: ventiladorimg },
-    { id: 3, name: 'Horno Microondas', price: 249.99,
+    { id: 3, name: 'Horno Microondas', price: '24 USD',
         image: colchonimg },
-    { id: 4, name: 'Televisor, TV',price: 249.99,
+    { id: 4, name: 'Televisor, TV',price: '249 USD',
         image: ollaarroceraImg },
-    { id: 5, name: 'Ventilador', price: 249.99,
+    { id: 5, name: 'Ventilador', price: '249.99 USD',
         image: turbinaImg },
-    { id: 6, name: 'Split',  price: 249.99,
+    { id: 6, name: 'Split',  price: '249.99 USD',
         image: split1tImg },
-    { id: 7, name: 'Smart TV RCA', price: 190,
+    { id: 7, name: 'Smart TV RCA', price: '190 USD',
         image: tvrca }
 ];
   

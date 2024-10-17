@@ -26,73 +26,73 @@ import refrigeradorroyal8pies from '../assets/images/Productos/refrigeradorroyal
 
 
 export const products = [
-    { id: 1, name: 'Ventiladores Recargables', category: 'Climatización',  price: 91,
+    { id: 1, name: 'Ventiladores Recargables', category: 'Climatización',  price: '91 USD',
         image: ventiladormilexus, garantia: 'No cuenta con garantia', domicilio: '500 cup', description: 'Ventiladores recargables, Ventilador recargable, Marca Milexus de 16 pulgadas, Batería de litio , alumbran y traen puerto USB para cargar, colores: Blancos y Negros' },
     
-    { id: 2, name: 'Neveras', category: 'Refrigeración',  price: 480,
+    { id: 2, name: 'Neveras', category: 'Refrigeración',  price: '480 USD',
             image: nevera7pies, garantia: '-', domicilio: 'Incluido', description: 'Neveras, tamaño: 7.5 pies, color: Blanco' },
     
-    { id: 3, name: 'Turbina', category: 'Otros Equipos',  price: 60,
+    { id: 3, name: 'Turbina', category: 'Otros Equipos',  price: '60 USD',
                 image: turbina, garantia: '-', domicilio: '-', description: 'Turbina de 1/2 HP, color: Azul' },
     
-    { id: 4, name: 'Licuadora + Termo', category: 'Para tu Cocina',  price: 70,
+    { id: 4, name: 'Licuadora + Termo', category: 'Para tu Cocina',  price: '70 USD',
                     image: batidoratermo, garantia: '-', domicilio: '500', description: 'Batidoras + Termo, Licuadora con vaso de cristal, colores: Negro, Azul, Rojo' },
     
-    { id: 5, name: 'Lavadora EKO', category: 'Otros Equipos',  price: 430,
+    { id: 5, name: 'Lavadora EKO', category: 'Otros Equipos',  price: '430 USD',
                         image: lavadoraeko, garantia: '-', domicilio: 'Incluido', description: 'Lavadora EKO 9kg Automatica, color: blanco' },
     
-    { id: 6, name: 'Lavadora Milexus', category: 'Otros Equipos',  price: 300,
+    { id: 6, name: 'Lavadora Milexus', category: 'Otros Equipos',  price: '300 USD',
                             image: lavadoramilexus, garantia: '-', domicilio: 'Incluido', description: 'Lavadora Semi-automática con secadora de 7kg, color: blanco' },
     
-     { id: 7, name: 'Olla de Presión 7 litros', category: 'Para tu Cocina',  price: 70,
+     { id: 7, name: 'Olla de Presión 7 litros', category: 'Para tu Cocina',  price: '70 USD',
                                 image: olladepresionlotus, garantia: '-', domicilio: '500', description: 'Olla de Presión de 3 Válvulas, marca: Lotus, capacidad: 7 litros' },
     
-     { id: 8, name: 'Olla de Presión 6 litros', category: 'Para tu Cocina',  price: 65,
+     { id: 8, name: 'Olla de Presión 6 litros', category: 'Para tu Cocina',  price: '65 USD',
                                     image: olladepresioneko, garantia: '-', domicilio: '500', description: 'Olla de Presión 1 Valvula, marca: EKO, capacidad: 6 litros' },
     
-     { id: 9, name: 'Olla de Presión 5 litros', category: 'Para tu Cocina',  price: 53,
+     { id: 9, name: 'Olla de Presión 5 litros', category: 'Para tu Cocina',  price: '53 USD',
                                         image: olladepresionsaco, garantia: '-', domicilio: '500', description: 'Olla de Presión de 3 Válvulas, marca: SACO, capacidad: 5 litros' },
     
-     { id: 10, name: 'Olla Reina', category: 'Para tu Cocina',  price: 90,
+     { id: 10, name: 'Olla Reina', category: 'Para tu Cocina',  price: '90 USD',
                                             image: ollareinasaco, garantia: '-', domicilio: '500', description: 'Olla Reina, marca: SACO, capacidad: 7 litros, color: Negro' },
      
-     { id: 11, name: 'Olla Arrocera', category: 'Para tu Cocina',  price: 50,
+     { id: 11, name: 'Olla Arrocera', category: 'Para tu Cocina',  price: '50 USD',
                                                 image: ollaarrocera, garantia: '-', domicilio: '500', description: 'Olla arrocera, marca: EKO, capacidad: 1.8 litros, color: Blanco' },
    
-    { id: 12, name: 'Televisor 32 pulgadas', category: 'TV & Equipos',  price: 190,
+    { id: 12, name: 'Televisor 32 pulgadas', category: 'TV & Equipos',  price: '190 USD',
                                                     image: tv32rca, garantia: 'No cuenta con garantia', domicilio: 'No cuenta con domicilio', description: 'Smart TV, tamaño: 32 pulgadas, marca: RCA, de uso impecable' },
    
-    { id: 13, name: 'Ventiladores Ciclones de Pared', category: 'Climatización',  price: 55,
+    { id: 13, name: 'Ventiladores Ciclones de Pared', category: 'Climatización',  price: '55 USD',
                                                         image: ciclondepared, garantia: '-', domicilio: '500', description: 'Ventiladores Ciclones de Pared, ventilador ciclon, marca: Milexus, color: Negro' },
    
-    { id: 14, name: 'Televisor 32 pulgadas', category: 'TV & Equipos',  price: 290,
+    { id: 14, name: 'Televisor 32 pulgadas', category: 'TV & Equipos',  price: '290 USD',
                                                             image: tv32pulgadaskodak, garantia: '-', domicilio: '-', description: 'Smart TV, tamaño: 32 pulgadas, marca: KODAK' },
        
-     { id: 15, name: 'Televisor 43 pulgadas', category: 'TV & Equipos',  price: 380,
+     { id: 15, name: 'Televisor 43 pulgadas', category: 'TV & Equipos',  price: '380 USD',
                                                                 image: tv43pulgadaskodak, garantia: '-', domicilio: '-', description: 'Smart TV, tamaño: 43 pulgadas, marca: KODAK' },
    
-    { id: 16, name: 'Televisor 50 pulgadas', category: 'TV & Equipos',  price: 500,
+    { id: 16, name: 'Televisor 50 pulgadas', category: 'TV & Equipos',  price: '500 USD',
                                                                     image: tv50pulgadas, garantia: '-', domicilio: '-', description: 'Smart TV, tamaño: 50 pulgadas, marca: EKO' },
       
-    { id: 17, name: 'Split', category: 'Climatización',  price: 430,
+    { id: 17, name: 'Split', category: 'Climatización',  price: '430 USD',
                                                                         image: split1t, garantia: '-', domicilio: 'Incluido', description: 'Split 1 Tonelada, marca: Milexus' },
          
-    { id: 18, name: 'Sandwisheras', category: 'Para tu Cocina',  price: 45,
+    { id: 18, name: 'Sandwisheras', category: 'Para tu Cocina',  price: '45 USD',
                                                                             image: sandwishera, garantia: '-', domicilio: '500', description: 'Sandwisheras, marca:OSKA' },
                                                                            
-  { id: 19, name: 'Motorina Yamaki', category: 'Transporte',  price: 2500,
+  { id: 19, name: 'Motorina Yamaki', category: 'Transporte',  price: '2500 USD',
                                                                                 image: motorinayamaki, garantia: '-', domicilio: '-', description: 'Motorina Yamaki, Batería: 72v 35 Amp' },
     
- { id: 20, name: 'Maquina de Refrigeración', category: 'Refrigeración',  price: 140,
+ { id: 20, name: 'Maquina de Refrigeración', category: 'Refrigeración',  price: '140 USD',
                                                                                 image: maquinaderefrigeracion, garantia: '-', domicilio: '-', description: 'Maquina de frio y nevera, Maquina de Nevera, Maquina de Refrigerador' },
       
-{ id: 21, name: 'Planta eléctrica ', category: 'Otros Equipos',  price: 450,
+{ id: 21, name: 'Planta eléctrica ', category: 'Otros Equipos',  price: '450 USD',
                                                                                     image: planta1200W, garantia: '-', domicilio: '-', description: 'Planta eléctrica, 1200W' },
         
-{ id: 22, name: 'Mini Refrigerador ', category: 'Refrigeración',  price: 350,
+{ id: 22, name: 'Mini Refrigerador ', category: 'Refrigeración',  price: '350 USD',
                                                                                         image: minibar3pies, garantia: '-', domicilio: 'Incluido', description: 'Mini Frio, Mini bar, marca: Hisense, tamaño: 3.1 pies, color: Gris' },
            
- { id: 23, name: 'Refrigerador ', category: 'Refrigeración',  price: 700,
+ { id: 23, name: 'Refrigerador ', category: 'Refrigeración',  price: '700 USD',
                                                                                             image: refrigeradorroyal8pies, garantia: '2 Meses', domicilio: 'Incluido', description: 'Frio, color: Gris, marca: Royal, tamaño: 8.5 pies' },
                
 ];
