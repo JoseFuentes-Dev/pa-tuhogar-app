@@ -21,11 +21,15 @@ const CategoryPage = ({ handleAddToCart }) => {
 
   // Filtrar productos por categoría
   const filteredProducts = products.filter(product => product.category === categoryName);
-
+  const sortedProducts = filteredProducts.sort((a, b) => {
+    if (a.inStock === b.inStock) return 0; // No cambia el orden si ambos productos tienen el mismo estado de stock
+    return a.inStock ? -1 : 1; // Coloca productos en stock antes que los agotados
+  });
+  
   // Si hay un término de búsqueda, filtrar productos también por el término de búsqueda
   const searchedProducts = searchTerm.length === 0 
-    ? filteredProducts 
-    : filteredProducts.filter(product => 
+    ? sortedProducts 
+    : sortedProducts.filter(product => 
         product.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
         product.description.toLowerCase().includes(searchTerm.toLowerCase())
       );
@@ -57,22 +61,37 @@ const CategoryPage = ({ handleAddToCart }) => {
         <p className='absolute ml-3 -mt-5 text-[#FF0000]'>No hay productos disponibles en la categoría {categoryName}.</p>
       ) : (
         <ul className="grid place-items-center gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
-          {searchedProducts.map(product => (
-            <li key={product.id} className="bg-white rounded-lg shadow-md w-[320px] sm:w-[285px] md:w-full">
-              <div className="overflow-hidden h-full rounded-t-lg">
-                <img src={product.image} alt={product.name} className="image-offer w-full h-60 rounded-t-lg " />
-              </div>
-              <div className="description flex flex-col justify-between h-[170px] p-4">
-                <h3 className="text-lg font-bold">{product.name}</h3>
-                <p>Precio: {product.price} USD</p>
-                <button onClick={() => handleAddToCart(product)} className="mt-4 w-full bg-[#008DDA] text-white hover:text-black font-semibold py-2 rounded hover:bg-[#41C9E2]">
-                  <FontAwesomeIcon className='text-[#FFFFF] mr-2' icon={faShoppingCart} size="1x" />
-                  Añadir al Carrito
-                </button>
-              </div>
-            </li>
-          ))}
-        </ul>
+  {searchedProducts.map(product => (
+    <li key={product.id} className="relative bg-white rounded-lg shadow-md w-[320px] sm:w-[285px] md:w-full">
+      {/* Superposición para productos agotados */}
+      {!product.inStock && (
+        <div className="absolute inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-10 rounded-lg cursor-not-allowed">
+          <p className="text-white text-xl font-bold">Producto agotado</p>
+        </div>
+      )}
+
+      <div className="overflow-hidden h-full rounded-t-lg">
+        <img src={product.image} alt={product.name} className="image-offer w-full h-60 rounded-t-lg" />
+      </div>
+      <div className="description flex flex-col justify-between h-[170px] p-4">
+        <h3 className="text-lg font-bold">{product.name}</h3>
+        <p>Precio: {product.price} USD</p>
+
+        {/* Botón deshabilitado si el producto está agotado */}
+        <button 
+          onClick={() => handleAddToCart(product)} 
+          className={`mt-4 w-full bg-[#008DDA] text-white hover:text-black font-semibold py-2 rounded hover:bg-[#41C9E2] 
+            ${!product.inStock ? 'cursor-not-allowed opacity-50' : ''}`}
+          disabled={!product.inStock}
+        >
+          <FontAwesomeIcon className='text-[#FFFFF] mr-2' icon={faShoppingCart} size="1x" />
+          Añadir al Carrito
+        </button>
+      </div>
+    </li>
+  ))}
+</ul>
+
       )}
     </div>
   );
