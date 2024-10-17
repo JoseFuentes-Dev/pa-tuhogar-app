@@ -64,7 +64,7 @@ const CategoryPage = ({ handleAddToCart }) => {
               </div>
               <div className="description flex flex-col justify-between h-[170px] p-4">
                 <h3 className="text-lg font-bold">{product.name}</h3>
-                <p>Precio: {product.price}</p>
+                <p>Precio: {product.price} USD</p>
                 <button onClick={() => handleAddToCart(product)} className="mt-4 w-full bg-[#008DDA] text-white hover:text-black font-semibold py-2 rounded hover:bg-[#41C9E2]">
                   <FontAwesomeIcon className='text-[#FFFFF] mr-2' icon={faShoppingCart} size="1x" />
                   Añadir al Carrito
