@@ -7,8 +7,10 @@ import 'aos/dist/aos.css';
 import AOS from 'aos'; 
 import { createRoot } from 'react-dom/client';
 import ShoppingCart from './components/ShoppingCart';
-
+import Contact from './components/Contact';
+import About from './components/About';
 import Home from './Home';
+import Services from './components/Services';
 import CategoryPage from './components/Productsection/CategoryPage';
 AOS.init();
 
@@ -79,6 +81,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home handleAddToCart={handleAddToCart} />} />
             <Route path="/Productsection/:categoryName" element={<CategoryPage handleAddToCart={handleAddToCart} />} />
+            <Route path="/contact" element={<Contact />} /> {/* Agregada la ruta de contacto */}
+            <Route path="/about" element={<About />} /> {/* Agregada la ruta de contacto */}
+            <Route path="/services" element={<Services />} />
+
           </Routes>
         </div>
 

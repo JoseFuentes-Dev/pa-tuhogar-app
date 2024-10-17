@@ -74,13 +74,16 @@ const Navbar = ({ cartCount, toggleCart }) => {
                             <Productnavbar handleCategoryClick={handleCategoryClick}/>
                         </ul>
                     )}
+                    <li>
+                        <Link to="/services" className='hover:text-[#ACE2E1] text-white px-1 py-2 block md:inline-block'>Servicios</Link>
+                    </li>
+                    <li>
+                        <Link to="/contact" className='hover:text-[#ACE2E1] text-white px-3 py-2 block md:inline-block'>Contacto</Link>
+                    </li>
+                    <li>
+                        <Link to="/about" className='hover:text-[#ACE2E1] text-white px-1 py-2 block md:inline-block'>Acerca De</Link>
+                    </li>
 
-                    <li>
-                        <Link to="/contacto" className='hover:text-[#ACE2E1] text-white px-3 py-2 block md:inline-block'>Contacto</Link>
-                    </li>
-                    <li>
-                        <Link to="/acerca-de" className='hover:text-[#ACE2E1] text-white px-1 py-2 block md:inline-block'>Acerca De</Link>
-                    </li>
 
                     <li className='relative cursor-pointer'>
                         <a onClick={toggleCart} className="mr-2 px-4 py-2 block md:inline-block">

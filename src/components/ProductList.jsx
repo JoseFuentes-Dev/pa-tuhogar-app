@@ -44,13 +44,13 @@ export const products = [
     { id: 6, name: 'Lavadora Milexus', category: 'Otros Equipos',  price: 300,
                             image: lavadoramilexus, garantia: '-', domicilio: 'Incluido', description: 'Lavadora Semi-automática con secadora de 7kg, color: blanco' },
     
-     { id: 7, name: 'Olla de Presión', category: 'Para tu Cocina',  price: 70,
+     { id: 7, name: 'Olla de Presión 7 litros', category: 'Para tu Cocina',  price: 70,
                                 image: olladepresionlotus, garantia: '-', domicilio: '500', description: 'Olla de Presión de 3 Válvulas, marca: Lotus, capacidad: 7 litros' },
     
-     { id: 8, name: 'Olla de Presión', category: 'Para tu Cocina',  price: 65,
+     { id: 8, name: 'Olla de Presión 6 litros', category: 'Para tu Cocina',  price: 65,
                                     image: olladepresioneko, garantia: '-', domicilio: '500', description: 'Olla de Presión 1 Valvula, marca: EKO, capacidad: 6 litros' },
     
-     { id: 9, name: 'Olla de Presión', category: 'Para tu Cocina',  price: 53,
+     { id: 9, name: 'Olla de Presión 5 litros', category: 'Para tu Cocina',  price: 53,
                                         image: olladepresionsaco, garantia: '-', domicilio: '500', description: 'Olla de Presión de 3 Válvulas, marca: SACO, capacidad: 5 litros' },
     
      { id: 10, name: 'Olla Reina', category: 'Para tu Cocina',  price: 90,
