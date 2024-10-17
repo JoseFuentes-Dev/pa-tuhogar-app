@@ -13,4 +13,8 @@
   .animate-slideDown {
     animation: slideDown 0.4s ease-out forwards;
   }
-  
+  /* ShoppingCart.css */
+button:disabled {
+  opacity: 0.; /* Menor opacidad para indicar que está desactivado */
+  pointer-events: none; /* Deshabilitar eventos */
+}

@@ -67,7 +67,9 @@ const ShoppingCart = ({ cart, setCart, closeCart }) => {
                   {/* Botón para reducir cantidad */}
                   <button
                     onClick={() => product.quantity > 1 && updateQuantity(product.id, product.quantity - 1)}
-                    className="bg-[#008DDA] text-white p-2 rounded hover:bg-[#41C9E2]">
+                    className={`text-white p-2 rounded hover:bg-[#41C9E2] ${product.quantity === 1 ? 'bg-gray-300 cursor-not-allowed' : 'bg-[#008DDA]'}`}
+                    disabled={product.quantity === 1} // Deshabilitar el botón si la cantidad es 1
+                  >
                     <FontAwesomeIcon icon={faMinus} />
                   </button>
                   
