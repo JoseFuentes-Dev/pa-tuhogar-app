@@ -2,7 +2,7 @@ import './ShoppingCart.css'; // Mantén esta línea si agregas la animación per
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faMinus, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
-
+import cartGif from '../assets/images/CartV.gif';
 const ShoppingCart = ({ cart, setCart, closeCart }) => {
   // Función para eliminar productos del carrito
   const removeFromCart = (id) => {
@@ -54,7 +54,11 @@ const ShoppingCart = ({ cart, setCart, closeCart }) => {
         <h2 className="text-2xl font-bold text-[#008DDA] mb-4">Carrito de Compras</h2>
 
         {cart.length === 0 ? (
-          <p className="text-gray-600">El carrito está vacío</p>
+          <div className="contain-cart flex  flex-col items-center">
+            <img src={cartGif} alt="" />
+            <p className="text-[#41C9E2] text-[1.3em]">El carrito está vacío</p>
+          </div>
+      
         ) : (
           <ul className="space-y-4 h-full">
             {cart.map(product => (
