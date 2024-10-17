@@ -1,4 +1,3 @@
-// App.js
 import './App.css';
 import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -61,26 +60,32 @@ function App() {
   
 
   return (
-    <Router basename='/pa-tuhogar-app/'>
-      <span id='top'></span>
-      <Navbar toggleCart={toggleCart} cartCount={cart.reduce((acc, item) => acc + item.quantity, 0)} />
-      {isCartOpen && (
-          <ShoppingCart cart={cart} setCart={setCart} closeCart={closeCart} />
-      )}
-    
-    {showToast && (
-      <div className="toast-message">
-    No puedes agregar más de 5 productos distintos al carrito.
-  </div>
-)}
+    <div className="min-h-screen flex flex-col"> {/* Ajuste aquí */}
+      <Router basename='/pa-tuhogar-app/'>
+        <span id='top'></span>
+        <Navbar toggleCart={toggleCart} cartCount={cart.reduce((acc, item) => acc + item.quantity, 0)} />
+        {isCartOpen && (
+            <ShoppingCart cart={cart} setCart={setCart} closeCart={closeCart} />
+        )}
+      
+        {showToast && (
+          <div className="toast-message">
+            No puedes agregar más de 5 productos distintos al carrito.
+          </div>
+        )}
+        
+        {/* Contenido principal */}
+        <div className="flex-grow"> 
+          <Routes>
+            <Route path="/" element={<Home handleAddToCart={handleAddToCart} />} />
+            <Route path="/Productsection/:categoryName" element={<CategoryPage handleAddToCart={handleAddToCart} />} />
+          </Routes>
+        </div>
 
-
-      <Routes>
-        <Route path="/" element={<Home handleAddToCart={handleAddToCart} />} />
-        <Route path="/Productsection/:categoryName" element={<CategoryPage handleAddToCart={handleAddToCart} />} />
-      </Routes>
-      <Footer  />
-    </Router>
+        {/* Footer siempre en la parte inferior */}
+        <Footer />
+      </Router>
+    </div>
   );
 }
 

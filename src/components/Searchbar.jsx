@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 import './search.css';
 import { products } from './ProductList'; 
 
@@ -7,14 +8,14 @@ const SearchBar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [noResults, setNoResults] = useState(false);
-  const searchBarRef = useRef(null); // Referencia para la barra de búsqueda
-
+  const searchBarRef = useRef(null);
+  const navigate = useNavigate(); // Inicializa useNavigate
 
   // Detectar clics fuera de la barra de búsqueda
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (searchBarRef.current && !searchBarRef.current.contains(event.target)) {
-        resetSearch(); // Resetear búsqueda y ocultar mensajes
+        resetSearch();
       }
     };
 
@@ -24,47 +25,41 @@ const SearchBar = () => {
     };
   }, []);
 
-  // Función para resetear la búsqueda
   const resetSearch = () => {
     setInputValue('');
     setFilteredProducts([]);
     setNoResults(false);
-    setIsVisible(true); // Mostrar el placeholder
+    setIsVisible(true);
   };
 
   const handleInputChange = (event) => {
     const value = event.target.value;
     setInputValue(value);
     
-    // Si el input está vacío, no mostramos sugerencias
     if (value.trim() === '') {
       resetSearch();
       return;
     }
 
-    // Actualizamos la lista filtrada en tiempo real
     const filtered = products.filter(product =>
       product.name.toLowerCase().includes(value.toLowerCase().trim()) || 
       product.description.toLowerCase().includes(value.toLowerCase().trim())
-
     );
 
     setFilteredProducts(filtered);
     setNoResults(filtered.length === 0);
-    setIsVisible(false); // Ocultamos el placeholder si hay texto
+    setIsVisible(false);
   };
 
-  const handleProductClick = () => {
-    setInputValue('');
-    setFilteredProducts([]);
-    setNoResults(false); // Al seleccionar un producto, quitamos el mensaje de "no resultados"
-    setIsVisible(true);
+  const handleProductClick = (product) => {
+    // Redirigir al usuario a la página de categoría del producto
+    navigate(`/Productsection/${product.category}`, { state: { selectedProduct: product } });
+    resetSearch(); // Resetea la búsqueda después de hacer clic
   };
 
-  // Función para resaltar las coincidencias
   const highlightMatch = (text, query) => {
-    if (!query) return text; // Si no hay consulta, retornamos el texto original
-    const parts = text.split(new RegExp(`(${query})`, 'gi')); // Divide el texto por la consulta
+    if (!query) return text; 
+    const parts = text.split(new RegExp(`(${query})`, 'gi'));
     return parts.map((part, index) => 
       part.toLowerCase() === query.toLowerCase() ? (
         <span key={index} style={{ backgroundColor: '#008DDA', color: '#FFFFFF' }}>{part}</span>
@@ -85,7 +80,6 @@ const SearchBar = () => {
           placeholder='Buscar:'
         />
 
-        {/* Placeholder si no hay texto en el input */}
         {isVisible && (
           <div className="wrapper absolute left-20 top-3" style={{ pointerEvents: 'none' }}>
             <div className="words">
@@ -99,21 +93,18 @@ const SearchBar = () => {
         )}
       </div>
 
-      {/* Mostrar productos filtrados */}
       <div className="w-full mt-1 max-w-4xl relative ">
         {filteredProducts.length > 0 ? (
           <ul className="product-list rounded-lg bg-white absolute z-50 w-full">
-
             {filteredProducts.map(product => (
               <li
-              key={product.id}
-              onClick={() => handleProductClick(product)}
-              className="cursor-pointer  shadow-md p-2  hover:bg-[#ACE2E1] transition-all"
+                key={product.id}
+                onClick={() => handleProductClick(product)}
+                className="cursor-pointer shadow-md p-2 hover:bg-[#ACE2E1] transition-all"
               >
                 {highlightMatch(product.name, inputValue)} - <span className="text-gray-500">{product.category}</span>
               </li>
             ))}
-
           </ul>
         ) : (
           noResults && <p className='absolute ml-3 text-[#FF0000]'>No se encontraron coincidencias</p>
