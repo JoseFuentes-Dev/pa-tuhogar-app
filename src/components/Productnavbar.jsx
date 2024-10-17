@@ -5,22 +5,22 @@ const ProductList = () => {
   return (
     <ul>
       <li className='py-1 px-2 hover:bg-[#ACE2E1]'>
-        <Link to="/Productsection/Climatizacion">Climatización</Link>
+        <Link to="/Productsection/Climatización">Climatización</Link>
       </li>
       <li className='py-1 px-2 hover:bg-[#ACE2E1]'>
-        <Link to="#">Refrigeración</Link>
+        <Link to="/Productsection/Refrigeración">Refrigeración</Link>
       </li>
       <li className='py-1 px-2 hover:bg-[#ACE2E1]'>
-        <Link to="#">Otros Equipos</Link>
+        <Link to="/Productsection/Otros Equipos">Otros Equipos</Link>
       </li>
       <li className='py-1 px-2 hover:bg-[#ACE2E1]'>
-        <Link to="#">Para tu Cocina</Link>
+        <Link to="/Productsection/Para tu Cocina">Para tu Cocina</Link>
       </li>
       <li className='py-1 px-2 hover:bg-[#ACE2E1]'>
-        <Link to="#">TV & Equipos</Link>
+        <Link to="/Productsection/TV & Equipos">TV & Equipos</Link>
       </li>
       <li className='py-1 px-2 hover:bg-[#ACE2E1]'>
-        <Link to="#">Transporte</Link>
+        <Link to="/Productsection/Transporte">Transporte</Link>
       </li>
     </ul>
   );

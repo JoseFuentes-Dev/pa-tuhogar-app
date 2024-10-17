@@ -7,7 +7,7 @@ const Searchbarcategori = ({ searchTerm, setSearchTerm }) => {
         type="text"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        placeholder="Buscar productos de Climatización..."
+        placeholder="Buscar productos:"
         className="p-2 border rounded w-full"
       />
     </div>
