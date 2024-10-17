@@ -26,7 +26,7 @@ const FeaturedProducts = ({ onAddToCart }) => {
             </div>
             <div className="description flex flex-col justify-between h-[170px] p-4">
 
-            <h3 className="text-[1em] font-semibold">{product.name}</h3>
+            <h3 className="text-lg font-bold">{product.name}</h3>
             <p className="text-xl text-gray-800">${product.price.toFixed(2)} USD</p>
             <button  onClick={() => onAddToCart(product)}  className="mt-4 w-full bg-[#008DDA] text-white hover:text-black font-semibold py-2 rounded hover:bg-[#41C9E2]">
     

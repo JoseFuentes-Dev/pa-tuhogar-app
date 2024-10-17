@@ -25,11 +25,11 @@ const OfferCard = ({ product, addToCart }) => (
             <img src={product.image} alt={product.name} className="image-offer w-full h-60 bg-initial rounded-t-lg " />
         </div>
         <div className="description p-2 relative rounded-lg">
-            <h2 className="font-semibold  text-[1em] mt-2">{product.name}</h2>
+            <h2 className="text-lg font-bold mt-2">{product.name}</h2>
             <span className="text-[#FF0000] font-bold text-[1.2em]">{product.price} USD</span>
             <div href="#" className="absolute right-2 bottom-2 block md:inline-block">
             <button onClick={() => addToCart(product)} className="absolute right-2 bottom-2 block md:inline-block">
-                    <FontAwesomeIcon className='hover:text-[#008DDA] text-[#41C9E2]' icon={faShoppingCart} size="2x" />
+                    <FontAwesomeIcon className='hover:text-[#008DDA] text-[#41C9E2]' icon={faShoppingCart}  style={{ fontSize: '24px' }}/>
                 </button>
             </div>
         </div>
