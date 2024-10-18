@@ -104,7 +104,7 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 1 }}
           variants={buttonVariants}
         >
-        <Link to="ofertas" smooth={true} duration={700} className="bg-[#ACE2E1] text-black px-6 py-1  hover:bg-[#41C9E2] flex flex-col items-center cursor-pointer rounded-lg">
+        <Link to="ofertas" smooth="true" duration={700} className="bg-[#ACE2E1] text-black px-6 py-1  hover:bg-[#41C9E2] flex flex-col items-center cursor-pointer rounded-lg">
           <label className='hero-label text-[1em] cursor-pointer '>Ver Productos</label>
           <FontAwesomeIcon className='hero-chevron -mt-2 cursor-pointer text-[#008DDA]' icon={faChevronDown} size="2x" />
         </Link>

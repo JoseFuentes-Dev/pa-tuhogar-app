@@ -5,7 +5,6 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import 'aos/dist/aos.css'; 
 import AOS from 'aos'; 
-import { createRoot } from 'react-dom/client';
 import ShoppingCart from './components/ShoppingCart';
 import Contact from './components/Contact';
 import About from './components/About';
@@ -14,8 +13,8 @@ import Services from './components/Services';
 import CategoryPage from './components/Productsection/CategoryPage';
 AOS.init();
 
-const root = createRoot(document.getElementById('root'));
-root.render(<App />);
+
+
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -62,7 +61,7 @@ function App() {
   
 
   return (
-    <div className="min-h-screen flex flex-col"> {/* Ajuste aquí */}
+    <div className="min-h-screen flex flex-col overflow-x-hidden"> {/* Añadido overflow-x-hidden */}
       <Router basename='/pa-tuhogar-app/'>
         <span id='top'></span>
         <Navbar toggleCart={toggleCart} cartCount={cart.reduce((acc, item) => acc + item.quantity, 0)} />

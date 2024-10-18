@@ -3,7 +3,7 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { productsdestacados } from './Productdestacados';
 
 const FeaturedProducts = ({ onAddToCart }) => {
-  console.log(onAddToCart);
+  
   return (
     <div className="mt-20 ">
       <h2 className="text-[1.8em] font-bold mb-6">Productos Destacados</h2>

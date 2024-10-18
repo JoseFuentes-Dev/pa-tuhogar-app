@@ -41,7 +41,7 @@ OfferCard.propTypes = {
   product: PropTypes.shape({
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
+    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     image: PropTypes.string.isRequired,
   }).isRequired,
   addToCart: PropTypes.func.isRequired,
@@ -147,15 +147,16 @@ const Offers = ({ products, onAddToCart }) => {
 
 // Validación de PropTypes
 Offers.propTypes = {
-    products: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.number.isRequired,
-            name: PropTypes.string.isRequired,
-            price: PropTypes.string.isRequired,
-            image: PropTypes.string.isRequired,
-        })
-    ).isRequired,
-    onAddToCart: PropTypes.func.isRequired,
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired, // Aceptar tanto string como number
+      image: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  onAddToCart: PropTypes.func.isRequired,
 };
+
 
 export default Offers;
