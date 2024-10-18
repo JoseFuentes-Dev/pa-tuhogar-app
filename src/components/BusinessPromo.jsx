@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { motion } from 'framer-motion';
-
+import { Link } from 'react-router-dom'; 
 import image1 from '../assets/images/promotion.jpg';
 import image7 from '../assets/images/7.jpg';
 import image8 from '../assets/images/8.jpg';
@@ -76,14 +76,18 @@ const BusinessPromo = () => {
         >
           ¿Quieres publicar o ver nuestras ofertas para promocionar tu negocio?
         </motion.p>
+
+             <Link to="/services" className='hover:text-[#ACE2E1] text-white px-1 py-2 block md:inline-block'>
+           
         <motion.button className="bg-yellow-400 text-black py-2 px-4 rounded hover:bg-yellow-500"
          initial="hidden"
          animate="visible"
          transition={{ duration: 0.5, ease: 'easeInOut' }}
          variants={buttonVariants}
-        >
-          Ver Ofertas
+         >
+      Ver Ofertas
         </motion.button>
+          </Link>
       </div>
     </motion.div>
   );

@@ -22,6 +22,16 @@ import maquinaderefrigeracion from '../assets/images/Productos/maquinaderefriger
 import planta1200W from '../assets/images/Productos/planta1200W.jpg';
 import minibar3pies from '../assets/images/Productos/minibar3.1pies.jpg';
 import refrigeradorroyal8pies from '../assets/images/Productos/refrigeradorroyal8.5pies.jpg';
+import refrigeradorroyal19pies from '../assets/images/Productos/refrigerador19pies.jpg';
+import refrigeradorroyal11pies from '../assets/images/Productos/refrigerador11pies.jpg';
+import fogoninfrarrojo from '../assets/images/Productos/fogoninfrarojo.jpg';
+import freidoradeaceite from '../assets/images/Productos/freidoradeaceite.jpg';
+import equipodemusicalg from '../assets/images/Productos/equipodemusicalg.jpg';
+import cafetera from '../assets/images/Productos/cafetera.jpg';
+import colchon from '../assets/images/Productos/colchon.jpg';
+import cajitahd from '../assets/images/Productos/cajitahd.jpg';
+import calentadordeagua from '../assets/images/Productos/calentadordeagua.jpg';
+import fogonelectrico from '../assets/images/Productos/fogonelectrico.jpg';
 
 
 
@@ -89,11 +99,40 @@ export const products = [
 { id: 21, name: 'Planta eléctrica ', category: 'Otros Equipos',  price: 450,
                                                                                     image: planta1200W, garantia: '-', domicilio: '-', description: 'Planta eléctrica, 1200W', inStock: true, },
         
-{ id: 22, name: 'Mini Refrigerador ', category: 'Refrigeración',  price: 350,
+{ id: 22, name: 'Mini Refrigerador 3.5 pies', category: 'Refrigeración',  price: 350,
                                                                                         image: minibar3pies, garantia: '-', domicilio: 'Incluido', description: 'Mini Frio, Mini bar, marca: Hisense, tamaño: 3.1 pies, color: Gris',inStock: true, },
            
- { id: 23, name: 'Refrigerador ', category: 'Refrigeración',  price: 700,
+ { id: 23, name: 'Refrigerador 8.5 pies', category: 'Refrigeración',  price: 700,
                                                                                             image: refrigeradorroyal8pies, garantia: '2 Meses', domicilio: 'Incluido', description: 'Frio, color: Gris, marca: Royal, tamaño: 8.5 pies', inStock: false,  },
-               
-];
+ 
+{ id: 24, name: 'Refrigerador 19 pies', category: 'Refrigeración',  price: 1500,
+                                                                image: refrigeradorroyal19pies, garantia: '2 Meses', domicilio: 'Incluido', description: 'frio con dispense, tamaño: 19 pies, color: Gris', inStock: true,  },
+
+ { id: 25, name: 'Refrigerador 11 pies', category: 'Refrigeración',  price: 820,
+                                                                    image: refrigeradorroyal11pies, garantia: '2 Meses', domicilio: 'Incluido', description: 'frio con dispense, marca: Royal, color: Gris, tamaño: 11 pies', inStock: true,  },
   
+{ id: 26, name: 'Fogon Infrarrojo', category: 'Para tu Cocina',  price: 80,
+                                                                        image: fogoninfrarrojo, garantia: 'NO', domicilio: '-', description: 'Fogon, marca: EKO, color: negro', inStock: true,  },
+           
+{ id: 27, name: 'Freidora de Aceite', category: 'Para tu Cocina',  price: 55,
+                                                                            image: freidoradeaceite, garantia: '-', domicilio: 'NO', description: 'Freidora, marca: Royal, color: blanco', inStock: true,  },
+  
+ { id: 28, name: 'Equipo de Musica', category: 'TV & Equipos',  price: 240,
+                                                                                image: equipodemusicalg, garantia: '-', domicilio: 'NO', description: 'Equipo , marca: LG, color: negro', inStock: true,  },
+   
+{ id: 29, name: 'Cafetera eléctrica', category: 'Para tu Cocina',  price: 60,
+                                                                                    image: cafetera, garantia: '-', domicilio: 'NO', description: 'Cafetera, color: negro, capacidad: 6 tazas, marca: JMD', inStock: true,  },
+    
+ { id: 30, name: 'Colchones', category: 'Otros Equipos',  price: 260,
+                                                                                        image: colchon, garantia: '-', domicilio: '-', description: 'Colchones , colchon ', inStock: true,  },
+           
+ { id: 31, name: 'Caja HD para TV', category: 'TV & Equipos',  price: 50,
+                                                                                            image: cajitahd, garantia: '-', domicilio: '-', description: 'Cajita HD, marca: Atec, color: negro ', inStock: true,  },
+    
+ { id: 32, name: 'Calentadores de Agua', category: 'Otros Equipos',  price: 320,
+                                                                                                image: calentadordeagua, garantia: '-', domicilio: '-', description: 'Calentador de Agua, marca EKO, color: blanco, capacidad: 50 litros ', inStock: false,  },
+     
+{ id: 33, name: 'Fogon eléctrico', category: 'Para tu Cocina',  price: 40,
+                                                                                                    image: fogonelectrico, garantia: '-', domicilio: 'NO', description: 'Fogon eléctrico de 1 sola hornilla, marca: thulos, color: blanco ', inStock: false,  },
+                     
+];

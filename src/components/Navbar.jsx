@@ -3,7 +3,7 @@ import logo from '../assets/images/logo.jpeg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import Productnavbar from './Productnavbar';
-import { Link } from 'react-router-dom'; // Se mantiene esta importación
+import { Link } from 'react-router-dom'; 
 
 const Navbar = ({ cartCount, toggleCart }) => {
     const [isOpen, setIsOpen] = useState(false);
