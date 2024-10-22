@@ -47,12 +47,7 @@ const CategoryPage = ({ handleAddToCart }) => {
 
       <Searchbarcategori 
         searchTerm={searchTerm} 
-        setSearchTerm={(term) => {
-          setSearchTerm(term);
-          if (term === '') {
-            setSelectedProduct(null); // Si se borra el término de búsqueda, restablecer el producto seleccionado
-          }
-        }} 
+        setSearchTerm={(term) => setSearchTerm(term)}
         placeholder={selectedProduct ? selectedProduct.name : `Buscar en ${categoryName}...`} 
         handleProductSelect={handleProductSelect} 
       />
@@ -60,20 +55,25 @@ const CategoryPage = ({ handleAddToCart }) => {
       {searchedProducts.length === 0 ? (
         <p className='absolute ml-3 -mt-5 text-[#FF0000]'>No hay productos disponibles en la categoría {categoryName}.</p>
       ) : (
-        <ul className="grid place-items-center gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+        <ul className=" grid place-items-center gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
   {searchedProducts.map(product => (
-    <li key={product.id} className="relative bg-white rounded-lg shadow-md w-[320px] sm:w-[285px] md:w-full">
+    <li key={product.id} className="relative h-full w-full">
       {/* Superposición para productos agotados */}
       {!product.inStock && (
-        <div className="absolute inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-10 rounded-lg cursor-not-allowed">
+        <div className="absolute  inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-10 rounded-lg cursor-not-allowed">
           <p className="text-white text-xl font-bold">Producto agotado</p>
         </div>
       )}
-
-      <div className="overflow-hidden h-full rounded-t-lg">
-        <img src={product.image} alt={product.name} className="image-offer w-full h-60 rounded-t-lg" />
-      </div>
-      <div className="description flex flex-col justify-between h-[170px] p-4">
+      
+    <div className=" flex flex-col h-full bg-white rounded-lg shadow-md    max-w-[340px] mx-auto">
+<div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-t-lg ">
+                <img 
+                  src={product.image} 
+                  alt={product.name} 
+                  className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110" 
+                />
+              </div>
+      <div className="description flex flex-col justify-between flex-grow p-3">
         <h3 className="text-lg font-bold">{product.name}</h3>
         <p>Precio: {product.price} USD</p>
 
@@ -87,6 +87,7 @@ const CategoryPage = ({ handleAddToCart }) => {
           <FontAwesomeIcon className='text-[#FFFFF] mr-2' icon={faShoppingCart} size="1x" />
           Añadir al Carrito
         </button>
+      </div>
       </div>
     </li>
   ))}

@@ -7,34 +7,36 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 // Componente de tarjeta de oferta
 const OfferCard = ({ product, addToCart }) => (
-  
   <div
   data-aos="fade-up" 
   data-aos-duration="600"
-  className='items-center'
+  className='w-full px-1'
   >
-
-    <div
-        className="bg-[#FFFFFF]  rounded-lg shadow-md mx-3 card-contain "
-        
-        
-        
-        > 
-        <div className="image-contain h-full rounded-t-lg"
-            >
-            <img src={product.image} alt={product.name} className="image-offer w-full h-60 bg-initial rounded-t-lg " />
+    <div className="bg-[#FFFFFF] rounded-lg shadow-md flex flex-col h-full max-w-[340px] mx-auto">
+      <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-t-lg">
+        <img 
+          src={product.image} 
+          alt={product.name} 
+          className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110" 
+        />
+      </div>
+      <div className="p-3 flex flex-col justify-between flex-grow">
+        <h2 className="text-base font-bold mb-2">{product.name}</h2>
+        <div className="flex justify-between items-center mt-auto">
+          <span className="text-[#FF0000] font-bold text-[1.1em]">{product.price} USD</span>
+          <button 
+            onClick={() => addToCart(product)} 
+            className="text-[#41C9E2] hover:text-[#008DDA]"
+          >
+            <FontAwesomeIcon 
+              icon={faShoppingCart}  
+              style={{ fontSize: '20px' }}
+            />
+          </button>
         </div>
-        <div className="description p-2 relative rounded-lg">
-            <h2 className="text-lg font-bold mt-2">{product.name}</h2>
-            <span className="text-[#FF0000] font-bold text-[1.2em]">{product.price} USD</span>
-            <div href="#" className="absolute right-2 bottom-2 block md:inline-block">
-            <button onClick={() => addToCart(product)} className="absolute right-2 bottom-2 block md:inline-block">
-                    <FontAwesomeIcon className='hover:text-[#008DDA] text-[#41C9E2]' icon={faShoppingCart}  style={{ fontSize: '24px' }}/>
-                </button>
-            </div>
-        </div>
+      </div>
     </div>
-                </div>
+  </div>
 );
 
 OfferCard.propTypes = {

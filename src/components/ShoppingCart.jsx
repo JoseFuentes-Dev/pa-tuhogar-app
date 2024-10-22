@@ -44,14 +44,14 @@ const ShoppingCart = ({ cart, setCart, closeCart }) => {
   };
 
   return (
-    <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-70 z-50 ">
-      <div className="relative bg-white rounded-lg shadow-lg w-full max-w-md p-6 z-10 animate-slideDown h-[580px] flex flex-col justify-between">
+    <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-70 z-50 p-2 ">
+      <div className="relative bg-white rounded-lg shadow-lg w-full max-w-md p-6 z-10 animate-slideDown h-full sm:h-[590px] flex flex-col justify-between">
         {/* Botón de cerrar */}
         <button onClick={closeCart} className="absolute top-3 right-3 text-red-600 text-2xl transition-transform transform hover:scale-110 ">
           <FontAwesomeIcon icon={faTimes} />
         </button>
 
-        <h2 className="text-2xl font-bold text-[#008DDA] mb-4">Carrito de Compras</h2>
+        <h2 className="text-2xl  font-bold text-[#008DDA] mb-4">Carrito de Compras</h2>
 
         {cart.length === 0 ? (
           <div className="contain-cart flex  flex-col items-center">
@@ -62,16 +62,16 @@ const ShoppingCart = ({ cart, setCart, closeCart }) => {
         ) : (
           <ul className="space-y-4 h-full">
             {cart.map(product => (
-              <li key={product.id} className="flex justify-between items-center border-b pb-2">
+              <li key={product.id} className="flex flex-col sm:flex-row justify-between items-center  border-b pb-2">
                 <div>
-                  <p className="text-lg font-medium">{product.name}</p>
-                  <p className="text-gray-600">${product.price.toFixed(2)} x {product.quantity}</p>
+                  <p className="text-[1em] font-medium ">{product.name}</p>
+                  <p className="text-gray-600 text-center mb-1 sm:text-left sm:mb-0">${product.price.toFixed(2)} x {product.quantity}</p>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center ">
                   {/* Botón para reducir cantidad */}
                   <button
                     onClick={() => product.quantity > 1 && updateQuantity(product.id, product.quantity - 1)}
-                    className={`text-white p-2 rounded hover:bg-[#41C9E2] ${product.quantity === 1 ? 'bg-gray-300 cursor-not-allowed' : 'bg-[#008DDA]'}`}
+                    className={`text-white p-2  rounded hover:bg-[#41C9E2] ${product.quantity === 1 ? 'bg-gray-300 cursor-not-allowed' : 'bg-[#008DDA]'}`}
                     disabled={product.quantity === 1} // Deshabilitar el botón si la cantidad es 1
                   >
                     <FontAwesomeIcon icon={faMinus} />
@@ -92,7 +92,7 @@ const ShoppingCart = ({ cart, setCart, closeCart }) => {
                   {/* Botón para eliminar producto */}
                   <button
                     onClick={() => removeFromCart(product.id)}
-                    className="ml-4 bg-red-500 text-white p-2 rounded hover:bg-red-600">
+                    className="ml-3 bg-red-500 text-white p-2 rounded hover:bg-red-600">
                     <FontAwesomeIcon icon={faTrash} />
                   </button>
                 </div>
