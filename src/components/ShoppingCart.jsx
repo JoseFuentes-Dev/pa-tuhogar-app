@@ -64,7 +64,7 @@ const ShoppingCart = ({ cart, setCart, closeCart }) => {
             {cart.map(product => (
               <li key={product.id} className="flex flex-col sm:flex-row justify-between items-center  border-b pb-2">
                 <div>
-                  <p className="text-[1em] font-medium ">{product.name}</p>
+                  <p className="text-[1em] font-medium text-center sm:text-left ">{product.name}</p>
                   <p className="text-gray-600 text-center mb-1 sm:text-left sm:mb-0">${product.price.toFixed(2)} x {product.quantity}</p>
                 </div>
                 <div className="flex items-center ">
