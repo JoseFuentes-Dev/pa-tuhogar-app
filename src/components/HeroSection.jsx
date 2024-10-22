@@ -1,4 +1,3 @@
-
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -83,12 +82,18 @@ const HeroSection = () => {
        
       >
         
-        <motion.h1 className="text-3xl xl:text-4xl font-bold mb-4 bg-white text-black p-2 rounded-lg mx-2"
-         initial="hidden"
-         animate="visible"
-         transition={{ duration: 1 }}
-         variants={titleVariants}>
-          Bienvenido a Pa'tu H <FontAwesomeIcon className={`text-[#FF0000]`} icon={faHeart} size="1x" /> gar
+        <motion.h1 
+          className="flex flex-col sm:flex-row text-3xl xl:text-4xl font-bold mb-4 bg-white text-black p-2 rounded-lg mx-2"
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 1 }}
+          variants={titleVariants}
+        >
+          <span className="sm:hidden">Bienvenido a</span>
+          <span className="hidden sm:inline">Bienvenido a&nbsp;</span>
+          <span>
+            Pa&apos;tu H <FontAwesomeIcon className="text-[#FF0000]" icon={faHeart} size="1x" /> gar
+          </span>
         </motion.h1>
         <motion.p className="text-md p-1 mx-1 xl:text-[1.2em] md:text-[1em] md:p-2 mb-6 bg-white text-black  rounded-lg md:mx-2"
           initial="hidden"

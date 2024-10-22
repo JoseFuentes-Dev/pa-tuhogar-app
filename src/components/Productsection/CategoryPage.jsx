@@ -11,13 +11,18 @@ const CategoryPage = ({ handleAddToCart }) => {
   const location = useLocation(); // Obtener la ubicación actual
   const selectedProduct = location.state?.selectedProduct; // Accede al producto seleccionado
   const [searchTerm, setSearchTerm] = useState('');
+  const [placeholder, setPlaceholder] = useState(`Buscar en ${categoryName}...`);
 
-  // Establecer el término de búsqueda inicial
+  // Establecer el término de búsqueda inicial y el placeholder
   useEffect(() => {
     if (selectedProduct) {
       setSearchTerm(selectedProduct.name); // Establecer el término de búsqueda inicial como el nombre del producto seleccionado
+      setPlaceholder(selectedProduct.name);
+    } else {
+      setSearchTerm('');
+      setPlaceholder(`Buscar en ${categoryName}...`);
     }
-  }, [selectedProduct]);
+  }, [selectedProduct, categoryName]);
 
   // Filtrar productos por categoría
   const filteredProducts = products.filter(product => product.category === categoryName);
@@ -48,7 +53,7 @@ const CategoryPage = ({ handleAddToCart }) => {
       <Searchbarcategori 
         searchTerm={searchTerm} 
         setSearchTerm={(term) => setSearchTerm(term)}
-        placeholder={selectedProduct ? selectedProduct.name : `Buscar en ${categoryName}...`} 
+        placeholder={placeholder}
         handleProductSelect={handleProductSelect} 
       />
 

@@ -47,7 +47,7 @@ const Navbar = ({ cartCount, toggleCart }) => {
 
     return (
         <>
-            <nav className={`menu-principal bg-[#008DDA] w-full flex justify-between items-center fixed top-0 z-50 transition-all duration-500 ease-in-out 
+            <nav className={`p-2 menu-principal bg-[#008DDA] w-full flex justify-between items-center fixed top-0 z-50 transition-all duration-500 ease-in-out 
                 ${isScrolled ? 'h-[50px]' : 'h-20'}`}>
                 <img src={logo} alt="Pa' tu hogar logo" className={`transition-all duration-500 ease-in-out ${isScrolled ? 'h-[50px]' : 'h-20'}`} />
 

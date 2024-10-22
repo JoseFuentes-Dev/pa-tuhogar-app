@@ -22,7 +22,7 @@ const Services = () => {
                     className="service-card w-full h-[400px] sm:h-[250px] xl:h-[320px]"
                     onClick={() => handleClick('Plan Básico', 'Publica 5 productos durante todo el mes.', '1000 CUP/Mes')}
                 >
-                    <h2 className='text-[3em]'>Plan Básico</h2>
+                    <h2 className='text-[3em] bg-gradient-to-t from-white to-[#008DDA] text-transparent bg-clip-text'>Plan Básico</h2>
                     <p className='desc md:text-[1.1em] text-[1.4em] xl:text-[1.4em]'>Publica 5 productos durante todo el mes.</p>
                     <p className='price'>Precio: 1000 CUP/Mes</p>
                 </div>
@@ -32,7 +32,7 @@ const Services = () => {
                     className="service-card w-full h-[400px] sm:h-[250px] xl:h-[320px]"
                     onClick={() => handleClick('Plan Avanzado', 'Publica 10 productos y 1 producto en la sección de ofertas.', '2000 CUP/Mes')}
                 >
-                    <h2 className='text-[3em]'>Plan Avanzado</h2>
+                    <h2 className='text-[3em] bg-gradient-to-t from-white to-[#008DDA] text-transparent bg-clip-text'>Plan Avanzado</h2>
                     <p className='desc md:text-[1.1em] text-[1.4em] xl:text-[1.4em]'>Publica 10 productos y 1 producto en la sección de ofertas.</p>
                     <p className='price '>Precio: 2000 CUP/Mes</p>
                 </div>
@@ -42,7 +42,7 @@ const Services = () => {
                     className="service-card w-full h-[400px] sm:h-[250px] xl:h-[320px]"
                     onClick={() => handleClick('Plan Premium', 'Publica 10 productos, 1 producto en la sección de ofertas y 2 productos en la sección de destacados.', '3000 CUP/Mes')}
                 >
-                    <h2 className='text-[3em]'>Plan Premium</h2>
+                    <h2 className='text-[3em] bg-gradient-to-t from-white to-[#008DDA] text-transparent bg-clip-text'>Plan Premium</h2>
                     <p className='desc md:text-[1.1em] text-[1.4em] xl:text-[1.4em]'>Publica 10 productos, 1 producto en la sección de ofertas y 2 productos en la sección de destacados.</p>
                     <p className='price'>Precio: 3000 CUP/Mes</p>
                 </div>
