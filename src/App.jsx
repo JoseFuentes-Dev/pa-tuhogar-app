@@ -28,25 +28,50 @@ function App() {
       setShowToast(false);
     }, 4000); // Oculta el toast después de 4 segundos
   };
-
-  const handleAddToCart = (product) => {
+  const handleAddToCart = (product, quantity) => {
     setCart((prevCart) => {
-      const isProductInCart = prevCart.find(item => item.id === product.id);
+        // Calcular la cantidad total en el carrito
+        const totalQuantityInCart = prevCart.reduce((acc, item) => acc + item.quantity, 0);
+        
+        // Verificar si se excede el límite total de 5 productos diferentes
+        const uniqueProductsCount = new Set(prevCart.map(item => item.id)).size;
 
-      if (isProductInCart) {
-        return prevCart.map(item =>
-          item.id === product.id ? { ...item, quantity: item.quantity < 5 ? item.quantity + 1 : 5 } : item
-        );
-      }
+        // Verificar si se excede el límite de 5 productos iguales
+        const isProductInCart = prevCart.find(item => item.id === product.id);
+        const currentProductQuantity = isProductInCart ? isProductInCart.quantity : 0;
 
-    if (prevCart.length >= 5) {
-        showTemporaryToast(); // Muestra el mensaje emergente si se alcanzan 5 productos
-        return prevCart; // No agregar más productos
-      }
+        // Si se intenta agregar un nuevo producto diferente
+        if (!isProductInCart) {
+            if (uniqueProductsCount >= 5) {
+                showTemporaryToast(); // Muestra el mensaje si se excede el límite de productos diferentes
+                return prevCart; // No agregar más productos
+            }
+        }
 
-      return [...prevCart, { ...product, quantity: 1 }];
+        // Verificar si se excede el límite de 5 productos iguales
+        if (isProductInCart && currentProductQuantity + quantity > 5) {
+            showTemporaryToast(); // Muestra el mensaje si se excede el límite de productos iguales
+            return prevCart; // No agregar más productos
+        }
+
+        // Verificar si el producto ya está en el carrito
+        if (isProductInCart) {
+            // Si el producto ya está en el carrito, actualiza la cantidad
+            return prevCart.map(item =>
+                item.id === product.id 
+                    ? { 
+                        ...item, 
+                        quantity: Math.min(item.quantity + quantity, 5) // Asegurarse de que no supere 5
+                      } 
+                    : item
+            );
+        }
+
+        // Si el producto no está en el carrito, agregarlo
+        return [...prevCart, { ...product, quantity: Math.min(quantity, 5) }]; // Asegurarse de que no supere 5 al agregar
     });
-  };
+};
+
 
   const toggleCart = () => {
     setIsCartOpen(prev => !prev);
@@ -62,12 +87,17 @@ function App() {
         <span id='top'></span>
         <Navbar toggleCart={toggleCart} cartCount={cart.reduce((acc, item) => acc + item.quantity, 0)} />
         {isCartOpen && (
-            <ShoppingCart cart={cart} setCart={setCart} closeCart={closeCart} />
+          <ShoppingCart 
+            cart={cart} 
+            setCart={setCart} 
+            closeCart={closeCart} 
+            showToast={showToast} // Pasar la función de mostrar toast
+          />
         )}
-      
+        
         {showToast && (
           <div className="toast-message">
-            No puedes agregar más de 5 productos distintos al carrito.
+            No puedes agregar más de 5 productos al carrito.
           </div>
         )}
         

@@ -2,7 +2,7 @@ import  { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useParams, useNavigate } from 'react-router-dom'; // Importa el hook para obtener parámetros de la URL y navegar
 
-const ProductDetail = ({ products, addToCart }) => {
+const ProductDetail = ({ products, addToCart, cart = [] }) => {
   const { id } = useParams(); // Obtiene el id desde la URL
   const product = products.find((item) => item.id === parseInt(id)); // Busca el producto por id
   const navigate = useNavigate(); // Hook para navegar a la página anterior
@@ -25,6 +25,15 @@ const ProductDetail = ({ products, addToCart }) => {
   const createWhatsAppMessage = () => {
     const domicilio = product.domicilio ? 'incluido' : 'no incluido';
     return `¡Hola! Estoy interesado en comprar **${quantity} unidad(es)** de **${product.name}**. \n\nDetalles:\n- Domicilio: ${domicilio}\n- Garantía: ${product.garantia ? 'Incluida' : 'No incluida'}\n\nEl precio total es **${product.price * quantity} USD**.`;
+  };
+
+  const handleAddToCart = () => {
+    const totalQuantityInCart = cart.reduce((acc, item) => acc + item.quantity, 0);
+    if (totalQuantityInCart + quantity > 5) {
+      showTemporaryToast(); // Muestra el mensaje si se excede el límite
+    } else {
+      addToCart(product, quantity); // Agrega al carrito con la cantidad seleccionada
+    }
   };
 
   return (
@@ -78,7 +87,7 @@ const ProductDetail = ({ products, addToCart }) => {
           Comprar Ahora
         </button>
         <button 
-          onClick={() => addToCart(product, quantity)} 
+          onClick={handleAddToCart} 
           className="mt-2 bg-yellow-500 text-white font-bold py-2 rounded hover:bg-yellow-600"
         >
           Agregar al Carrito
