@@ -40,22 +40,22 @@ export const products = [
         image: ventiladormilexus, garantia: false, domicilio: false, description: 'Ventiladores recargables, Ventilador recargable, Marca Milexus de 16 pulgadas, Batería de litio , alumbran y traen puerto USB para cargar, colores: Blancos y Negros', inStock: true, offer:true, },
     
     { id: 2, name: 'Neveras', category: 'Refrigeración',  price: 480,
-            image: nevera7pies, garantia: false, domicilio: true, description: 'Neveras, tamaño: 7.5 pies, color: Blanco', inStock: false, },
+            image: nevera7pies, garantia: false, domicilio: true, description: 'Neveras, tamaño: 7.5 pies, color: Blanco', inStock: false,  featured:true },
     
     { id: 3, name: 'Turbina', category: 'Otros Equipos',  price: 60,
-                image: turbina, garantia: false , domicilio: false, description: 'Turbina de 1/2 HP, color: Azul', inStock: false,offer: true, },
+                image: turbina, garantia: false , domicilio: false, description: 'Turbina de 1/2 HP, color: Azul', inStock: false,offer: true,  featured:true},
     
     { id: 4, name: 'Licuadora + Termo', category: 'Para tu Cocina',  price: 70,
-                    image: batidoratermo, garantia: false, domicilio: false, description: 'Batidoras + Termo, Licuadora con vaso de cristal, colores: Negro, Azul, Rojo', inStock: true, },
+                    image: batidoratermo, garantia: false, domicilio: false, description: 'Batidoras + Termo, Licuadora con vaso de cristal, colores: Negro, Azul, Rojo', inStock: true, featured:true },
     
     { id: 5, name: 'Lavadora EKO', category: 'Otros Equipos',  price: 430,
-                        image: lavadoraeko, garantia: false, domicilio: true, description: 'Lavadora EKO 9kg Automatica, color: blanco', inStock: false, },
+                        image: lavadoraeko, garantia: false, domicilio: true, description: 'Lavadora EKO 9kg Automatica, color: blanco', inStock: false, featured:true },
     
     { id: 6, name: 'Lavadora Milexus', category: 'Otros Equipos',  price: 300,
-                            image: lavadoramilexus, garantia: false, domicilio: true, description: 'Lavadora Semi-automática con secadora de 7kg, color: blanco', inStock: false, offer: true, },
+                            image: lavadoramilexus, garantia: false, domicilio: true, description: 'Lavadora Semi-automática con secadora de 7kg, color: blanco', inStock: false, offer: true, featured:true },
     
      { id: 7, name: 'Olla de Presión 7 litros', category: 'Para tu Cocina',  price: 70,
-                                image: olladepresionlotus, garantia: false, domicilio: false, description: 'Olla de Presión de 3 Válvulas, marca: Lotus, capacidad: 7 litros', inStock: true, },
+                                image: olladepresionlotus, garantia: false, domicilio: false, description: 'Olla de Presión de 3 Válvulas, marca: Lotus, capacidad: 7 litros', inStock: true, featured:true },
     
      { id: 8, name: 'Olla de Presión 6 litros', category: 'Para tu Cocina',  price: 65,
                                     image: olladepresioneko, garantia: false, domicilio: false, description: 'Olla de Presión 1 Valvula, marca: EKO, capacidad: 6 litros', inStock: true, offer: true,},
@@ -76,13 +76,13 @@ export const products = [
                                                         image: ciclondepared, garantia: false, domicilio: false, description: 'Ventiladores Ciclones de Pared, ventilador ciclon, marca: Milexus, color: Negro', inStock: true, },
    
     { id: 14, name: 'Televisor 32 pulgadas', category: 'TV & Equipos',  price: 290,
-                                                            image: tv32pulgadaskodak, garantia: false, domicilio: false, description: 'Smart TV, tamaño: 32 pulgadas, marca: KODAK', inStock: false, },
+                                                            image: tv32pulgadaskodak, garantia: false, domicilio: false, description: 'Smart TV, tamaño: 32 pulgadas, marca: KODAK', inStock: false, featured:true },
        
      { id: 15, name: 'Televisor 43 pulgadas', category: 'TV & Equipos',  price: 380,
-                                                                image: tv43pulgadaskodak, garantia: false, domicilio: false, description: 'Smart TV, tamaño: 43 pulgadas, marca: KODAK', inStock: false, offer: true,},
+                                                                image: tv43pulgadaskodak, garantia: false, domicilio: false, description: 'Smart TV, tamaño: 43 pulgadas, marca: KODAK', inStock: false, offer: true, featured:true},
    
     { id: 16, name: 'Televisor 50 pulgadas', category: 'TV & Equipos',  price: 500,
-                                                                    image: tv50pulgadas, garantia: false, domicilio: false, description: 'Smart TV, tamaño: 50 pulgadas, marca: EKO', inStock: false, offer: true,},
+                                                                    image: tv50pulgadas, garantia: false, domicilio: false, description: 'Smart TV, tamaño: 50 pulgadas, marca: EKO', inStock: false, offer: true, featured:true},
       
     { id: 17, name: 'Split', category: 'Climatización',  price: 430,
                                                                         image: split1t, garantia: false, domicilio: true, description: 'Split 1 Tonelada, marca: Milexus', inStock: true, offer: true, },
