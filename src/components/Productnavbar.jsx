@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ProductList = ({ handleCategoryClick }) => {
   return (
-    <ul>
+    <ul className='flex flex-col md:gap-1 gap-4'>
       <li className='py-1 px-2 hover:bg-[#ACE2E1]'>
         <Link to="/Productsection/Climatización"  onClick={handleCategoryClick}>Climatización</Link>
       </li>
