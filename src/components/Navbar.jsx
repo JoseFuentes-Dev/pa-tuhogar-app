@@ -70,13 +70,13 @@ const Navbar = ({ cartCount, toggleCart }) => {
                             />
                         </a>
 
-                        <ul className={`z-30 productos-menu absolute w-[180px] md:group-hover:block hidden bg-white text-black mt-0 p-4 rounded-lg shadow-lg top-full`}>
+                        <ul className={`z-30  productos-menu absolute w-[180px] md:group-hover:block hidden bg-[#F7EEDD] text-black mt-0 p-4 rounded-lg shadow-lg top-full`}>
                             <Productnavbar handleCategoryClick={handleCategoryClick} />
                         </ul>
                     </li>
 
                     {isProductsOpen && (
-                        <ul className='z-30 productos-menu flex flex-col items-center md:hidden bg-[#008DDA] text-[#ffff] mt-1 p-2 rounded-lg w-full'>
+                        <ul className='z-30 productos-menu flex flex-col items-center md:hidden bg-[#41C9E2] text-[#ffff] mt-1 p-2 rounded-lg w-full'>
                             <Productnavbar handleCategoryClick={handleCategoryClick} />
                         </ul>
                     )}
@@ -94,7 +94,7 @@ const Navbar = ({ cartCount, toggleCart }) => {
                         <a onClick={toggleCart} className="mr-2 px-4 py-2 block md:inline-block">
                             <FontAwesomeIcon className='hover:text-[#ACE2E1]' icon={faShoppingCart} size="1x" />
                             {cartCount > 0 && (
-                                <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex justify-center items-center">
+                                <span className="absolute top-0 right-0 bg-[#FFA500] text-white rounded-full text-xs w-5 h-5 flex justify-center items-center">
                                     {cartCount}
                                 </span>
                             )}

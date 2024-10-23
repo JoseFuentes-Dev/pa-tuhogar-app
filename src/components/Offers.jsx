@@ -29,7 +29,7 @@ const OfferCard = ({ product, addToCart }) => {
           <div className="flex justify-between items-center mt-auto">
             <span className="text-[#FF0000] font-bold text-[1.1em]">{product.price} USD</span>
             <button className="text-[#41C9E2] hover:text-[#008DDA]" onClick={() => addToCart(product, 1)} >
-              <FontAwesomeIcon icon={faShoppingCart} style={{ fontSize: '20px' }} />
+              <FontAwesomeIcon icon={faShoppingCart} style={{ fontSize: '25px' }} />
             </button>
           </div>
         </div>
