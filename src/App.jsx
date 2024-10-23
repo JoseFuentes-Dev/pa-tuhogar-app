@@ -11,16 +11,15 @@ import About from './components/About';
 import Home from './Home';
 import Services from './components/Services';
 import CategoryPage from './components/Productsection/CategoryPage';
+import ProductDetail from './components/ProductDetail'; // Asegúrate de importar ProductDetail
+import { products } from './components/ProductList';
+
 AOS.init();
-
-
-
 
 function App() {
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-
-  const [showToast, setShowToast] = useState(false); // Estado del toast
+  const [showToast, setShowToast] = useState(false); 
 
   // Función para mostrar el toast temporalmente
   const showTemporaryToast = () => {
@@ -40,7 +39,7 @@ function App() {
         );
       }
 
-      if (prevCart.length >= 5) {
+    if (prevCart.length >= 5) {
         showTemporaryToast(); // Muestra el mensaje emergente si se alcanzan 5 productos
         return prevCart; // No agregar más productos
       }
@@ -49,19 +48,16 @@ function App() {
     });
   };
 
-
   const toggleCart = () => {
-      setIsCartOpen(prev => !prev);
+    setIsCartOpen(prev => !prev);
   };
 
   const closeCart = () => {
-      setIsCartOpen(false);
+    setIsCartOpen(false);
   };
   
-  
-
   return (
-    <div className="min-h-screen flex flex-col overflow-x-hidden"> {/* Añadido overflow-x-hidden */}
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
       <Router basename='/pa-tuhogar-app/'>
         <span id='top'></span>
         <Navbar toggleCart={toggleCart} cartCount={cart.reduce((acc, item) => acc + item.quantity, 0)} />
@@ -79,11 +75,17 @@ function App() {
         <div className="flex-grow"> 
           <Routes>
             <Route path="/" element={<Home handleAddToCart={handleAddToCart} />} />
-            <Route path="/Productsection/:categoryName" element={<CategoryPage handleAddToCart={handleAddToCart} />} />
-            <Route path="/contact" element={<Contact />} /> {/* Agregada la ruta de contacto */}
-            <Route path="/about" element={<About />} /> {/* Agregada la ruta de contacto */}
+            <Route 
+              path="/Productsection/:categoryName" 
+              element={<CategoryPage handleAddToCart={handleAddToCart} />} 
+            />
+            <Route 
+              path="/product/:id" // Ruta para ProductDetail
+              element={<ProductDetail products={products} addToCart={handleAddToCart} />} 
+            />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
-
           </Routes>
         </div>
 

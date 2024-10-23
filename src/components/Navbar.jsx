@@ -3,14 +3,13 @@ import logo from '../assets/images/logo.jpeg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import Productnavbar from './Productnavbar';
-import { Link } from 'react-router-dom'; 
-import { useLocation } from 'react-router-dom'; // Importa el hook
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = ({ cartCount, toggleCart }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isProductsOpen, setIsProductsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-    const location = useLocation(); // Hook para detectar el cambio de rutas
+    const location = useLocation();
 
     const toggleMobileMenu = () => {
         setIsOpen(!isOpen);
@@ -40,7 +39,6 @@ const Navbar = ({ cartCount, toggleCart }) => {
         };
     }, []);
 
-    // Cierra el menú móvil cada vez que cambia la ruta
     useEffect(() => {
         setIsOpen(false);
     }, [location]);
@@ -105,7 +103,6 @@ const Navbar = ({ cartCount, toggleCart }) => {
                 </ul>
             </nav>
 
-            {/* Espaciador para evitar que el contenido quede detrás de la barra de navegación */}
             <div className='h-20'></div>
         </>
     );

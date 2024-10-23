@@ -6,7 +6,7 @@ import FeaturedProducts from './components/FeaturedProducts';
 import Testimonials from './components/Testimonials';
 import BusinessPromo from './components/BusinessPromo';
 import SearchBar from './components/Searchbar';
-import { productsoffers } from './components/Productoffers';
+import { products } from './components/ProductList';
 import { productsdestacados } from './components/Productdestacados';
 import PropTypes from 'prop-types';
 
@@ -23,7 +23,7 @@ const Home = ({ handleAddToCart }) => {
           </section>
         </div>
       
-      <Offers products={productsoffers} onAddToCart={handleAddToCart} />
+      <Offers products={products} onAddToCart={handleAddToCart} />
       <FeaturedProducts products={productsdestacados} onAddToCart={handleAddToCart} />
       <Testimonials />
     </main>

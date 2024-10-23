@@ -37,13 +37,13 @@ import fogonelectrico from '../assets/images/Productos/fogonelectrico.jpg';
 
 export const products = [
     { id: 1, name: 'Ventiladores Recargables', category: 'Climatización',  price: 91,
-        image: ventiladormilexus, garantia: 'No cuenta con garantia', domicilio: '500 cup', description: 'Ventiladores recargables, Ventilador recargable, Marca Milexus de 16 pulgadas, Batería de litio , alumbran y traen puerto USB para cargar, colores: Blancos y Negros', inStock: true, },
+        image: ventiladormilexus, garantia: 'No cuenta con garantia', domicilio: '500 cup', description: 'Ventiladores recargables, Ventilador recargable, Marca Milexus de 16 pulgadas, Batería de litio , alumbran y traen puerto USB para cargar, colores: Blancos y Negros', inStock: true, offer:true, },
     
     { id: 2, name: 'Neveras', category: 'Refrigeración',  price: 480,
             image: nevera7pies, garantia: '-', domicilio: 'Incluido', description: 'Neveras, tamaño: 7.5 pies, color: Blanco', inStock: false, },
     
     { id: 3, name: 'Turbina', category: 'Otros Equipos',  price: 60,
-                image: turbina, garantia: '-', domicilio: '-', description: 'Turbina de 1/2 HP, color: Azul', inStock: false, },
+                image: turbina, garantia: '-', domicilio: '-', description: 'Turbina de 1/2 HP, color: Azul', inStock: false,offer: true, },
     
     { id: 4, name: 'Licuadora + Termo', category: 'Para tu Cocina',  price: 70,
                     image: batidoratermo, garantia: '-', domicilio: '500', description: 'Batidoras + Termo, Licuadora con vaso de cristal, colores: Negro, Azul, Rojo', inStock: true, },
@@ -52,13 +52,13 @@ export const products = [
                         image: lavadoraeko, garantia: '-', domicilio: 'Incluido', description: 'Lavadora EKO 9kg Automatica, color: blanco', inStock: false, },
     
     { id: 6, name: 'Lavadora Milexus', category: 'Otros Equipos',  price: 300,
-                            image: lavadoramilexus, garantia: '-', domicilio: 'Incluido', description: 'Lavadora Semi-automática con secadora de 7kg, color: blanco', inStock: false, },
+                            image: lavadoramilexus, garantia: '-', domicilio: 'Incluido', description: 'Lavadora Semi-automática con secadora de 7kg, color: blanco', inStock: false, offer: true, },
     
      { id: 7, name: 'Olla de Presión 7 litros', category: 'Para tu Cocina',  price: 70,
                                 image: olladepresionlotus, garantia: '-', domicilio: '500', description: 'Olla de Presión de 3 Válvulas, marca: Lotus, capacidad: 7 litros', inStock: true, },
     
      { id: 8, name: 'Olla de Presión 6 litros', category: 'Para tu Cocina',  price: 65,
-                                    image: olladepresioneko, garantia: '-', domicilio: '500', description: 'Olla de Presión 1 Valvula, marca: EKO, capacidad: 6 litros', inStock: true, },
+                                    image: olladepresioneko, garantia: '-', domicilio: '500', description: 'Olla de Presión 1 Valvula, marca: EKO, capacidad: 6 litros', inStock: true, offer: true,},
     
      { id: 9, name: 'Olla de Presión 5 litros', category: 'Para tu Cocina',  price: 53,
                                         image: olladepresionsaco, garantia: '-', domicilio: '500', description: 'Olla de Presión de 3 Válvulas, marca: SACO, capacidad: 5 litros', inStock: false, },
@@ -67,7 +67,7 @@ export const products = [
                                             image: ollareinasaco, garantia: '-', domicilio: '500', description: 'Olla Reina, marca: SACO, capacidad: 7 litros, color: Negro', inStock: false, },
      
      { id: 11, name: 'Olla Arrocera', category: 'Para tu Cocina',  price: 50,
-                                                image: ollaarrocera, garantia: '-', domicilio: '500', description: 'Olla arrocera, marca: EKO, capacidad: 1.8 litros, color: Blanco', inStock: false, },
+                                                image: ollaarrocera, garantia: '-', domicilio: '500', description: 'Olla arrocera, marca: EKO, capacidad: 1.8 litros, color: Blanco', inStock: false, offer: true, },
    
     { id: 12, name: 'Televisor 32 pulgadas', category: 'TV & Equipos',  price: 190,
                                                     image: tv32rca, garantia: 'No cuenta con garantia', domicilio: 'No cuenta con domicilio', description: 'Smart TV, tamaño: 32 pulgadas, marca: RCA, de uso impecable', inStock: true, },
@@ -79,25 +79,25 @@ export const products = [
                                                             image: tv32pulgadaskodak, garantia: '-', domicilio: '-', description: 'Smart TV, tamaño: 32 pulgadas, marca: KODAK', inStock: false, },
        
      { id: 15, name: 'Televisor 43 pulgadas', category: 'TV & Equipos',  price: 380,
-                                                                image: tv43pulgadaskodak, garantia: '-', domicilio: '-', description: 'Smart TV, tamaño: 43 pulgadas, marca: KODAK', inStock: false, },
+                                                                image: tv43pulgadaskodak, garantia: '-', domicilio: '-', description: 'Smart TV, tamaño: 43 pulgadas, marca: KODAK', inStock: false, offer: true,},
    
     { id: 16, name: 'Televisor 50 pulgadas', category: 'TV & Equipos',  price: 500,
-                                                                    image: tv50pulgadas, garantia: '-', domicilio: '-', description: 'Smart TV, tamaño: 50 pulgadas, marca: EKO', inStock: false, },
+                                                                    image: tv50pulgadas, garantia: '-', domicilio: '-', description: 'Smart TV, tamaño: 50 pulgadas, marca: EKO', inStock: false, offer: true,},
       
     { id: 17, name: 'Split', category: 'Climatización',  price: 430,
-                                                                        image: split1t, garantia: '-', domicilio: 'Incluido', description: 'Split 1 Tonelada, marca: Milexus', inStock: true, },
+                                                                        image: split1t, garantia: '-', domicilio: 'Incluido', description: 'Split 1 Tonelada, marca: Milexus', inStock: true, offer: true, },
          
     { id: 18, name: 'Sandwisheras', category: 'Para tu Cocina',  price: 45,
-                                                                            image: sandwishera, garantia: '-', domicilio: '500', description: 'Sandwisheras, marca:OSKA', inStock: false, },
+                                                                            image: sandwishera, garantia: '-', domicilio: '500', description: 'Sandwisheras, marca:OSKA', inStock: false, offer: true, },
                                                                            
   { id: 19, name: 'Motorina Yamaki', category: 'Transporte',  price: 2500,
-                                                                                image: motorinayamaki, garantia: '-', domicilio: '-', description: 'Motorina Yamaki, Batería: 72v 35 Amp', inStock: false, },
+                                                                                image: motorinayamaki, garantia: '-', domicilio: '-', description: 'Motorina Yamaki, Batería: 72v 35 Amp', inStock: false, offer: true, },
     
  { id: 20, name: 'Maquina de Refrigeración', category: 'Refrigeración',  price: 140,
                                                                                 image: maquinaderefrigeracion, garantia: '-', domicilio: '-', description: 'Maquina de frio y nevera, Maquina de Nevera, Maquina de Refrigerador', inStock: false, },
       
 { id: 21, name: 'Planta eléctrica ', category: 'Otros Equipos',  price: 450,
-                                                                                    image: planta1200W, garantia: '-', domicilio: '-', description: 'Planta eléctrica, 1200W', inStock: true, },
+                                                                                    image: planta1200W, garantia: '-', domicilio: '-', description: 'Planta eléctrica, 1200W', inStock: true, offer: true,},
         
 { id: 22, name: 'Mini Refrigerador 3.5 pies', category: 'Refrigeración',  price: 350,
                                                                                         image: minibar3pies, garantia: '-', domicilio: 'Incluido', description: 'Mini Frio, Mini bar, marca: Hisense, tamaño: 3.1 pies, color: Gris',inStock: true, },
