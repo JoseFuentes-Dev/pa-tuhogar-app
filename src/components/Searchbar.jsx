@@ -83,11 +83,11 @@ const SearchBar = () => {
         {isVisible && (
           <div className="wrapper absolute left-20 top-3" style={{ pointerEvents: 'none' }}>
             <div className="words">
-              <span>Climatización</span>
+              <span>Split</span>
               <span>Refrigeración</span>
-              <span>Para tu Cocina</span>
+              <span>Ollas</span>
               <span>TV & Equipos</span>
-              <span>Climatización</span>
+              <span>Split</span>
             </div>
           </div>
         )}
@@ -95,7 +95,7 @@ const SearchBar = () => {
 
       <div className="w-full mt-1 max-w-4xl relative ">
         {filteredProducts.length > 0 ? (
-          <ul className="product-list rounded-lg bg-white absolute z-50 w-full">
+          <ul className="product-list rounded-lg bg-[#F7EEDD] absolute z-50 w-full">
             {filteredProducts.map(product => (
               <li
                 key={product.id}
@@ -107,7 +107,7 @@ const SearchBar = () => {
             ))}
           </ul>
         ) : (
-          noResults && <p className='absolute ml-3 text-[#FF0000]'>No se encontraron coincidencias</p>
+          noResults && <p className='err-message absolute ml-3 text-[#FF0000]'>No se encontraron coincidencias</p>
         )}
       </div>
     </div>

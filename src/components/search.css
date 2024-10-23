@@ -1,11 +1,13 @@
+
 .contain-input{
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 .wrapper{
   box-sizing: content-box;
   height: 40px;
   display: flex;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  color: #008DDA;
  }
 .words{
   overflow: hidden;
@@ -18,6 +20,9 @@
   animation: spin_words 9s infinite;
   font-size: 1.2em;
 
+}
+.err-message{
+  font-family: 'Open Sans', sans-serif;
 }
 
 
