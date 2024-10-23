@@ -55,7 +55,7 @@ const Navbar = ({ cartCount, toggleCart }) => {
                     </button>
                 </div>
 
-                <ul className={`z-40 flex flex-col bg-[#008DDA] items-center md:flex-row md:items-center text-white md:static absolute  md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-9 transition-all duration-500 ease-in-out  ${isOpen ? 'top-10' : 'top-[-490px]'}`}>
+                <ul className={`z-40 flex flex-col bg-[#008DDA] items-center md:flex-row md:items-center text-white md:static absolute  md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-9 gap-3 transition-all duration-500 ease-in-out  ${isOpen ? 'top-10' : 'top-[-490px]'}`}>
                     <li>
                         <Link to="/" className='cursor-pointer hover:text-[#ACE2E1] text-white px-3 py-2 block md:inline-block'>Inicio</Link>
                     </li>
