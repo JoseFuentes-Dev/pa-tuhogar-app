@@ -27,7 +27,7 @@ const HeroSection = () => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 1200,
+    speed: 2000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
@@ -39,8 +39,8 @@ const HeroSection = () => {
 
   // Definición de las variantes de animación
   const slideVariants = {
-    hidden: { opacity: 0, scale: 1.2 },
-    visible: { opacity: 1, scale: 1 },
+    hidden: { opacity: 0, scale: 1.2, filter: 'blur(100px)' }, // Agregado efecto de desenfoque
+    visible: { opacity: 1, scale: 1, filter: 'blur(0px)' }, // Agregado efecto de desenfoque
   };
 
   const titleVariants = {
@@ -86,7 +86,7 @@ const HeroSection = () => {
       >
         
         <motion.h1 
-          className="flex flex-col xl:flex-row text-4xl sm:text-5xl font-bold mb-4 bg-white text-black p-2 rounded-lg mx-2"
+          className="title flex flex-col xl:flex-row text-4xl sm:text-5xl font-bold mb-4 bg-white text-black p-3 rounded-lg"
           initial="hidden"
           animate="visible"
           transition={{ duration: 1 }}
@@ -98,7 +98,7 @@ const HeroSection = () => {
             Pa&apos;tu H <FontAwesomeIcon className="text-[#FF0000]" icon={faHeart} size="1x" /> gar
           </span>
         </motion.h1>
-        <motion.p className="text-[1.1em]  mx-5 xl:text-[1.2em]  p-2 mb-6 bg-white text-black  rounded-lg "
+        <motion.p className="text-[1.1em]  xl:text-[1.2em]  p-3 mb-4 bg-white text-black  rounded-lg "
           initial="hidden"
           animate="visible"
           transition={{ duration: 1, delay: 0.5 }}
@@ -112,7 +112,7 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 1 }}
           variants={buttonVariants}
         >
-        <Link to="ofertas" smooth="true" duration={700} className="bg-[#ACE2E1] text-black px-6 py-1  hover:bg-[#41C9E2] flex flex-col items-center cursor-pointer rounded-lg">
+        <Link to="ofertas" smooth="true" duration={700} className="bg-[#ACE2E1] text-black px-6 py-2 hover:bg-[#41C9E2] flex flex-col items-center cursor-pointer rounded-lg transform transition-transform duration-300 hover:scale-105">
           <label className='hero-label text-[1em] cursor-pointer '>Ver Productos</label>
           <FontAwesomeIcon className='hero-chevron -mt-2 cursor-pointer text-[#008DDA]' icon={faChevronDown} size="2x" />
         </Link>

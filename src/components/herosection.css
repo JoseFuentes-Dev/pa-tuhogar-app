@@ -4,6 +4,12 @@ animation: chevron_moved 2s infinite;
 .hero-label{
     cursor: pointer;
 }
+.title{
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4); 
+   font-family: 'Montserrat', sans-serif;
+   letter-spacing: 2px;
+
+}
 
 @keyframes chevron_moved{
     0%{
