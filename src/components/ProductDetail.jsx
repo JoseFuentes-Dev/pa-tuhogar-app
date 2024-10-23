@@ -35,7 +35,6 @@ const ProductDetail = ({ products, addToCart, cart = [] }) => {
       addToCart(product, quantity); // Agrega al carrito con la cantidad seleccionada
     }
   };
-
   return (
     <div className="flex flex-col md:flex-row md:max-w-2xl mx-auto p-5 bg-white shadow-lg rounded-lg">
       <div className="md:w-1/2 flex flex-col items-center mb-4 md:mb-0">
@@ -43,7 +42,7 @@ const ProductDetail = ({ products, addToCart, cart = [] }) => {
         <h1 className="mt-3 text-xl font-bold text-center">{product.name}</h1>
         <button 
           className="mt-3 text-blue-500 underline" 
-          onClick={() => navigate(-1)} // Navega a la página anterior
+          onClick={() =>  navigate(`/Productsection/${product.category}`)} // Navega a la página anterior
         >
           Volver Atrás
         </button>

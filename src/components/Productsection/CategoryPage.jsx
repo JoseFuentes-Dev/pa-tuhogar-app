@@ -1,6 +1,6 @@
 // CategoryPage.js
 import { useState, useEffect } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import { products } from '../ProductList';
 import Searchbarcategori from './Searchbarcategori';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,17 +12,29 @@ const CategoryPage = ({ handleAddToCart }) => {
   const selectedProduct = location.state?.selectedProduct; // Accede al producto seleccionado
   const [searchTerm, setSearchTerm] = useState('');
   const [placeholder, setPlaceholder] = useState(`Buscar en ${categoryName}...`);
+  const navigate = useNavigate();
+
+  
+  
 
   // Establecer el término de búsqueda inicial y el placeholder
   useEffect(() => {
     if (selectedProduct) {
       setSearchTerm(selectedProduct.name); // Establecer el término de búsqueda inicial como el nombre del producto seleccionado
-      setPlaceholder(selectedProduct.name);
+     
     } else {
       setSearchTerm('');
       setPlaceholder(`Buscar en ${categoryName}...`);
     }
   }, [selectedProduct, categoryName]);
+
+ 
+
+  const createWhatsAppMessage = (product) => {
+  
+ return  `¡Hola! Estoy interesado en comprar  **${product.name}**. \n\nDetalles:\n- Domicilio: ${product.domicilio  ? 'incluido' : 'no incluido' }\n- Garantía: ${product.garantia ? 'Incluida' : 'No incluida'}\n\nEl precio total es **${product.price} USD**.`;
+  
+  };
 
   // Filtrar productos por categoría
   const filteredProducts = products.filter(product => product.category === categoryName);
@@ -42,6 +54,7 @@ const CategoryPage = ({ handleAddToCart }) => {
   // Función para manejar el clic en un producto
   const handleProductSelect = (product) => {
     setSearchTerm(product.name); // Establecer el término de búsqueda como el nombre del producto seleccionado
+    navigate(`/product/${product.id}`); // Redirigir a la página de detalles del producto
   };
 
   return (
@@ -60,7 +73,7 @@ const CategoryPage = ({ handleAddToCart }) => {
       {searchedProducts.length === 0 ? (
         <p className='absolute ml-3 -mt-5 text-[#FF0000]'>No hay productos disponibles en la categoría {categoryName}.</p>
       ) : (
-        <ul className=" grid place-items-center gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+        <ul className=" grid place-items-center  gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
   {searchedProducts.map(product => (
     <li key={product.id} className="relative h-full w-full">
       {/* Superposición para productos agotados */}
@@ -70,32 +83,45 @@ const CategoryPage = ({ handleAddToCart }) => {
         </div>
       )}
       
-    <div className=" flex flex-col h-full bg-white rounded-lg shadow-md    max-w-[340px] mx-auto">
-<div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-t-lg ">
-                <img 
-                  src={product.image} 
-                  alt={product.name} 
-                  className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110" 
-                />
-              </div>
-      <div className="description flex flex-col justify-between flex-grow p-3">
+    <div 
+  
+    className=" flex flex-col h-full bg-white rounded-lg shadow-md    max-w-[340px] mx-auto">
+      <div className="aspect-w-1 hover:cursor-pointer aspect-h-1 w-full overflow-hidden rounded-t-lg " onClick={() => handleProductSelect(product)}> {/* Agregado para redirigir a detalles */}
+        <img 
+          src={product.image} 
+          alt={product.name} 
+          className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110" 
+        />
+      </div>
+      <div className="description flex flex-col justify-between flex-grow p-3 ">
         <h3 className="text-lg font-bold">{product.name}</h3>
         <p>Precio: {product.price} USD</p>
 
+      <div >
+
         {/* Botón deshabilitado si el producto está agotado */}
         <button 
-          onClick={() => handleAddToCart(product)} 
+          onClick={() => handleAddToCart(product,1)} 
           className={`mt-4 w-full bg-[#008DDA] text-white hover:text-black font-semibold py-2 rounded hover:bg-[#41C9E2] 
             ${!product.inStock ? 'cursor-not-allowed opacity-50' : ''}`}
-          disabled={!product.inStock}
-        >
+            disabled={!product.inStock}
+            >
           <FontAwesomeIcon className='text-[#FFFFF] mr-2' icon={faShoppingCart} size="1x" />
           Añadir al Carrito
         </button>
+
+        {/* Botón de Comprar Ahora */}
+        <button 
+          onClick={() => window.open(`https://wa.me/59014481?text=${encodeURIComponent(createWhatsAppMessage(product))}`)} 
+          className="mt-4 bg-blue-500 text-white font-bold w-full py-2 rounded hover:bg-blue-600"
+          >
+          Comprar Ahora
+        </button>
+          </div>
       </div>
-      </div>
-    </li>
-  ))}
+    </div>
+  </li>
+))}
 </ul>
 
       )}

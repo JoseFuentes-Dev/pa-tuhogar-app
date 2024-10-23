@@ -15,7 +15,7 @@ const OfferCard = ({ product, addToCart }) => {
       className='w-full px-1'
      
     >
-      <div className="bg-[#FFFFFF] rounded-lg shadow-md flex flex-col h-full max-w-[340px] mx-auto">
+      <div className="bg-[#FFFFFF] rounded-lg shadow-md flex flex-col h-full max-w-[500px] mx-auto">
         <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-t-lg">
           <img 
             src={product.image} 

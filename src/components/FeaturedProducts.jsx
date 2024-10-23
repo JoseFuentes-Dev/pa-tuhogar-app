@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import { productsdestacados } from './Productdestacados';
 import { useNavigate } from 'react-router-dom'; // Importar useNavigate
 
 const FeaturedProducts = ({ onAddToCart, products }) => { // Asegúrate de recibir 'products'
@@ -23,8 +22,8 @@ const FeaturedProducts = ({ onAddToCart, products }) => { // Asegúrate de recib
               data-aos="fade-up" 
               data-aos-duration="600"
             >
-              <div className="bg-[#FFFFFF] rounded-lg shadow-md flex flex-col mb-5 h-full max-w-[340px] mx-auto">
-                <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-t-lg">
+              <div className="bg-[#FFFFFF]  rounded-lg shadow-md flex flex-col mb-5 h-full max-w-[340px] mx-auto">
+                <div className="aspect-w-1 hover:cursor-pointer aspect-h-1 w-full overflow-hidden rounded-t-lg">
                   <img 
                     src={product.image} 
                     alt={product.name} 
@@ -37,11 +36,12 @@ const FeaturedProducts = ({ onAddToCart, products }) => { // Asegúrate de recib
                     <h2 className="text-base font-bold">{product.name}</h2>
                     <span className=" text-[1.1em]">{product.price.toFixed(2)} USD</span>
                   </div>
+                  
                   <button 
                     onClick={() => onAddToCart(product, 1)} // Agregado para añadir al carrito
                     className="mt-1 w-full bg-[#008DDA] text-white hover:text-black font-semibold py-2 rounded hover:bg-[#41C9E2]"
                   >
-                    <FontAwesomeIcon className='text-[#FFFFFF] mr-2' icon={faShoppingCart} style={{ fontSize: '20px' }} />
+                    <FontAwesomeIcon className=' mr-2 ' icon={faShoppingCart} style={{ fontSize: '20px' }} />
                     Añadir al Carrito
                   </button>
                 </div>
