@@ -49,7 +49,7 @@ const ProductDetail = ({ products, addToCart }) => {
             <strong>Domicilio:</strong> {product.domicilio ? 'Incluido' : 'No incluido'}
           </p>
           <p className="mt-2">
-            <strong>Garantía:</strong> {product.garantia ? 'Incluida' : 'No incluida'}
+            <strong>Garantía:</strong> {product.garantia ? 'Si' : 'No'}
           </p>
         </div>
 
