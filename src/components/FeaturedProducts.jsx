@@ -30,7 +30,7 @@ const FeaturedProducts = ({ onAddToCart }) => {
                   <span className=" text-[1.1em]">{product.price.toFixed(2)} USD</span>
                 </div>
                 <button 
-                  onClick={() => onAddToCart(product)} 
+                  onClick={() => onAddToCart(product, 1)} // Agregado para añadir al carrito
                   className="mt-1 w-full bg-[#008DDA] text-white hover:text-black font-semibold py-2 rounded hover:bg-[#41C9E2]"
                 >
                   <FontAwesomeIcon className='text-[#FFFFFF] mr-2' icon={faShoppingCart} style={{ fontSize: '20px' }} />
