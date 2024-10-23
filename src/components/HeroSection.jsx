@@ -16,9 +16,12 @@ import image5 from '../assets/images/5.jpg';
 import image6 from '../assets/images/6.jpg';
 import image7 from '../assets/images/7.jpg';
 import image8 from '../assets/images/8.jpg';
+import image9 from '../assets/images/9.jpg';
+
+
 
 const HeroSection = () => {
-  const images = [image1, image2, image3, image4, image5, image6, image7, image8];
+  const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9];
 
   // Configuración del carrusel
   const settings = {
@@ -83,7 +86,7 @@ const HeroSection = () => {
       >
         
         <motion.h1 
-          className="flex flex-col sm:flex-row text-3xl xl:text-4xl font-bold mb-4 bg-white text-black p-2 rounded-lg mx-2"
+          className="flex flex-col xl:flex-row text-4xl sm:text-5xl font-bold mb-4 bg-white text-black p-2 rounded-lg mx-2"
           initial="hidden"
           animate="visible"
           transition={{ duration: 1 }}
@@ -95,13 +98,13 @@ const HeroSection = () => {
             Pa&apos;tu H <FontAwesomeIcon className="text-[#FF0000]" icon={faHeart} size="1x" /> gar
           </span>
         </motion.h1>
-        <motion.p className="text-md p-1 mx-1 xl:text-[1.2em] md:text-[1em] md:p-2 mb-6 bg-white text-black  rounded-lg md:mx-2"
+        <motion.p className="text-[1.1em]  mx-5 xl:text-[1.2em]  p-2 mb-6 bg-white text-black  rounded-lg "
           initial="hidden"
           animate="visible"
           transition={{ duration: 1, delay: 0.5 }}
           variants={paragraphVariants}
           >
-          Encuentra los mejores electrodomésticos para tu hogar en Holguín.
+         Un mundo de productos a tu alcance, en un solo lugar
         </motion.p>
         <motion.div
           initial="hidden"

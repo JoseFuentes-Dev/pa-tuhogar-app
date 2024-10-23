@@ -4,11 +4,15 @@ import "slick-carousel/slick/slick-theme.css";
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom'; 
 import image1 from '../assets/images/promotion.jpg';
-import image7 from '../assets/images/7.jpg';
-import image8 from '../assets/images/8.jpg';
+import image2 from '../assets/images/promotion2.jpg';
+import image3 from '../assets/images/promotion3.jpg';
+import image4 from '../assets/images/promotion4.jpg';
+import image5 from '../assets/images/promotion5.jpg';
+
+
 
 const BusinessPromo = () => {
-  const images = [image1, image7, image8];
+  const images = [image1, image2, image3, image4, image5 ];
 
   const settings = {
     infinite: true,
@@ -42,7 +46,7 @@ const BusinessPromo = () => {
     visible: { opacity: 1, x: 0 },  // Visible y en su posición original
   };
   return (
-    <motion.div className="relative w-full h-[240px]   md:h-2/3 shadow-lg rounded-lg overflow-hidden  "
+    <motion.div className="relative w-full h-[240px]   md:h-2/3 shadow-lg rounded-[14px] overflow-hidden  "
     initial="hidden"
     animate="visible"
     transition={{ duration: 1, ease: 'easeInOut' }}
@@ -50,10 +54,10 @@ const BusinessPromo = () => {
     >
       <Slider {...settings}>
       {images.map((image, index) => (
-            <div key={index} className="w-full h-full flex justify-center items-center rounded-lg ">
+            <div key={index} className="w-full h-full flex justify-center items-center ">
               <img
                 src={image}
-                className="w-full h-[240px] md:h-[370px] rounded-lg object-initial"
+                className="w-full h-[240px] md:h-[370px]  object-initial "
                 alt={`Slide ${index + 1}`}
               />
             </div>
