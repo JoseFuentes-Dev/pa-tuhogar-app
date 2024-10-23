@@ -46,7 +46,7 @@ const Navbar = ({ cartCount, toggleCart }) => {
     return (
         <>
             <nav className={`p-3 menu-principal bg-[#008DDA] w-full flex justify-between items-center fixed top-0 z-50 transition-all duration-500 ease-in-out 
-                ${isScrolled ? 'h-[55px]' : 'h-20'}`}>
+                ${isScrolled ? 'h-[56px] bg-opacity-95' : 'h-20 bg-opacity-100'}`}>
                 <img src={logo} alt="Pa' tu hogar logo" className={`transition-all duration-500 ease-in-out ${isScrolled ? 'h-[55px]' : 'h-20'}`} />
 
                 <div className='md:hidden pr-5'>
@@ -55,7 +55,7 @@ const Navbar = ({ cartCount, toggleCart }) => {
                     </button>
                 </div>
 
-                <ul className={`z-40 flex flex-col bg-[#008DDA] items-center md:flex-row md:items-center text-white md:static absolute  md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-9 gap-3 transition-all duration-500 ease-in-out  ${isOpen ? 'top-10' : 'top-[-650px]'}`}>
+                <ul className={`z-40 flex flex-col md:bg-opacity-0 bg-[#008DDA] items-center md:flex-row md:items-center text-white md:static absolute  md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-9 md:gap-1 gap-3 transition-all duration-500 ease-in-out  ${isOpen ? 'top-10' : 'top-[-650px]'}`}>
                     <li>
                         <Link to="/" className='cursor-pointer hover:text-[#ACE2E1] text-white px-3 py-2 block md:inline-block'>Inicio</Link>
                     </li>
@@ -91,7 +91,7 @@ const Navbar = ({ cartCount, toggleCart }) => {
                     </li>
 
                     <li className='relative cursor-pointer'>
-                        <a onClick={toggleCart} className=" px-4 mb-2 py-2 block md:inline-block">
+                        <a onClick={toggleCart} className=" px-4 py-2 block md:inline-block">
                             <FontAwesomeIcon className='hover:text-[#ACE2E1]' icon={faShoppingCart} size="1x" />
                             {cartCount > 0 && (
                                 <span className="absolute top-0 right-0 bg-[#FFA500] text-white rounded-full text-xs w-5 h-5 flex justify-center items-center">
