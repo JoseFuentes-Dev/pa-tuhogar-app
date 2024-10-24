@@ -102,7 +102,7 @@ function App() {
         )}
         
         {/* Contenido principal */}
-        <div className="flex-grow"> 
+
           <Routes>
             <Route path="/" element={<Home handleAddToCart={handleAddToCart} />} />
             <Route 
@@ -117,7 +117,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
           </Routes>
-        </div>
+
 
         {/* Footer siempre en la parte inferior */}
         <Footer />

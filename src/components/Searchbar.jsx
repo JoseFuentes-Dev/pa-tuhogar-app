@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 import './search.css';
 import { products } from './ProductList'; 
+import { motion } from 'framer-motion'; // Importa motion
 
 const SearchBar = () => {
   const [inputValue, setInputValue] = useState('');
@@ -70,7 +71,14 @@ const SearchBar = () => {
   };
 
   return (
-    <div id='search-bar' ref={searchBarRef} className="flex flex-col items-center justify-center ">
+    <motion.div 
+      id='search-bar' 
+      ref={searchBarRef} 
+      className="flex flex-col items-center justify-center z-60"
+      initial={{ y: -100, opacity: 0 }} // Inicializa la posición y la opacidad
+      animate={{ y: 0, opacity: 1 }} // Animación al aparecer
+      transition={{ duration: 0.8, delay: 0.5 }} // Añade un retraso aquí
+    >
       <div className="contain-input relative w-full max-w-4xl">
         <input
           type="text"
@@ -93,14 +101,14 @@ const SearchBar = () => {
         )}
       </div>
 
-      <div className="w-full mt-1 max-w-4xl relative ">
+      <div className="w-full mt-1 max-w-4xl relative z-50">
         {filteredProducts.length > 0 ? (
           <ul className="product-list rounded-lg bg-[#F7EEDD] absolute z-50 w-full">
             {filteredProducts.map(product => (
               <li
                 key={product.id}
                 onClick={() => handleProductClick(product)}
-                className="cursor-pointer shadow-md p-2 hover:bg-[#ACE2E1] transition-all"
+                className="cursor-pointer shadow-md p-2 hover:bg-[#ACE2E1] transition-all "
               >
                 {highlightMatch(product.name, inputValue)} - <span className="text-gray-500">{product.category}</span>
               </li>
@@ -110,7 +118,7 @@ const SearchBar = () => {
           noResults && <p className='err-message absolute ml-3 text-[#FF0000]'>No se encontraron coincidencias</p>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
