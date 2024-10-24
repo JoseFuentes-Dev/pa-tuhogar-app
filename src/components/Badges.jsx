@@ -11,25 +11,26 @@ const Badges = () => {
   };
 
   return (
-    <div className="z-0 flex-col bg-white rounded-[15px] shadow-md p-1 xl:p-2">
+    <div className="z-0 flex-col bg-white rounded-[15px]  shadow-lg p-1 xl:p-2 space-y-2">
       {/* Badge 1 */}
+      
       <motion.div
-        className="flex items-center gap-7 w-auto p-1 xl:p-2 border-b-2 border-[#008DDA]-200"
+        className="flex items-center gap-4  p-1 xl:p-2 "
         initial="hidden"
         animate="visible"
         transition={{ duration: 0.5, ease: 'easeInOut' }}
         variants={badgeVariants}
       >
         <FontAwesomeIcon icon={faCheck} className="text-[#008DDA] transition-transform transform hover:scale-110 text-[40px] sm:text-[60px]" />
-        <label className='flex flex-col text-left'>
-          <span className="xl:text-[1.3em] text-[1em] font-semibold">Calidad</span>
-          <p className="xl:text-[.9em] text-[.8em]">Productos seleccionados por su excelente calidad.</p>
+        <label className='flex flex-col text-left '>
+          <span className="text-lg font-semibold">Calidad</span>
+          <p className="text-sm text-gray-700">Productos seleccionados por su excelente calidad</p>
         </label>
       </motion.div>
 
       {/* Badge 2 */}
       <motion.div
-        className="flex items-center gap-7 w-auto p-1 xl:p-2 border-b-2 border-[#008DDA]-200"
+        className="flex items-center gap-4  p-1 xl:p-2 "
         initial="hidden"
         animate="visible"
         transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.2 }} // Agregar un delay para la segunda badge
@@ -37,14 +38,14 @@ const Badges = () => {
       >
         <FontAwesomeIcon icon={faCheck} className="text-[#008DDA] transition-transform transform hover:scale-110 text-[40px] sm:text-[60px]" />
         <label className='flex flex-col text-left'>
-          <span className="xl:text-[1.3em] text-[1em] font-semibold">Garantía</span>
-          <p className="xl:text-[.9em] text-[.8em]">Disfruta de la tranquilidad de la garantía de los productos</p>
+          <span className="text-lg font-semibold">Garantía</span>
+          <p className="text-sm text-gray-700">Disfruta de la tranquilidad de la garantía de los productos</p>
         </label>
       </motion.div>
 
       {/* Badge 3 */}
       <motion.div
-        className="flex items-center gap-7 w-auto p-1 xl:p-2"
+        className="flex items-center gap-4 p-1 xl:p-2"
         initial="hidden"
         animate="visible"
         transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.4 }} // Agregar un delay para la tercera badge
@@ -52,8 +53,8 @@ const Badges = () => {
       >
         <FontAwesomeIcon icon={faCheck} className="text-[#008DDA] transition-transform transform hover:scale-110 text-[40px] sm:text-[60px]" />
         <label className='flex flex-col text-left'>
-          <span className="xl:text-[1.3em] text-[1em] font-semibold">Domicilio</span>
-          <p className="xl:text-[.9em] text-[.8em]">Aprovecha las entregas rápidas y seguras a tu hogar</p>
+          <span className="text-lg font-semibold">Domicilio</span>
+          <p className="text-sm text-gray-700">Aprovecha las entregas rápidas y seguras a tu hogar</p>
         </label>
       </motion.div>
     </div>
