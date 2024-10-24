@@ -11,6 +11,7 @@
 }
 .custom-prev-arrow:hover,  .custom-next-arrow:hover{
   background-color: #ACE2E1;
+  
 }
 
 /* Agrega una flecha en el centro del cuadro */
@@ -37,6 +38,10 @@
   left: 10px;
   
 }
+.custom-prev-arrow:focus, .custom-next-arrow:focus {
+  background-color: #ACE2E1;
+}
+
 
 /* Flecha hacia la derecha */
 .custom-next-arrow:before {
@@ -73,6 +78,6 @@
 .image-offer:hover
 {
 cursor: pointer;
-transform: scale(120%);
+transform: scale(1.1);
 transition: all 1s ease;
   }

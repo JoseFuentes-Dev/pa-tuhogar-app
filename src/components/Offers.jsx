@@ -4,10 +4,23 @@ import './offers.css';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 const OfferCard = ({ product, addToCart }) => {
+  
+  const [isAnimating, setIsAnimating] = useState(false); // Estado para manejar la animación
   const navigate = useNavigate();
 
+  const handleAddToCart = () => {
+    setIsAnimating(true); // Iniciar la animación
+    addToCart(product, 1);
+    
+    // Detener la animación después de un tiempo
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 300); // Duración de la animación
+  };
   return (
     <div
       data-aos="fade-up" 
@@ -24,13 +37,18 @@ const OfferCard = ({ product, addToCart }) => {
             onClick={() => navigate(`/product/${product.id}`)}
         />
         </div>
-        <div className="p-3 flex flex-col justify-between flex-grow">
-          <h2 className="text-base font-bold mb-2">{product.name}</h2>
+        <div className="p-3 h-[110px] flex flex-col justify-between flex-grow">
+          <h2 className=" text-[1.1em] font-semibold mb-2 ">{product.name}</h2>
           <div className="flex justify-between items-center mt-auto">
-            <span className="text-[#FF0000] font-bold text-[1.1em]">{product.price} USD</span>
-            <button className="text-[#41C9E2] hover:text-[#008DDA]" onClick={() => addToCart(product, 1)} >
+            <span className="text-[#FF0000] font-bold text-[1em]">{product.price} USD</span>
+            <motion.button
+              className="text-[#41C9E2] hover:text-[#008DDA]"
+              onClick={handleAddToCart}
+              animate={{ scale: isAnimating ? 1.3 : 1 }} // Escalar cuando está animando
+              transition={{ type: 'spring', stiffness: 300 }} // Configuración de la animación
+            >
               <FontAwesomeIcon icon={faShoppingCart} style={{ fontSize: '25px' }} />
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>
@@ -59,6 +77,12 @@ const CustomPrevArrow = (props) => {
   );
 };
 
+CustomPrevArrow.propTypes = {
+  className: PropTypes.string.isRequired, // Añadir validación para className
+  style: PropTypes.object.isRequired,      // Añadir validación para style
+  onClick: PropTypes.func.isRequired,      // Añadir validación para onClick
+};
+
 const CustomNextArrow = (props) => {
   const { className, style, onClick } = props;
   return (
@@ -68,6 +92,12 @@ const CustomNextArrow = (props) => {
       onClick={onClick}
     />
   );
+};
+
+CustomNextArrow.propTypes = {
+  className: PropTypes.string.isRequired,
+  style: PropTypes.object.isRequired,      // Añadir validación para style
+  onClick: PropTypes.func.isRequired,      // Añadir validación para onClick
 };
 
 const Offers = ({ products, onAddToCart }) => {
