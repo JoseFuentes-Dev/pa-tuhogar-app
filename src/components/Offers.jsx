@@ -149,7 +149,8 @@ const Offers = ({ products, onAddToCart }) => {
 
   return (
     <div id='ofertas' className="my-24 relative pt-[60px]">
-      <h1 className="text-[1.8em] font-bold mb-6 text-[#FF0000]">Ofertas</h1>
+      <h2 className="text-[2em] font-bold mb-8 text-[#008DDA] underline decoration-[#ACE2E1]">Ofertas</h2>
+
       <Slider {...settings}>
         {offerProducts.length > 0 ? (
           offerProducts.map((product) => (

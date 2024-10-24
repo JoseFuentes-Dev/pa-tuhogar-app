@@ -10,7 +10,8 @@ const FeaturedProducts = ({ onAddToCart, products }) => { // Asegúrate de recib
 
   return (
     <div className="mt-20">
-      <h2 className="text-[1.8em] font-bold mb-6">Productos Destacados</h2>
+      <h2 className="text-[2em] font-bold mb-8 text-[#008DDA] underline decoration-[#ACE2E1]">Productos Destacados</h2>
+
       <div 
         className="grid place-items-center gap-2  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"
       >
