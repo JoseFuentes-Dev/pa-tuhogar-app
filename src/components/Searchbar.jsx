@@ -71,21 +71,24 @@ const SearchBar = () => {
   };
 
   return (
-    <motion.div 
+    <div 
       id='search-bar' 
       ref={searchBarRef} 
       className="flex flex-col items-center justify-center z-60"
-      initial={{ y: -100, opacity: 0 }} // Inicializa la posición y la opacidad
-      animate={{ y: 0, opacity: 1 }} // Animación al aparecer
-      transition={{ duration: 0.8, delay: 0.5 }} // Añade un retraso aquí
+   
     >
-      <div className="contain-input relative w-full max-w-4xl">
+      <motion.div
+         initial={{ y: -100, opacity: 0 }} // Inicializa la posición y la opacidad
+         animate={{ y: 0, opacity: 1 }} // Animación al aparecer
+         transition={{ duration: 0.8, delay: 0.5 }} // Añade un retraso aquí
+          className="contain-input relative w-full max-w-4xl">
         <input
           type="text"
           value={inputValue}
           onChange={handleInputChange}
           className="relative shadow-md pl-4 text-[1.2em] text-[rgba(0,0,0,.7)] h-[50px] w-full max-w-4xl p-2 rounded-bl-lg rounded-br-lg focus:outline-none focus:ring-1 focus:ring-[#008DDA]"
           placeholder='Buscar:'
+          
         />
 
         {isVisible && (
@@ -99,7 +102,7 @@ const SearchBar = () => {
             </div>
           </div>
         )}
-      </div>
+      </motion.div>
 
       <div className="w-full mt-1 max-w-4xl relative z-50">
         {filteredProducts.length > 0 ? (
@@ -118,7 +121,7 @@ const SearchBar = () => {
           noResults && <p className='err-message absolute ml-3 text-[#FF0000]'>No se encontraron coincidencias</p>
         )}
       </div>
-    </motion.div>
+    </div>
   );
 };
 
