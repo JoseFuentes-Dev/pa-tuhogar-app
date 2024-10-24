@@ -104,7 +104,7 @@ const SearchBar = () => {
         )}
       </motion.div>
 
-      <div className="w-full mt-1 max-w-4xl relative z-50">
+      <div className="w-full mt-1 max-w-4xl relative z-40">
         {filteredProducts.length > 0 ? (
           <ul className="product-list rounded-lg bg-[#F7EEDD] absolute z-50 w-full">
             {filteredProducts.map(product => (
