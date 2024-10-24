@@ -49,7 +49,7 @@ const Services = () => {
             </div>
 
             <p className='text-[1.2em] text-center my-5'>
-                Todos nuestros planes están diseñados para maximizar la exposición de tus productos en nuestra plataforma. Contáctanos para más detalles y para comenzar a publicitar tus productos <strong>¡Hoy mismo!</strong>
+                Todos nuestros planes están diseñados para maximizar la exposición de tus productos en nuestra plataforma. Contáctanos para más detalles y para comenzar a publicitar tus productos  <br /><strong>¡Hoy mismo!</strong>
             </p>
         </div>
     );

@@ -39,7 +39,7 @@ const HeroSection = () => {
 
   // Definición de las variantes de animación
   const slideVariants = {
-    hidden: { opacity: 0, scale: 1.2, filter: 'blur(100px)' }, // Agregado efecto de desenfoque
+    hidden: { opacity: 0, scale: 1.2, filter: 'blur(10px)' }, // Agregado efecto de desenfoque
     visible: { opacity: 1, scale: 1, filter: 'blur(0px)' }, // Agregado efecto de desenfoque
   };
 
@@ -81,7 +81,7 @@ const HeroSection = () => {
 
       {/* Contenido sobre el banner */}
       <div
-        className="absolute inset-0 flex flex-col justify-center items-center z-10 text-center rounded-lg "
+        className="absolute inset-0 flex flex-col justify-center items-center z-10 text-center rounded-[15px] "
        
       >
         
@@ -95,10 +95,10 @@ const HeroSection = () => {
           <span className="sm:hidden">Bienvenido a</span>
           <span className="hidden sm:inline">Bienvenido a&nbsp;</span>
           <span>
-            Pa&apos;tu H <FontAwesomeIcon className="text-[#FF0000]" icon={faHeart} size="1x" /> gar
+            Pa&apos;tu H<FontAwesomeIcon className="text-[#FF0000]" icon={faHeart} size="1x" />gar
           </span>
         </motion.h1>
-        <motion.p className="text-[1.1em]  xl:text-[1.2em]  p-3 mb-4 bg-white text-black  rounded-lg "
+        <motion.p className="text-[1.1em]  xl:text-[1.2em]  p-3 mb-4 bg-white text-black mx-4  rounded-lg "
           initial="hidden"
           animate="visible"
           transition={{ duration: 1, delay: 0.5 }}

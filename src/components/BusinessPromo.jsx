@@ -46,7 +46,7 @@ const BusinessPromo = () => {
     visible: { opacity: 1, x: 0 },  // Visible y en su posición original
   };
   return (
-    <motion.div className="relative w-full h-[340px]   md:h-2/3 shadow-lg rounded-[14px] overflow-hidden  "
+    <motion.div className="relative w-full h-[340px]   md:h-full shadow-lg rounded-[14px] overflow-hidden  "
     initial="hidden"
     animate="visible"
     transition={{ duration: 1, ease: 'easeInOut' }}
@@ -57,7 +57,7 @@ const BusinessPromo = () => {
             <div key={index} className="w-full h-full flex justify-center items-center ">
               <img
                 src={image}
-                className="w-full h-[340px] md:h-[370px]  object-initial "
+                className="w-full h-[340px] sm:h-[350px] md:h-[410px]  object-initial "
                 alt={`Slide ${index + 1}`}
               />
             </div>
@@ -81,9 +81,9 @@ const BusinessPromo = () => {
           ¿Quieres publicar o ver nuestras ofertas para promocionar tu negocio?
         </motion.p>
 
-             <Link to="/services" className='hover:text-[#ACE2E1] text-white px-1 py-2 block md:inline-block'>
+             <Link to="/services" className='hover:text-[#ACE2E1] text-white px-1 py-2 block md:inline-block transform transition-transform duration-300 hover:scale-105'>
            
-        <motion.button className="bg-[#41C9E2] text-black py-2 px-4 rounded hover:bg-[#008DDA]"
+        <motion.button className="bg-[#41C9E2] text-black py-2 px-4 rounded hover:bg-[#008DDA] "
          initial="hidden"
          animate="visible"
          transition={{ duration: 0.5, ease: 'easeInOut' }}
