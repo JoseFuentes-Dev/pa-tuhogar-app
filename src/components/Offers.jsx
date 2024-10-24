@@ -78,9 +78,9 @@ const CustomPrevArrow = (props) => {
 };
 
 CustomPrevArrow.propTypes = {
-  className: PropTypes.string.isRequired, // Añadir validación para className
-  style: PropTypes.object.isRequired,      // Añadir validación para style
-  onClick: PropTypes.func.isRequired,      // Añadir validación para onClick
+  className: PropTypes.string, // Añadir validación para className
+  style: PropTypes.object,      // Añadir validación para style
+  onClick: PropTypes.func,      // Añadir validación para onClick
 };
 
 const CustomNextArrow = (props) => {
@@ -95,9 +95,9 @@ const CustomNextArrow = (props) => {
 };
 
 CustomNextArrow.propTypes = {
-  className: PropTypes.string.isRequired,
-  style: PropTypes.object.isRequired,      // Añadir validación para style
-  onClick: PropTypes.func.isRequired,      // Añadir validación para onClick
+  className: PropTypes.string,
+  style: PropTypes.object,      // Añadir validación para style
+  onClick: PropTypes.func,      // Añadir validación para onClick
 };
 
 const Offers = ({ products, onAddToCart }) => {

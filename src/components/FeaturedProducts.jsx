@@ -22,7 +22,7 @@ const FeaturedProducts = ({ onAddToCart, products }) => { // Asegúrate de recib
               data-aos="fade-up" 
               data-aos-duration="600"
             >
-              <div className="bg-[#FFFFFF]  rounded-lg shadow-md flex flex-col mb-5 h-full max-w-[340px] mx-auto">
+              <div className="bg-[#FFFFFF]  rounded-lg shadow-md flex flex-col mb-5 h-full w-full max-w-[400px] mx-auto">
                 <div className="aspect-w-1 hover:cursor-pointer aspect-h-1 w-full overflow-hidden rounded-t-lg">
                   <img 
                     src={product.image} 
@@ -31,15 +31,16 @@ const FeaturedProducts = ({ onAddToCart, products }) => { // Asegúrate de recib
                     onClick={() => navigate(`/product/${product.id}?featured=true`)} // Agregado para redirigir a detalles
                   />
                 </div>
-                <div className="p-3 flex flex-col justify-between flex-grow">
+                <div className="p-3  flex flex-col gap-2 flex-grow">
                   <div>
-                    <h2 className="text-base font-bold">{product.name}</h2>
-                    <span className=" text-[1.1em]">{product.price.toFixed(2)} USD</span>
+                  <h2 className="text-[1.1em] font-semibold">{product.name}</h2>
+                  <span className="text-[1em] ">{product.price} USD</span>
+
                   </div>
                   
                   <button 
                     onClick={() => onAddToCart(product, 1)} // Agregado para añadir al carrito
-                    className="mt-1 w-full bg-[#008DDA] text-white hover:text-black font-semibold py-2 rounded hover:bg-[#41C9E2]"
+                    className="mt-1 w-full bg-[#008DDA] text-white hover:text-black font-semibold py-2 rounded hover:bg-[#41C9E2]  transition-colors duration-300"
                   >
                     <FontAwesomeIcon className=' mr-2 ' icon={faShoppingCart} style={{ fontSize: '20px' }} />
                     Añadir al Carrito
