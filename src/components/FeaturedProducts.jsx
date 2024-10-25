@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom'; // Importar useNavigate
+import PropTypes from 'prop-types'; // Importar PropTypes
 
 const FeaturedProducts = ({ onAddToCart, products }) => { // Asegúrate de recibir 'products'
   const navigate = useNavigate(); // Inicializar useNavigate
@@ -8,9 +9,20 @@ const FeaturedProducts = ({ onAddToCart, products }) => { // Asegúrate de recib
   // Filtrar productos destacados
   const featuredProducts = products.filter(product => product.featured); // Filtrar usando la prop 'products'
 
+  FeaturedProducts.propTypes = { // Agregar validación de props
+    onAddToCart: PropTypes.func.isRequired,
+    products: PropTypes.arrayOf(PropTypes.shape({ // Validar que 'products' sea un array de objetos
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      image: PropTypes.string.isRequired,
+      featured: PropTypes.bool.isRequired,
+    })).isRequired,
+  };
+
   return (
-    <div className="mt-20">
-      <h2 className="text-[2em] font-bold mb-8 text-[#008DDA] underline decoration-[#ACE2E1]">Productos Destacados</h2>
+    <div id="featured-products"  className="mt-30">
+      <h2  className="text-[2em] font-bold mb-8 text-[#008DDA] underline decoration-[#ACE2E1]">Productos Destacados</h2>
 
       <div 
         className="grid place-items-center gap-2  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"

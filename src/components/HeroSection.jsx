@@ -59,7 +59,7 @@ const HeroSection = () => {
   };
 
   return (
-    <motion.section className="z-0 w-full h-[500px] relative sm:h-[650px] md:w-2/3  text-white flex flex-col "
+    <motion.section  className="z-0 w-full h-[500px] relative sm:h-[650px] md:w-2/3  text-white flex flex-col "
     initial="hidden"
     animate="visible"
     transition={{ duration: 1, ease: 'easeInOut' }}

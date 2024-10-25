@@ -84,7 +84,7 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden">
       <Router basename='/pa-tuhogar-app/'>
-        <span id='top'></span>
+        <span id='home'></span>
         <Navbar toggleCart={toggleCart} cartCount={cart.reduce((acc, item) => acc + item.quantity, 0)} />
         {isCartOpen && (
           <ShoppingCart 

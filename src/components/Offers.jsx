@@ -148,7 +148,7 @@ const Offers = ({ products, onAddToCart }) => {
   };
 
   return (
-    <div id='ofertas' className="my-24 relative pt-[60px]">
+    <div id="offers" className="my-24 relative pt-[60px]">
       <h2 className="text-[2em] font-bold mb-8 text-[#008DDA] underline decoration-[#ACE2E1]">Ofertas</h2>
 
       <Slider {...settings}>
