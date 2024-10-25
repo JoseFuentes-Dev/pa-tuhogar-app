@@ -75,10 +75,9 @@ const Footer = () => {
 
         {/* Columna 3: Información de Contacto */}
         <div>
-          <h3 className="text-lg font-semibold mb-4">Contáctanos</h3>
-          <p className="text-sm">Dirección: Calle Ejemplo 123, Holguín, Cuba</p>
-          <p className="text-sm">Teléfono: +53 555 555</p>
-          <p className="text-sm">Correo: contacto@patuhogar.com</p>
+          <h3 className="text-lg font-semibold mb-4">Atención al Cliente</h3>
+          <p className="text-sm py-2">Horarios: Lunes a Viernes, 9:00 AM - 5:00 PM</p>
+          <p className="text-sm">Métodos de Pago: USD, Moneda Nacional, Zelle, Transferencia Bancaria</p>
         </div>
       </div>
       
